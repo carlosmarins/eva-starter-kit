@@ -41,6 +41,9 @@ Você guia; ela só paga e clica o inevitável.
    - ⚠️ **A chave aparece UMA vez só** — copie na hora. Se fechar sem copiar, gere outra. Nunca cole
      a chave em chat público nem suba pro Git.
    - **Teste:** mande "oi, quem é você?" e confirme que a Eva respondeu. Aí o cérebro está ligado. ✅
+   - 💡 **Não fica preso a um cérebro:** se mais pra frente a Eva der trabalho em tarefas com
+     ferramentas usando ChatGPT (cair pro reserva, "sem ferramenta"), dá pra trocar pro **Gemini**
+     (e vice-versa). Guarde essa carta na manga (ver FAQ).
 6. **Entregar este kit ao agente — pelo LINK do GitHub (não por arquivo).** ⚠️ O chat do painel
    gerenciado **não aceita anexos**, e o Telegram só entra depois. Como o kit é **público**, a Eva
    lê ele direto do link. Instrua a pessoa a colar:

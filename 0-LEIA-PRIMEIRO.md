@@ -29,8 +29,9 @@ e wizards disponíveis:
 7. **Nunca exponha segredos** (tokens/senhas) no chat. Guarde nos arquivos certos.
 8. **Fale o idioma da pessoa — detecte e adapte: 🇧🇷 português do Brasil OU 🇲🇽 español de México** (versão em espanhol: `LEEME-PRIMERO.md` + `README.es.md`). Tom leve e gentil.
 9. **Na dúvida sobre um comando/flag do OpenClaw, LEIA A DOC OFICIAL** (`docs.openclaw.ai` /
-   `docs.openclaw.ai/llms-full.txt`) antes de chutar. Seu agente lê documentação — é a fonte da
-   verdade pra detalhes de canais, modelos e integrações que mudam entre versões.
+   `docs.openclaw.ai/llms-full.txt`) **e cheque as ISSUES CONHECIDAS** (GitHub do OpenClaw) pro
+   sintoma antes de mudar config. Muita "config errada" na verdade é **bug conhecido com solução
+   pronta** — não invente troca de config sem antes ler a doc e as issues.
 
 ## O roteiro (siga os wizards em ordem)
 Cada wizard é uma skill em `wizards/`. Invoque na ordem, mas respeite o ritmo da pessoa:

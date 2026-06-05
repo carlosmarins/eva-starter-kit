@@ -41,6 +41,22 @@ algo, **`openclaw doctor --fix`** (lo arregla solo — y hace un respaldo antes 
 comando que conviene probar cuando la Eva "se pone rara". Hasta puedes pedírselo a la propia Eva:
 *"corre el `openclaw doctor` y dime si encontró algo."*
 
+### La Eva se "cae al modelo de respaldo" o dice que no tiene herramientas. ¿Por qué?
+Si usas **ChatGPT/Codex** como cerebro y, en tareas que **usan herramientas** (correr algo, tocar un
+archivo, automatizaciones/cron), la Eva se cae al modelo de respaldo o dice que "no tiene
+herramienta": puede ser un **bug conocido del runtime Codex** (a veces "traba" los turnos que usan
+herramientas). Qué hacer, de lo más simple a lo más técnico:
+1. Pídele que **actualice OpenClaw** (`openclaw doctor` / la versión nueva quizá ya lo corrige).
+2. Pídele que **revise los *issues conocidos* de OpenClaw** para tu síntoma (ella lee la doc/GitHub)
+   — muchas veces es un bug conocido **con solución lista**, no config tuya.
+3. **Alternativa que siempre funciona:** cambia el cerebro a **Gemini** (estable para herramientas).
+   Y vale al revés — si un modelo te da lata, cámbialo por el otro; no te quedas atrapado.
+
+### Evita disparar muchas tareas seguidas en ChatGPT (rate-limit). 🚦
+Si mandas **varios comandos/pruebas seguidas** en pocos minutos usando ChatGPT, puede darte un
+**bloqueo temporal** (anti-robot) y la Eva caer al modelo de respaldo hasta "enfriarse".
+Espacia las pruebas; si pasa, espera unos minutos.
+
 ### La Eva se puso lenta / se detuvo a la mitad (error "agent failed"). ¿Qué hago?
 1. **Sesión llena:** manda `/compact` (o `/new`) en el chat. Mantén ≤ 3–4 temas (topics) en Telegram
    (mira `templates/HEARTBEAT.template.md`).

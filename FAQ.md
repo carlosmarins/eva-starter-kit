@@ -41,6 +41,22 @@ algo, **`openclaw doctor --fix`** (conserta sozinho — e faz um backup antes de
 comando a tentar quando a Eva "fica estranha". Você pode até pedir pra própria Eva: *"roda o
 `openclaw doctor` e me diz se achou algo."*
 
+### A Eva fica "caindo pro modelo reserva" ou diz que está sem ferramentas. Por quê?
+Se você usa **ChatGPT/Codex** como cérebro e, em tarefas que **usam ferramentas** (rodar algo, mexer
+em arquivo, automações/cron), a Eva fica caindo pro modelo reserva ou diz que "não tem ferramenta":
+pode ser um **bug conhecido do runtime Codex** (ele às vezes "trava" turnos que usam ferramentas).
+O que fazer, do mais simples ao mais técnico:
+1. Peça pra Eva **atualizar o OpenClaw** (`openclaw doctor` / a versão nova pode já corrigir).
+2. Peça pra ela **checar as *issues conhecidas* do OpenClaw** pro seu sintoma (ela lê a doc/GitHub) —
+   muitas vezes é bug conhecido **com solução pronta**, não config sua.
+3. **Alternativa que sempre funciona:** troque o cérebro pro **Gemini** (estável pra ferramentas).
+   E vale o contrário — se um modelo te der trabalho, troque pelo outro; você não fica preso.
+
+### Evite disparar muitas tarefas seguidas no ChatGPT (rate-limit). 🚦
+Se você mandar **vários comandos/testes em sequência** em poucos minutos usando o ChatGPT, ele pode
+te dar um **bloqueio temporário** (anti-robô) e a Eva cair pro modelo reserva até "esfriar".
+Espace os testes; se acontecer, espere alguns minutos.
+
 ### A Eva ficou lenta / parou no meio (erro "agent failed"). O que faço?
 1. **Sessão cheia:** mande `/compact` (ou `/new`) no chat. Mantenha ≤ 3–4 tópicos no Telegram
    (ver `templates/HEARTBEAT.template.md`).

@@ -1,5 +1,16 @@
 # Changelog — Eva Starter Kit
 
+## v0.6.4 (2026-06-05) — Lições de campo: modelo, ferramentas e issues conhecidas 🧠
+Destilado de um incidente real (cron com ferramentas caindo pro modelo reserva):
+- **FAQ (PT+ES):** "a Eva fica caindo pro modelo reserva / sem ferramentas" — explica em linguagem de
+  leigo o bug do runtime Codex em turnos com ferramenta e os remédios (atualizar OpenClaw, checar
+  issues conhecidas, ou trocar pro Gemini). **Sem `sed`/tecniquês** (isso é infra avançada, fora do kit).
+- **FAQ (PT+ES):** aviso de **rate-limit** — não disparar muitas tarefas seguidas no ChatGPT (pega
+  bloqueio temporário e cai pro reserva).
+- **`0-LEIA-PRIMEIRO` regra #9 reforçada:** antes de mudar config, ler a doc **E as issues conhecidas**
+  — "config errada" costuma ser bug conhecido com solução pronta.
+- **`wizard-01a`:** dica de que dá pra **trocar de cérebro** (ChatGPT ↔ Gemini) se um der trabalho.
+
 ## v0.6.3 (2026-06-04) — Emoji da Eva = 🦄
 - A Eva agora **nasce com o emoji 🦄 (unicórnio)** em vez de cair no caranguejo/lagosta 🦀 padrão do
   OpenClaw. Definido no `IDENTITY.template` + regra no `AGENTS.template` (usa 🦄 e, se houver config
