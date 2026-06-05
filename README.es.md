@@ -65,14 +65,22 @@ Una vez hecho el pago, tu Eva aparece aquí. Haz clic en **"OpenClaw"** (abre su
 
 ![Panel de OpenClaw con tu agente](docs/img/04-hostinger-agente.png)
 
-### Paso 5 — Darle este kit y pedirle que te enseñe
+### Paso 5 — Pedirle a la Eva que lea el kit y te enseñe
 En el chat de tu nuevo agente, **pega exactamente este mensaje**:
 
-> *"Recibí un kit de instalación. Lee el archivo `LEEME-PRIMERO.md` y sé mi tutor a partir de ahí.
-> Puedes correr la skill /criar-eva."*
+> *"Lee mi kit de instalación aquí: https://github.com/carlosmarins/eva-starter-kit — empieza por el
+> archivo `LEEME-PRIMERO.md`, trae el kit a tu workspace y sé mi tutor a partir de ahí."*
+
+> 💡 **¿Por qué un link y no un archivo?** El chat del panel **no acepta adjuntos**, y el Telegram lo
+> vamos a conectar más adelante. Como el kit es público en GitHub, la Eva simplemente **lo lee del
+> link** y se instala sola. (El comando `/criar-eva` aparece solo después de que ella jala el kit.)
 
 ¡Listo! De ahí en adelante **la propia Eva te guía** — su nombre, el Telegram, tus herramientas y
 (¡importante!) el **respaldo**. Solo responde lo que te pregunte. 🎉
+
+> 🧠 **¿La Eva no respondió nada?** Seguramente falta "encender su cerebro" (el modelo de IA). En el
+> plan de Hostinger, los **créditos de IA** que marcaste normalmente ya lo resuelven. Si aun así
+> queda muda, solo pídele conectar un modelo (la Eva sabe — está en el `wizard-01a`).
 
 > 📱 **El paso de Telegram/WhatsApp** es el que más dudas genera: la Eva te ayuda a crear un
 > "robot" en Telegram (@BotFather) y a conectarlo en **OpenClaw → Integraciones → Conectar**. Es
@@ -104,7 +112,8 @@ sudo bash install-eva.sh              # instala la Eva
 ```
 
 ### Paso 4 — Hablar con la Eva y pedirle que te enseñe
-Cuando responda a un "hola", mándale: *"Lee el `LEEME-PRIMERO.md` y corre /criar-eva."*
+Cuando responda a un "hola", mándale: *"Lee el kit en https://github.com/carlosmarins/eva-starter-kit
+(empieza por `LEEME-PRIMERO.md`), tráelo a tu workspace y sé mi tutor."*
 De ahí en adelante es igual al camino fácil: ella te guía en el resto. 🎉
 
 ---

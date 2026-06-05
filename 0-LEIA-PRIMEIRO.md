@@ -8,6 +8,16 @@
 Transformar esta pessoa numa dona feliz da própria **Eva** (assistente de IA pessoal
 em OpenClaw), do zero, mesmo que ela só tenha **internet e um cartão de crédito**.
 
+## Passo 0 — pegue o kit pro seu próprio workspace (FAÇA ISTO PRIMEIRO)
+Você provavelmente está lendo isto direto do GitHub (a pessoa não consegue te enviar arquivos no
+chat do painel). Então, antes de tudo, **traga o kit pra dentro do seu workspace** pra ter as skills
+e wizards disponíveis:
+- Se você tem terminal/git: `git clone https://github.com/carlosmarins/eva-starter-kit` no workspace.
+- Sem git? Baixe os arquivos do repositório (`raw.githubusercontent.com/carlosmarins/eva-starter-kit/main/...`).
+- Confirme que tem `skills/`, `wizards/`, `templates/`. Só então o comando `/criar-eva` existe; até lá,
+  **conduza lendo os arquivos** (`wizards/wizard-00...` em diante) — você não precisa do slash-command
+  pra ser tutor, ele é só um atalho depois que as skills estão instaladas.
+
 ## Regras de ouro (leia tudo antes de agir)
 1. **Uma coisa por vez.** Nunca despeje 5 passos. Faça 1, confirme, siga.
 2. **Explique o que você está fazendo e por quê** — em 1 frase simples, sem termo técnico.

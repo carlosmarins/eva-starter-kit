@@ -65,14 +65,22 @@ Feito o pagamento, sua Eva aparece aqui. Clique em **"OpenClaw"** (abre o painel
 
 ![Painel do OpenClaw com o seu agente](docs/img/04-hostinger-agente.png)
 
-### Passo 5 — Dar este kit pra ela e mandar ela te ensinar
+### Passo 5 — Mandar a Eva ler o kit e te ensinar
 No chat do seu novo agente, **cole exatamente esta mensagem**:
 
-> *"Recebi um kit de instalação. Leia o arquivo `0-LEIA-PRIMEIRO.md` e seja meu tutor a partir daí.
-> Pode rodar a skill /criar-eva."*
+> *"Leia o meu kit de instalação aqui: https://github.com/carlosmarins/eva-starter-kit — comece pelo
+> arquivo `0-LEIA-PRIMEIRO.md`, traga o kit pro seu workspace e seja meu tutor a partir daí."*
+
+> 💡 **Por que um link, e não um arquivo?** O chat do painel **não aceita anexos**, e o Telegram só
+> vamos ligar mais pra frente. Como o kit é público no GitHub, a Eva simplesmente **lê ele do link**
+> e se instala sozinha. (O comando `/criar-eva` passa a existir só depois que ela puxa o kit.)
 
 Pronto! A partir daí **a própria Eva te guia** — o nome dela, o Telegram, suas ferramentas e
 (importante!) o **backup**. É só responder o que ela perguntar. 🎉
+
+> 🧠 **A Eva não respondeu nada?** Provavelmente falta "ligar o cérebro" dela (o modelo de IA). No
+> plano da Hostinger, os **créditos de IA** que você marcou já costumam resolver. Se mesmo assim ela
+> ficar muda, é só me/ela pedir pra conectar um modelo (a Eva sabe — está no `wizard-01a`).
 
 > 📱 **O passo do Telegram/WhatsApp** é o que mais gera dúvida: a Eva vai te ajudar a criar um
 > "robô" no Telegram (@BotFather) e a conectar em **OpenClaw → Integrações → Conectar**. É tranquilo,
@@ -104,7 +112,8 @@ sudo bash install-eva.sh              # instala a Eva
 ```
 
 ### Passo 4 — Falar com a Eva e mandar ela te ensinar
-Quando ela responder a um "oi", mande: *"Leia o `0-LEIA-PRIMEIRO.md` e rode /criar-eva."*
+Quando ela responder a um "oi", mande: *"Leia o kit em https://github.com/carlosmarins/eva-starter-kit
+(comece pelo `0-LEIA-PRIMEIRO.md`), traga pro seu workspace e seja meu tutor."*
 Daí em diante é igual ao jeito fácil: ela te guia no resto. 🎉
 
 ---

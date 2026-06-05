@@ -1,5 +1,16 @@
 # Changelog — Eva Starter Kit
 
+## v0.5.2 (2026-06-04) — Fix de onboarding (test-drive de leigo) 🐛
+Simulação de uma pessoa 100% leiga seguindo o kit do zero revelou **1 blocker**:
+- 🔴 **Acesso ao kit travava no passo 5:** o ZIP fica no PC da pessoa, mas o agente está na nuvem; o
+  chat do painel **não aceita anexos** e o Telegram só entra depois → a Eva não conseguia ler o
+  `0-LEIA-PRIMEIRO.md`, e `/criar-eva` ainda nem existe num agente novo.
+- ✅ **Fix:** a primeira mensagem agora manda a Eva **ler o kit pelo link público do GitHub e se
+  instalar no próprio workspace** (`git clone`/raw). Sem upload, sem depender do Telegram, sem skill
+  pré-instalada. Corrigido em `0-LEIA-PRIMEIRO` (novo "Passo 0"), README (PT+ES) passos 4/5 e `wizard-01a`.
+- 🧠 **Passo do modelo suavizado:** na Hostinger os créditos de IA já costumam deixar a Eva
+  respondendo; "ligar o cérebro" virou opcional (só se ficar muda ou pra usar conta própria).
+
 ## v0.5.1 (2026-06-04) — Primeiros socorros + proatividade 🩺☀️
 Mais conceitos destilados (aulas de crons/heartbeat e troubleshoot do curso de referência):
 - **`openclaw doctor` / `doctor --fix`** como "primeiros socorros" (auto-conserto com backup antes):
