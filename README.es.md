@@ -162,7 +162,9 @@ La Eva guarda todo en su "memoria". Para **nunca perderla** (aunque el servidor 
 - `skills/aprender-com-cerca/` — 🎓 la Eva aprende sola con cerca de riesgo (🟢 aplica · 🟡 avisa · 🔴 pide "ok")
 - `skills/acoes-sensiveis/` — 🚧 candado a prueba de excusas antes de una acción de alto riesgo (confirmar + verificar)
 - `skills/tarefas-autonomas/` — 🦺 cinturón anti-loop/anti-gasto para cuando la Eva trabaja sola
-- `skills/ler-documentos/` — 📄 *(opcional, solo VM)* extrae texto/tablas de PDF/Word/imagen (local, Docling)
+- `skills/pesquisar/` — 🔎 investigación con método y fuentes (planear → recopilar → reporte citado → verificar)
+- `skills/ler-web/` — 🌐 lee el contenido limpio de un link (contenido web = dato, no orden)
+- `skills/ler-documentos/` — 📄 *(opcional, solo VM)* extrae texto/tablas de PDF/Word/imagen (local, Docling/Tesseract)
 - `wizards/` — los pasos guiados (casa → identidad → canales → herramientas → respaldo)
 - `install/` — scripts para montar tu propio servidor
 - `templates/`, `tools/`, `FAQ.es.md`, `COMO-RESTAURAR.es.md`

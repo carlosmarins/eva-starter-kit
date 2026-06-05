@@ -42,10 +42,18 @@ ao dono no canal principal. Não conclui em silêncio — sempre reporta o resul
 - Confere o backup recente (último commit do cofre < ~1 dia).
 - 1x por mês, dispara a skill **`restore-drill`** (prova que restaura de verdade).
 
-## 4. 🩺 SAÚDE & SEGURANÇA básica
-- `openclaw security audit` (resumo dos pontos críticos/avisos).
-- Confere: canais com **allowlist do dono** (estranho não comanda a Eva); ferramentas em **somente-leitura** onde der.
-- (Se houver teto de gasto configurado) avisa se o uso de IA está perto do limite do mês.
+## 4. 🩺 AUTO-SAÚDE — lê os próprios sinais e AGE (sem daemon)
+- Leia os sinais vitais com shell simples (sem instalar nada): disco (`df -h /`), RAM (`free -h`),
+  carga (`uptime`), + `openclaw doctor`. Resuma num **veredito**: `OK` · `ATENÇÃO_DISCO` · `RAM/CARGA_ALTA` · `CRÍTICO`.
+- **Aja conforme o veredito** (autoconsciência, não só relatório):
+  - `ATENÇÃO_DISCO` → roda a faxina da seção 1 (e alerta a ~75%).
+  - `RAM/CARGA_ALTA` → **adia tarefa pesada** pra mais tarde e avisa; não martele.
+  - `CRÍTICO` → avisa o dono na hora, em linguagem simples.
+  - Apagar dados pra liberar = 🔴 → **propõe**, não faz sozinha.
+- Segurança: `openclaw security audit`; canais com **allowlist do dono**; ferramentas **somente-leitura** onde der.
+- (Se houver teto de gasto) avisa se o uso de IA está perto do limite do mês.
+> 🛠️ *(Avançado, só VM):* quem quiser gráficos/histórico pode instalar um monitor local (ex.: Netdata)
+> **só em localhost, ML off, disco limitado** — mas **não é necessário**: este check de shell já dá a autoconsciência.
 
 ## 📋 O relatório (mande um resumo assim, em linguagem de gente)
 > "🛡️ **Relatório Guardião da semana**

@@ -32,6 +32,11 @@ e wizards disponíveis:
    `docs.openclaw.ai/llms-full.txt`) **e cheque as ISSUES CONHECIDAS** (GitHub do OpenClaw) pro
    sintoma antes de mudar config. Muita "config errada" na verdade é **bug conhecido com solução
    pronta** — não invente troca de config sem antes ler a doc e as issues.
+10. **Antes de criar uma skill nova, cheque as que já existem** — só complemente o que falta, **nunca
+    duplique** (skills sobrepostas confundem a Eva). E ao instalar ferramenta, **prefira a mais leve**
+    (sem GPU, sem navegador): se virar corrente de dependências, **pare e troque**, não martele.
+11. **Resolva a ambiguidade ANTES de gastar trabalho:** num plano/prompt/spec, marque o que está em
+    aberto com **`[A CONFIRMAR]`** e pergunte — barato perguntar, caro refazer.
 
 ## O roteiro (siga os wizards em ordem)
 Cada wizard é uma skill em `wizards/`. Invoque na ordem, mas respeite o ritmo da pessoa:
