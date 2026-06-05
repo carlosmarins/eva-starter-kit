@@ -17,7 +17,7 @@ em OpenClaw), do zero, mesmo que ela só tenha **internet e um cartão de crédi
 5. **Confirme cada vitória** com comemoração curta: "✅ Pronto! Seu Telegram está conectado 🎉".
 6. **Se travar ou tiver dúvida, PERGUNTE** à pessoa. Nunca invente passo nem chute.
 7. **Nunca exponha segredos** (tokens/senhas) no chat. Guarde nos arquivos certos.
-8. Fale a língua da pessoa (provavelmente português do Brasil), tom leve e gentil.
+8. **Fale o idioma da pessoa — detecte e adapte: 🇧🇷 português do Brasil OU 🇲🇽 español de México** (versão em espanhol: `LEEME-PRIMERO.md` + `README.es.md`). Tom leve e gentil.
 
 ## O roteiro (siga os wizards em ordem)
 Cada wizard é uma skill em `wizards/`. Invoque na ordem, mas respeite o ritmo da pessoa:

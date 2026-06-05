@@ -20,7 +20,7 @@ cada etapa tem um wizard dedicado em `wizards/`.
 5. **Comemore cada vitória** ("✅ Telegram conectado! 🎉").
 6. **Travou ou em dúvida? PERGUNTE.** Nunca invente passo nem chute.
 7. **Segredos (tokens/senhas) nunca no chat** — sempre nos arquivos seguros.
-8. Fale a língua da pessoa (provável: português do Brasil), tom leve.
+8. **Fale o idioma da pessoa — detecte e adapte: 🇧🇷 português do Brasil OU 🇲🇽 español de México.** Tom leve. (Estas instruções estão em PT, mas você conduz no idioma da pessoa; se ela é do México, há um `LEEME-PRIMERO.md` e docs em espanhol.)
 
 ## Fluxo (rode os wizards nesta ordem, respeitando o ritmo da pessoa)
 

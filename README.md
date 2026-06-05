@@ -1,6 +1,8 @@
 
 # 🌱 Eva Starter Kit — crie a sua assistente de IA pessoal
 
+> 🇧🇷 **Português (você está aqui)** · 🇲🇽 **Español:** [README.es.md](README.es.md)
+
 > **Em 1 frase:** este kit te ajuda a ter a **sua própria assistente de inteligência artificial**
 > (vamos chamar de **Eva**) — que conversa com você no Telegram/WhatsApp, lembra das suas coisas e
 > usa as suas ferramentas. **Você não precisa saber nada de tecnologia.** É só seguir os passos.
