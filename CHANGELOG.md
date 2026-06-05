@@ -1,5 +1,12 @@
 # Changelog — Eva Starter Kit
 
+## v0.8.1 (2026-06-05) — Não chutar caminho de arquivo 🗂️
+Lição de campo (Eva chutava nomes de arquivo → turno caía). Levada na **versão leve e portátil**:
+- **`AGENTS.template`:** regra "não invente caminho; se a leitura falhar, liste a pasta / `memory search`
+  e refaça no mesmo turno". Funciona no **gerenciado E na VM**, sem infra.
+- **FAQ (PT+ES):** "deu erro de arquivo não encontrado?" + nota de que a trava técnica de shell
+  (`BASH_ENV`/systemd) é **avançada e só-VM** — **não** entra no kit básico (gerenciado não tem systemd).
+
 ## v0.8.0 (2026-06-05) — Segurança de comportamento + aprendizado de verdade 🚧🦺🎓
 Destilado (adaptado, não copiado) de padrões abertos de agentes — tudo leve, markdown, **nada no boot**:
 - **`aprender-com-cerca` turbinado:** + **confiança por contagem** (baixa/média/alta), **decaimento na

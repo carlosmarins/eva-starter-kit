@@ -57,6 +57,14 @@ Se você mandar **vários comandos/testes em sequência** em poucos minutos usan
 te dar um **bloqueio temporário** (anti-robô) e a Eva cair pro modelo reserva até "esfriar".
 Espace os testes; se acontecer, espere alguns minutos.
 
+### A Eva deu erro de "arquivo não encontrado" (errou o nome de um arquivo)?
+Acontece — às vezes a IA "chuta" o nome de um arquivo. A Eva foi orientada a **não inventar caminho**:
+se uma leitura falhar, ela **lista a pasta** (ou usa `openclaw memory search`), acha o nome certo e
+**refaz no mesmo turno** — sem travar. Num workspace pequeno (o caso normal), isso raramente atrapalha.
+> 🛠️ *(Avançado, só VM própria — não dá no gerenciado):* quem tiver um workspace **enorme** e bater
+> nisso com frequência pode instalar uma "trava" de shell que, na falha, já mostra os nomes parecidos.
+> É técnico (systemd/`BASH_ENV`) e **não** faz parte do kit básico.
+
 ### A Eva ficou lenta / parou no meio (erro "agent failed"). O que faço?
 1. **Sessão cheia:** mande `/compact` (ou `/new`) no chat. Mantenha ≤ 3–4 tópicos no Telegram
    (ver `templates/HEARTBEAT.template.md`).

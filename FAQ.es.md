@@ -57,6 +57,14 @@ Si mandas **varios comandos/pruebas seguidas** en pocos minutos usando ChatGPT, 
 **bloqueo temporal** (anti-robot) y la Eva caer al modelo de respaldo hasta "enfriarse".
 Espacia las pruebas; si pasa, espera unos minutos.
 
+### La Eva dio error de "archivo no encontrado" (equivocó el nombre de un archivo)?
+Pasa — a veces la IA "adivina" el nombre de un archivo. A la Eva se le indicó **no inventar rutas**:
+si una lectura falla, **lista la carpeta** (o usa `openclaw memory search`), encuentra el nombre
+correcto y **lo rehace en el mismo turno** — sin trabarse. En un workspace chico (lo normal) casi no molesta.
+> 🛠️ *(Avanzado, solo VM propia — no se puede en el administrado):* quien tenga un workspace
+> **enorme** y choque seguido con esto puede instalar un "candado" de shell que, al fallar, ya muestra
+> los nombres parecidos. Es técnico (systemd/`BASH_ENV`) y **no** es parte del kit básico.
+
 ### La Eva se puso lenta / se detuvo a la mitad (error "agent failed"). ¿Qué hago?
 1. **Sesión llena:** manda `/compact` (o `/new`) en el chat. Mantén ≤ 3–4 temas (topics) en Telegram
    (mira `templates/HEARTBEAT.template.md`).

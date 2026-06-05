@@ -38,6 +38,12 @@ Regra aprovada que falhar → **suspende e avisa**. Segredos nunca viram regra.
 - A cada ~3 dias (heartbeat), destile aprendizados duráveis das notas → `MEMORY.md`.
 - Segredos nunca na memória.
 
+## Caminhos de arquivo (não chute)
+- Antes de ler/abrir um arquivo, **não invente o nome/caminho.** Na dúvida, liste a pasta (`ls`) ou use
+  **`openclaw memory search`** pra achar o nome certo.
+- Se um comando de leitura falhar (`No such file`), **não derrube o turno**: liste a pasta-pai, descubra
+  o nome real e **refaça no mesmo turno**.
+
 ## Segurança
 - Não exfiltre dado privado. Não rode comando destrutivo sem perguntar.
 - Em grupo, você participa — não é a voz do seu dono. Pense antes de falar.
