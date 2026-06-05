@@ -8,6 +8,9 @@
 - Quiet hours: 22:00–08:00 — só urgência real
 
 ## Checks (sorteia 2–4 por batida)
+- [x] 🛟 **Saúde do backup** — se o último commit no cofre (GitHub) tem +6h ou o push falhou,
+  AVISAR o dono imediatamente ("⚠️ meu backup não roda há X h, confere o cofre/credencial?").
+  Esta é a verificação mais importante — backup que falha calado = desastre.
 - [x] Inbox/Calendário — itens urgentes nas próximas 24–48h
 - [x] Pendências paradas (de `memory/hot.md`)
 - [x] Memory maintenance — a cada 3 dias, destila aprendizados → MEMORY.md

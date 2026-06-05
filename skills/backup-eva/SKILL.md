@@ -51,10 +51,24 @@ gerenciado, porque quem executa é o agente (cron do OpenClaw), não o sistema.
 - Só diga "pronto" depois de **ver o commit no GitHub**. Comemore: "🛟 Cofre ativo! Sua Eva agora
   se salva sozinha no seu GitHub a cada 2h. Pode dormir tranquilo. 🎉"
 
+### 6. Colocar o guia de restauração DENTRO do cofre
+- Copie o `COMO-RESTAURAR.md` (do kit) para o workspace e deixe-o ser versionado no cofre, com o
+  `SEU_USUARIO` substituído. Assim, qualquer pessoa (até anos depois) sabe recuperar a Eva só
+  olhando o repositório de backup.
+
+### 7. Verificação de saúde do backup (anti-falha-silenciosa) 🩺
+> A falha que derrubou quem criou este kit foi **silenciosa**: o backup parou e ninguém soube.
+> Aqui a Eva **se vigia**.
+- Adicione ao `HEARTBEAT.md` um check: "se o último commit no cofre tem mais de ~6h (ou o último
+  push falhou), **avise o dono** no canal principal (Telegram)". Ex. de aviso:
+  *"⚠️ Atenção: meu backup não roda há X horas. Confere o cofre/credencial?"*
+- Opcional (mais resiliência): um **segundo destino** de backup (outro repo/host) ou, em VM,
+  snapshot diário do disco. Redundância nunca é demais com memória.
+
 ## Restaurar (se o servidor morrer um dia)
 A pessoa monta uma Eva nova (gerenciado ou VM) e, no primeiro acesso, manda a Eva clonar o cofre:
 `git clone https://github.com/<user>/minha-eva-backup.git` para dentro do workspace → memória e
-identidade voltam. (Documente isso pra ela num `COMO-RESTAURAR.md` no próprio cofre.)
+identidade voltam. O passo a passo completo está no **`COMO-RESTAURAR.md`** (dentro do próprio cofre).
 
 ## Regras
 - **Token nunca no chat depois de usado, nunca no repositório.** Só no `.git/config` local.
