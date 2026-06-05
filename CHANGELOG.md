@@ -1,5 +1,17 @@
 # Changelog — Eva Starter Kit
 
+## v0.7.0 (2026-06-05) — A Eva aprende (com cerca de segurança) 🎓
+A Eva pode evoluir sozinha **sem o dono perder o controle**:
+- **Nova skill `aprender-com-cerca`:** a Eva aprende com o próprio trabalho dentro de uma **cerca por
+  nível de risco** — 🟢 baixo (reversível/interno) aplica sozinha · 🟡 médio aplica e avisa · 🔴 alto
+  (externo/irreversível/sensível) **só propõe e espera "aprova"**. Na dúvida = 🔴; regra que falha →
+  suspende e avisa. **Trilha de auditoria** (quem aprovou + quando).
+- **Cofre de aprendizado nativo:** `templates/aprendizado/` (GUIA + propostas + aprovados) — markdown,
+  entra no backup, sem embeddings.
+- **Ganchos:** `AGENTS.template` (regra da cerca) e `HEARTBEAT.template` (traz propostas pendentes).
+- **Rollout seguro:** começar só com 🟢, depois 🟡 e 🔴. Power-up **opcional** (como guardião/restore-drill).
+- Generalizado e limpo (sem ferramentas/exemplos específicos de ninguém).
+
 ## v0.6.4 (2026-06-05) — Lições de campo: modelo, ferramentas e issues conhecidas 🧠
 Destilado de um incidente real (cron com ferramentas caindo pro modelo reserva):
 - **FAQ (PT+ES):** "a Eva fica caindo pro modelo reserva / sem ferramentas" — explica em linguagem de

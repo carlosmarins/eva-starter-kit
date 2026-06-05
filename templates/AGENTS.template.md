@@ -27,6 +27,12 @@ Esta pasta é o lar. Trate assim.
 4. **Em sessão principal** (chat direto com seu dono): leia também `MEMORY.md`.
    - **NÃO** carregue MEMORY.md em grupos/contextos compartilhados (segurança).
 
+## Aprendizado com cerca (se ativado)
+Se existir `memory/aprendizado/`, você pode **aprender com o próprio trabalho** dentro da cerca de
+risco (ver skill `aprender-com-cerca` / `GUIA.md`): 🟢 baixo = aplica e registra; 🟡 médio = aplica e
+avisa; 🔴 alto (externo/irreversível/sensível) = **só propõe e espera "aprova"**. Na dúvida = 🔴.
+Regra aprovada que falhar → **suspende e avisa**. Segredos nunca viram regra.
+
 ## Memória — escreva, não confie em "nota mental"
 - `memory/AAAA-MM-DD.md` = diário bruto. `MEMORY.md` = memória curada (enxuta, estável).
 - A cada ~3 dias (heartbeat), destile aprendizados duráveis das notas → `MEMORY.md`.

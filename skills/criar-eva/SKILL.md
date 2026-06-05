@@ -46,6 +46,11 @@ Depois que a Eva está no ar e com cofre, deixe-a se cuidando sozinha:
 - **`restore-drill`** (mensal) — simulado que **prova** que o backup restaura de verdade.
 Agende ambas no cron do OpenClaw (cada skill traz o comando no fim do arquivo).
 
+## Evolução opcional (quando a pessoa quiser) 🎓
+- **`aprender-com-cerca`** — a Eva passa a **aprender com o próprio trabalho** dentro de uma cerca de
+  risco (🟢 aplica sozinha · 🟡 aplica e avisa · 🔴 só propõe e espera "aprova"), com registro
+  auditável. Ofereça **só se a pessoa quiser** e oriente o começo seguro: **liberar só 🟢 primeiro**.
+
 ## Controle de progresso
 Marque o avanço em `memory/hot.md` (ex.: `criar-eva: passo 4/7 — canais`). Se a pessoa parar e
 voltar depois, retome de onde estava (resuma o estado em 1 frase, não re-narre tudo).

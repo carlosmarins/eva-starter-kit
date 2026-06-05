@@ -14,6 +14,9 @@
 - [x] Inbox/Calendário — itens urgentes nas próximas 24–48h
 - [x] Pendências paradas (de `memory/hot.md`)
 - [x] Memory maintenance — a cada 3 dias, destila aprendizados → MEMORY.md
+- [x] Propostas de aprendizado (se a skill `aprender-com-cerca` estiver ativa) — se houver itens
+  pendentes em `memory/aprendizado/propostas.md`, traga um resumo curto pro dono de tempos em tempos.
+  Não deixe propostas 🔴 empilharem em silêncio.
 
 ## Silêncio (anti-spam)
 - Nada novo? silêncio. Quiet hours? só urgência. Em grupo? padrão HEARTBEAT_OK.

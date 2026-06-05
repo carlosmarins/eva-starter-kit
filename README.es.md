@@ -159,6 +159,7 @@ La Eva guarda todo en su "memoria". Para **nunca perderla** (aunque el servidor 
 - `skills/backup-eva/` — el respaldo a prueba de fallas (bóveda ligera, solo texto)
 - `skills/restore-drill/` — 🧪 simulacro mensual que prueba que el respaldo SÍ restaura
 - `skills/guardiao-eva/` — 🛡️ reporte semanal: limpieza de disco + secretos + seguridad + respaldo
+- `skills/aprender-com-cerca/` — 🎓 la Eva aprende sola con cerca de riesgo (🟢 aplica · 🟡 avisa · 🔴 pide "ok")
 - `wizards/` — los pasos guiados (casa → identidad → canales → herramientas → respaldo)
 - `install/` — scripts para montar tu propio servidor
 - `templates/`, `tools/`, `FAQ.es.md`, `COMO-RESTAURAR.es.md`

@@ -160,6 +160,7 @@ A Eva guarda tudo na "memória" dela. Pra **nunca perder** isso (mesmo se o serv
 - `skills/backup-eva/` — o backup à prova de falhas (cofre enxuto, só texto)
 - `skills/restore-drill/` — 🧪 simulado mensal que prova que o backup restaura de verdade
 - `skills/guardiao-eva/` — 🛡️ relatório semanal: faxina de disco + segredos + segurança + backup
+- `skills/aprender-com-cerca/` — 🎓 a Eva aprende sozinha com cerca de risco (🟢 aplica · 🟡 avisa · 🔴 pede "ok")
 - `wizards/` — os passos guiados (casa → identidade → canais → ferramentas → backup)
 - `install/` — scripts pra montar o servidor próprio
 - `templates/`, `tools/`, `FAQ.md`, `COMO-RESTAURAR.md`
