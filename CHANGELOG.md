@@ -1,5 +1,14 @@
 # Changelog — Eva Starter Kit
 
+## v0.6.2 (2026-06-04) — Test-drive REAL numa VM ✅
+Rodei o caminho VM/GCP **de verdade** numa VM Ubuntu 24.04 descartável (não só no papel):
+- ✅ **Tudo funcionou ponta a ponta:** `install-eva.sh` baixado do GitHub instalou Node 24 +
+  OpenClaw 2026.6.1 + workspace + systemd; gateway subiu `active` e **reachable** (90ms); memória
+  nativa habilitada out-of-the-box; e o **git clone do kit no workspace** trouxe skills/wizards. 🎉
+- 🟡 **Único ajuste:** o `openclaw setup` mostra um aviso vermelho `Gateway did not become reachable`
+  (ele faz health-check antes do systemd subir o gateway) — assustador pra leigo, mas **inofensivo**.
+  Adicionada uma **linha tranquilizadora** no `install-eva.sh` explicando que é esperado.
+
 ## v0.6.1 (2026-06-04) — Fix do caminho VM (test-drive GCP) 🐛🔵
 Simulação do caminho VM/GCP achou **2 blockers de acesso a arquivo** (mesma família do gerenciado):
 - 🔴 **Cloud Shell não tinha os scripts:** `bash provision-gcp.sh` falharia. ✅ Fix: `git clone` do

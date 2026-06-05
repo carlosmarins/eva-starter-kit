@@ -26,6 +26,8 @@ echo "[eva] OpenClaw: $(command -v openclaw) — $(openclaw --version 2>/dev/nul
 
 echo "[eva] inicializando workspace (headless)…"
 sudo -u openclaw -H bash -lc "openclaw setup --non-interactive --accept-risk" || true
+echo "[eva] ℹ️  Se apareceu um aviso 'Gateway did not become reachable / ECONNREFUSED' acima, é"
+echo "[eva]     ESPERADO — pode ignorar. O gateway sobe AGORA, no próximo passo (systemd). Não é erro."
 
 echo "[eva] instalando serviço systemd (um único supervisor, restart automático)…"
 cat >/etc/systemd/system/openclaw.service <<'UNIT'
