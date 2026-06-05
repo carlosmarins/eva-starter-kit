@@ -36,40 +36,44 @@ Pense numa **casa** pra sua Eva morar:
 
 ## 🟢 JEITO FÁCIL — passo a passo (Hostinger)
 
-### Passo 1 — Abrir a página do serviço
-Abra o link do **OpenClaw gerenciado** (peça pro Carlos o link, ou procure "Hostinger OpenClaw").
+Quando você entra na Hostinger, cai no **hPanel** (seu painel de controle):
 
-<!-- docs/img/01-hostinger-home.png — tela inicial da Hostinger com os planos -->
-*(imagem: tela de planos)*
+![Tela inicial do hPanel da Hostinger](docs/img/00-hostinger-hpanel.png)
 
-### Passo 2 — Escolher o plano e pagar
-- Clique no botão de **assinar/comprar** o plano mais simples (o básico já roda sua Eva).
-- Preencha os dados do **cartão** e confirme. ✅
+### Passo 1 — Achar o OpenClaw no menu
+No menu da **esquerda**, em **"Agentes de IA"**, clique em **OpenClaw**.
 
-<!-- docs/img/02-hostinger-checkout.png — tela de pagamento -->
-*(imagem: tela de checkout/pagamento)*
+![Menu lateral: Agentes de IA -> OpenClaw](docs/img/01-hostinger-menu.png)
 
-> 🔒 Só **você** digita o cartão. Ninguém mais vê.
+### Passo 2 — Começar
+Clique no botão roxo **"Comece agora"** (ou em **"Adicionar OpenClaw"**).
 
-### Passo 3 — Entrar no painel da sua Eva
-Depois de pagar, a Hostinger te leva pra um **painel** onde você consegue **conversar com o agente**
-(é uma telinha de chat / terminal).
+![Página do OpenClaw com o botão Comece agora](docs/img/02-hostinger-openclaw.png)
 
-<!-- docs/img/03-hostinger-painel.png — painel onde se fala com o agente -->
-*(imagem: painel/terminal do agente)*
+### Passo 3 — Escolher o plano e pagar 💳
+Escolha a duração (o de **1 mês** já serve pra testar; os planos maiores saem mais barato por mês),
+deixe os **créditos de IA** marcados, escolha a forma de pagamento e confirme.
 
-### Passo 4 — Dar este kit pra ela e mandar ela te ensinar
+![Tela de seleção do plano e pagamento](docs/img/03-hostinger-plano.png)
+
+> 🔒 Só **você** digita o cartão. Tem **30 dias de reembolso garantido**.
+
+### Passo 4 — Acessar a sua Eva
+Feito o pagamento, sua Eva aparece aqui. Clique em **"OpenClaw"** (abre o painel dela) ou em
+**"Abrir linha de comando (CLI)"** pra **conversar com o agente**.
+
+![Painel do OpenClaw com o seu agente](docs/img/04-hostinger-agente.png)
+
+### Passo 5 — Dar este kit pra ela e mandar ela te ensinar
 No chat do seu novo agente, **cole exatamente esta mensagem**:
 
 > *"Recebi um kit de instalação. Leia o arquivo `0-LEIA-PRIMEIRO.md` e seja meu tutor a partir daí.
 > Pode rodar a skill /criar-eva."*
 
-Pronto! A partir daí **a própria Eva te guia** — ela vai te perguntar o nome dela, conectar o
-Telegram, suas ferramentas, e (importante!) ligar o **backup**. É só responder o que ela perguntar. 🎉
+Pronto! A partir daí **a própria Eva te guia** — o nome dela, o Telegram, suas ferramentas e
+(importante!) o **backup**. É só responder o que ela perguntar. 🎉
 
 > 📥 *Como pegar os arquivos do kit?* Veja "📦 Como baixar este kit" mais abaixo.
-
----
 
 ## 🔵 JEITO PODEROSO — passo a passo (servidor na Google)
 

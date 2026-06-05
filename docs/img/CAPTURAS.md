@@ -1,24 +1,19 @@
-# 📸 Checklist de prints pro README
+# 📸 Prints do README
 
-O README referencia imagens nesta pasta (`docs/img/`). Tire cada print abaixo, salve com o
-**nome exato** e a imagem aparece automaticamente no README. Dica: corte só a parte importante
-e, se aparecer dado pessoal/cartão/token, **borre antes**.
+## ✅ Hostinger — JÁ INCLUÍDOS (redatados)
+- `00-hostinger-hpanel.png` — hPanel inicial (nome redatado, barra do navegador removida)
+- `01-hostinger-menu.png` — menu lateral (Agentes de IA → OpenClaw)
+- `02-hostinger-openclaw.png` — landing "Comece agora"
+- `03-hostinger-plano.png` — seleção de plano/pagamento
+- `04-hostinger-agente.png` — painel do agente (ID da instância redatado)
 
+## ⬜ Faltam (opcionais — tire e salve com o nome exato nesta pasta)
 | Arquivo | O que mostrar | Onde |
 |---|---|---|
-| `00-banner.png` | (opcional) uma arte/logo "Eva Starter Kit" no topo | — |
-| `01-hostinger-home.png` | Tela de **planos** do OpenClaw gerenciado | Hostinger |
-| `02-hostinger-checkout.png` | Tela de **pagamento/checkout** (borre o cartão!) | Hostinger |
-| `03-hostinger-painel.png` | O **painel/chat** onde se fala com o agente | Hostinger |
-| `10-gcp-novo-projeto.png` | Criar **projeto novo** | console.cloud.google.com |
-| `11-gcp-cloudshell.png` | O botão **`>_` (Cloud Shell)** no topo | Google Cloud |
-| `20-github-download-zip.png` | Botão verde **`Code` → `Download ZIP`** | esta página do GitHub |
+| `10-gcp-novo-projeto.png` | Criar projeto novo | console.cloud.google.com |
+| `11-gcp-cloudshell.png` | Botão `>_` (Cloud Shell) | Google Cloud |
+| `20-github-download-zip.png` | Botão verde `Code` → `Download ZIP` | esta página do GitHub |
+| `00-banner.png` | (opcional) arte/logo do topo | — |
 
-## Como inserir
-1. Salve o print nesta pasta com o nome da tabela.
-2. No README já existe o marcador (ex.: `docs/img/01-hostinger-home.png`). É só ter o arquivo com
-   esse nome — o GitHub renderiza sozinho.
-3. (Se quiser legenda diferente, edite o texto ao lado do marcador no `README.md`.)
-
-> ⚠️ **Segurança nos prints:** nunca deixe aparecer número de cartão, senha, token (`glpat-`,
-> `github_pat_`, `xoxb-`) ou e-mail pessoal. Borre/recorte antes de subir.
+> ⚠️ **Segurança:** nunca deixe aparecer cartão, senha, token (`glpat-`, `github_pat_`, `xoxb-`) ou
+> e-mail pessoal nos prints. Borre/recorte antes (ou me peça pra redatar, como fizemos com os da Hostinger).
