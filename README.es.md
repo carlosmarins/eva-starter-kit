@@ -125,12 +125,29 @@ De ahí en adelante es igual al camino fácil: ella te guía en el resto. 🎉
 
 ---
 
-## 📦 Cómo descargar este kit (desde GitHub)
-1. Arriba de esta página, haz clic en el botón verde **`< > Code`**.
-2. Haz clic en **Download ZIP**. (O toma el [Release más reciente](../../releases) — es lo recomendado.)
-3. Descomprime el archivo. Listo — ese contenido es el que le entregas a tu agente.
+## 📦 Cómo obtener este kit (desde GitHub) — 3 formas, de la más fácil a la técnica
 
-> Si le sabes a Git: `git clone https://github.com/carlosmarins/eva-starter-kit.git`
+> 🧒 **Antes que nada:** "GitHub" es solo el sitio donde vive este kit (esta página que estás leyendo).
+> **No necesitas crear cuenta** ni saber programar para obtenerlo.
+
+### ⭐ Forma 1 — NO descargues nada (la más fácil, camino administrado)
+En el camino **Fácil (Hostinger)**, tu Eva **lee el kit sola por internet**. Solo **pegas el link**
+en su chat (el mensaje del Paso 5 de más arriba). Listo — **ni siquiera descargas archivos.** Es lo recomendado para principiantes.
+> El link es: `https://github.com/carlosmarins/eva-starter-kit`
+
+### 📥 Forma 2 — Descargar el ZIP (si quieres los archivos en tu computadora)
+1. **Arriba de esta página**, haz clic en el botón verde **`< > Code`**.
+2. En el menucito que abre, haz clic en **Download ZIP**.
+3. Ve a la carpeta de **Descargas** de tu computadora y **descomprímelo** (doble clic / "Extraer todo").
+4. Listo — esa carpeta es el kit. (Puedes arrastrar los archivos a tu agente, si acepta subirlos.)
+> 💡 Tip: el **[Release más reciente](../../releases)** (ej.: v1.0.0) es la versión estable recomendada.
+
+### 🧑‍💻 Forma 3 — `git clone` (para quien usa Git / camino VM propia)
+En la terminal (o en el Cloud Shell de Google, en el camino VM):
+```bash
+git clone https://github.com/carlosmarins/eva-starter-kit
+```
+Es justo lo que usa el camino **VM propia** para traer los scripts de instalación.
 
 ---
 

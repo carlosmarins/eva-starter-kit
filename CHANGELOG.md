@@ -1,5 +1,19 @@
 # Changelog — Eva Starter Kit
 
+## v1.0.0 (2026-06-05) — Primeira versão estável 🎉🦄
+Marco de consolidação — o kit está completo, testado (test-drive real numa VM) e à prova de iniciante.
+- **Git how-to detalhado (PT+ES):** "Como pegar o kit" em 3 jeitos (não-baixar/link · ZIP · `git clone`),
+  deixando claro que **no gerenciado nem precisa baixar** (a Eva lê pelo link).
+- **O kit completo nesta versão:**
+  - 2 caminhos: **Gerenciado (Hostinger)** e **VM própria (GCP)** — ambos validados (VM testada de verdade).
+  - Jornada guiada: casa → no ar → **batismo (nome)** → canais (Telegram/WhatsApp) → ferramentas (MCP-first) → backup.
+  - **Nasce pronta** (personalidade de fábrica, modo automático), emoji 🦄, bilíngue 🇧🇷/🇲🇽.
+  - **10 skills:** criar-eva · backup-eva · restore-drill · guardiao-eva · acoes-sensiveis · tarefas-autonomas ·
+    aprender-com-cerca · pesquisar · ler-web · ler-documentos.
+  - Resiliência: cofre no GitHub do dono + restore-drill + auto-saúde/faxina + retenção anti-estouro de disco.
+  - Segurança: anti-injeção, privilégio mínimo, trava de ações 🔴, redação de segredos, memória nativa (sem chave/GPU).
+- Tudo limpo (sem credenciais/infra/repos-fonte), performance (nada no boot), e com Mapa do kit pra não assustar.
+
 ## v0.9.1 (2026-06-05) — Anti-overwhelm: o kit cresceu, a jornada continua simples 🧒
 Test-drive "criança de 5 anos" após 10 skills — nada faltando, mas risco de **excesso**. Ajustes de clareza:
 - **`criar-eva` (conclusão):** regra explícita **"NÃO despeje tudo"** — proteção instala **em silêncio**
