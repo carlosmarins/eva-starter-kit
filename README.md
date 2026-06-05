@@ -103,12 +103,19 @@ Acesse **console.cloud.google.com**, entre com sua conta Google, crie um **proje
 No topo do site, clique no ícone **`>_`** (Cloud Shell). É um terminal que já vem pronto.
 
 
-### Passo 3 — Rodar os 2 comandos
-Cole os comandos abaixo (a Eva/este kit te dá eles prontos):
+### Passo 3 — Rodar os comandos
+Primeiro **traga o kit** pro Cloud Shell (ele não vem com seus arquivos), depois crie o servidor:
 ```bash
-bash provision-gcp.sh SEU_PROJETO     # cria o servidor
-# depois, dentro do servidor:
-sudo bash install-eva.sh              # instala a Eva
+git clone https://github.com/carlosmarins/eva-starter-kit
+cd eva-starter-kit/install
+bash provision-gcp.sh SEU_PROJETO     # cria o servidor (troque SEU_PROJETO pelo ID do seu projeto)
+```
+Quando ele terminar, vai te mostrar **a linha pra entrar na VM e instalar a Eva** (o instalador é
+baixado do GitHub na hora). É só copiar e colar o que ele mostrar — basicamente:
+```bash
+gcloud compute ssh eva --zone=us-central1-a --project=SEU_PROJETO
+# dentro da VM, cole a linha única que o passo anterior te deu:
+curl -fsSL https://raw.githubusercontent.com/carlosmarins/eva-starter-kit/main/install/install-eva.sh | sudo bash
 ```
 
 ### Passo 4 — Falar com a Eva e mandar ela te ensinar

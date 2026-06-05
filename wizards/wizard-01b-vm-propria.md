@@ -22,10 +22,20 @@ e cola comandos quando você pedir.
    o uso inicial costuma cair nos créditos grátis."
 2. **Abrir o Cloud Shell** (ícone `>_` no topo do console) — "é um terminal que já vem pronto, sem
    instalar nada". Peça pra ela colar os comandos que você mandar e te enviar a saída.
-3. **Provisionar a VM** — rode/oriente o `install/provision-gcp.sh` (cria APIs, service account,
-   VM `e2-standard-4`, Ubuntu, firewall). Adapte o `PROJECT` ao projeto dela.
-4. **Instalar a Eva** — dentro da VM, rode `install/install-eva.sh`: instala Node 24 + OpenClaw,
-   cria o usuário `openclaw`, sobe o gateway via **systemd** (com restart automático).
+3. **Trazer o kit + provisionar a VM.** ⚠️ O Cloud Shell **não tem os arquivos do kit** — clone
+   primeiro. Oriente a colar:
+   ```bash
+   git clone https://github.com/carlosmarins/eva-starter-kit && cd eva-starter-kit/install
+   bash provision-gcp.sh <ID_DO_PROJETO_DELA>
+   ```
+   (cria APIs, service account, VM `e2-standard-4` Ubuntu, firewall, chave Gemini, snapshot diário).
+4. **Instalar a Eva na VM.** O `install-eva.sh` **não está na VM** — baixe do GitHub na hora. Entre
+   na VM e cole a linha única (o passo 3 também imprime ela no final):
+   ```bash
+   gcloud compute ssh eva --zone=us-central1-a --project=<ID_DO_PROJETO>
+   curl -fsSL https://raw.githubusercontent.com/carlosmarins/eva-starter-kit/main/install/install-eva.sh | sudo bash
+   ```
+   Instala Node 24 + OpenClaw, cria o usuário `openclaw`, sobe o gateway via **systemd** (restart automático).
 5. **Modelo do agente** — configure o provedor de modelo (o wizard pergunta: usar a chave do
    Google/Gemini, que dá pra gerar no próprio projeto, é o caminho mais simples/keyless).
 6. **Validar** — `openclaw status` + um "oi" de teste. Comemore quando responder. ✅

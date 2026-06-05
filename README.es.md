@@ -103,12 +103,19 @@ nuevo** y **activa la facturación** (tarjeta — el uso inicial suele caer en l
 ### Paso 2 — Abrir el "Cloud Shell"
 Arriba del sitio, haz clic en el ícono **`>_`** (Cloud Shell). Es una terminal que ya viene lista.
 
-### Paso 3 — Correr los 2 comandos
-Pega los comandos de abajo (el kit te los da listos):
+### Paso 3 — Correr los comandos
+Primero **trae el kit** al Cloud Shell (no viene con tus archivos), luego crea el servidor:
 ```bash
-bash provision-gcp.sh TU_PROYECTO     # crea el servidor
-# después, dentro del servidor:
-sudo bash install-eva.sh              # instala la Eva
+git clone https://github.com/carlosmarins/eva-starter-kit
+cd eva-starter-kit/install
+bash provision-gcp.sh TU_PROYECTO     # crea el servidor (cambia TU_PROYECTO por el ID de tu proyecto)
+```
+Al terminar, te muestra **la línea para entrar a la VM e instalar la Eva** (el instalador se baja
+de GitHub al momento). Solo copia y pega lo que te muestre — básicamente:
+```bash
+gcloud compute ssh eva --zone=us-central1-a --project=TU_PROYECTO
+# dentro de la VM, pega la línea única que te dio el paso anterior:
+curl -fsSL https://raw.githubusercontent.com/carlosmarins/eva-starter-kit/main/install/install-eva.sh | sudo bash
 ```
 
 ### Paso 4 — Hablar con la Eva y pedirle que te enseñe

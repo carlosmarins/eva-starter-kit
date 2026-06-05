@@ -1,5 +1,14 @@
 # Changelog — Eva Starter Kit
 
+## v0.6.1 (2026-06-04) — Fix do caminho VM (test-drive GCP) 🐛🔵
+Simulação do caminho VM/GCP achou **2 blockers de acesso a arquivo** (mesma família do gerenciado):
+- 🔴 **Cloud Shell não tinha os scripts:** `bash provision-gcp.sh` falharia. ✅ Fix: `git clone` do
+  kit no Cloud Shell antes (README PT+ES + `wizard-01b`).
+- 🔴 **`install-eva.sh` não estava na VM** após o SSH. ✅ Fix: baixar do GitHub na hora via
+  `curl ... | sudo bash` (provision-gcp.sh, README PT+ES, `wizard-01b`).
+- ✅ **Validado contra a Eva real:** `ExecStart=/usr/bin/openclaw gateway run` e
+  `openclaw setup --non-interactive --accept-risk` estão **corretos** (sem bug no systemd/install).
+
 ## v0.6.0 (2026-06-04) — Nasce pronta + batismo automático 🪄
 A Eva agora **nasce pronta** e o nome é a única coisa obrigatória:
 - **Batismo automático:** regra no `AGENTS.template` — quando o dono dá um nome ("seu nome é Zé"), a

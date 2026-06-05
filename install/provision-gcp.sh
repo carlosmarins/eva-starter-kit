@@ -41,8 +41,9 @@ gcloud compute disks add-resource-policies eva --zone="$ZONE" --project="$PROJEC
 
 cat <<NEXT
 
-✅ Infra criada. Agora entre na VM e instale a Eva:
+✅ Infra criada. Agora entre na VM e instale a Eva (o install-eva.sh é baixado do GitHub na hora,
+   porque ele não está na VM):
   gcloud compute ssh eva --zone=$ZONE --project=$PROJECT
-  # dentro da VM:
-  sudo bash install-eva.sh
+  # dentro da VM, cole esta linha única:
+  curl -fsSL https://raw.githubusercontent.com/carlosmarins/eva-starter-kit/main/install/install-eva.sh | sudo bash
 NEXT
