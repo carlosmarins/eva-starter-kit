@@ -74,6 +74,12 @@ No chat do seu novo agente, **cole exatamente esta mensagem**:
 Pronto! A partir daí **a própria Eva te guia** — o nome dela, o Telegram, suas ferramentas e
 (importante!) o **backup**. É só responder o que ela perguntar. 🎉
 
+> 📱 **O passo do Telegram/WhatsApp** é o que mais gera dúvida: a Eva vai te ajudar a criar um
+> "robô" no Telegram (@BotFather) e a conectar em **OpenClaw → Integrações → Conectar**. É tranquilo,
+> ela te guia clique a clique.
+>
+> ![Tela de Integrações (conectar Telegram/WhatsApp)](docs/img/05-hostinger-integracoes.png)
+
 > 📥 *Como pegar os arquivos do kit?* Veja "📦 Como baixar este kit" mais abaixo.
 
 ## 🔵 JEITO PODEROSO — passo a passo (servidor na Google)

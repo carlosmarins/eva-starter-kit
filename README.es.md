@@ -74,6 +74,12 @@ En el chat de tu nuevo agente, **pega exactamente este mensaje**:
 ¡Listo! De ahí en adelante **la propia Eva te guía** — su nombre, el Telegram, tus herramientas y
 (¡importante!) el **respaldo**. Solo responde lo que te pregunte. 🎉
 
+> 📱 **El paso de Telegram/WhatsApp** es el que más dudas genera: la Eva te ayuda a crear un
+> "robot" en Telegram (@BotFather) y a conectarlo en **OpenClaw → Integraciones → Conectar**. Es
+> sencillo, te guía clic a clic.
+>
+> ![Pantalla de Integraciones (conectar Telegram/WhatsApp)](docs/img/05-hostinger-integracoes.png)
+
 > 📥 *¿Cómo bajar los archivos del kit?* Mira "📦 Cómo descargar este kit" más abajo.
 
 ---

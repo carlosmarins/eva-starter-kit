@@ -1,5 +1,13 @@
 # Changelog — Eva Starter Kit
 
+## v0.4.1 (2026-06-04) — Conectar canal sem travar 📱
+- **`wizard-03-canais` reescrito** (era o ponto que mais trava o leigo): passo a passo real e
+  clique-a-clique pra **Telegram** (criar bot no @BotFather → pegar token → conectar) e **WhatsApp**
+  (QR Code), cobrindo os **dois caminhos** — painel gerenciado (Hostinger → OpenClaw → Integrações →
+  Conectar) e VM própria (dashboard/config). + seção "erros comuns".
+- Novo print `docs/img/05-hostinger-integracoes.png` (tela de Integrações) referenciado no wizard.
+- FAQ (PT+ES): "não consigo conectar Telegram/WhatsApp".
+
 ## v0.4.0 (2026-06-04) — Nascimento 🐣
 - **Cartão "primeiros pedidos"** (`PRIMEIROS-PEDIDOS.md` + `.es.md`): os 5 primeiros pedidos pra
   fazer assim que a Eva nasce — ativa a pessoa e mostra valor na hora. **Regra de ouro:** o

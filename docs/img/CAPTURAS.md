@@ -6,6 +6,7 @@
 - `02-hostinger-openclaw.png` — landing "Comece agora"
 - `03-hostinger-plano.png` — seleção de plano/pagamento
 - `04-hostinger-agente.png` — painel do agente (ID da instância redatado)
+- `05-hostinger-integracoes.png` — tela **OpenClaw → Integrações** (botões Conectar do WhatsApp e Telegram) — usada no `wizard-03-canais`
 
 ## ⬜ Faltam (opcionais — tire e salve com o nome exato nesta pasta)
 | Arquivo | O que mostrar | Onde |

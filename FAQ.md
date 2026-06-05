@@ -40,6 +40,16 @@ Sim. Chame o `wizard-04` quando quiser — a Eva conecta a nova sem mexer no res
      quedas, o Gemini como principal é mais estável (mas usa chave/cota).
 3. Se uma conversa ficou "presa" num modelo de fallback, dê `/new` ou `/model <modelo>` nela.
 
+### Não consigo conectar o Telegram / WhatsApp. O que faço?
+É o passo que mais trava — calma, é simples quando você sabe o pulo do gato:
+- **Telegram:** primeiro você cria um "robô" no **@BotFather** (manda `/newbot`, escolhe nome e um
+  usuário que **termina em `bot`**) — ele te dá um **token**. Depois é só **colar esse token**: no
+  gerenciado, em **OpenClaw → Integrações → Telegram → Conectar**; na VM, a própria Eva configura.
+  Por fim, procure **o seu bot** no Telegram e mande "oi".
+- **WhatsApp:** não tem token — você **escaneia um QR Code** (igual WhatsApp Web): Integrações →
+  WhatsApp → Conectar → no celular, WhatsApp → Aparelhos conectados → Conectar um aparelho.
+- Comece pelo **Telegram** (mais estável). O passo a passo completo está no `wizard-03-canais`.
+
 ### Meu disco/cota encheu rápido (quase bati o limite). Por quê?
 Normal — o que cresce **não** é a memória (texto leve), e sim **sessões, mídia e logs** do dia a dia.
 Quem criou este kit quase bateu 10GB em 3 dias por isso. Soluções:

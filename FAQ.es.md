@@ -40,6 +40,16 @@ Sí. Llama al `wizard-04` cuando quieras — la Eva conecta la nueva sin tocar l
      Gemini como principal es más estable (pero usa llave/cuota).
 3. Si una plática se quedó "pegada" en un modelo de respaldo, dale `/new` o `/model <modelo>`.
 
+### No logro conectar Telegram / WhatsApp. ¿Qué hago?
+Es el paso que más se atora — tranqui, es fácil cuando sabes el truco:
+- **Telegram:** primero creas un "robot" en **@BotFather** (manda `/newbot`, eliges nombre y un
+  usuario que **termina en `bot`**) — te da un **token**. Luego solo **pegas ese token**: en el
+  administrado, en **OpenClaw → Integrações → Telegram → Conectar**; en la VM, la propia Eva lo
+  configura. Al final, busca **tu bot** en Telegram y mándale "hola".
+- **WhatsApp:** no hay token — **escaneas un QR** (igual que WhatsApp Web): Integraciones →
+  WhatsApp → Conectar → en el celular, WhatsApp → Dispositivos vinculados → Vincular un dispositivo.
+- Empieza por **Telegram** (más estable). El paso a paso completo está en `wizard-03-canais`.
+
 ### Mi disco/cuota se llenó rápido (casi llego al límite). ¿Por qué?
 Normal — lo que crece **no** es la memoria (texto ligero), sino **sesiones, media y logs** del día a
 día. Quien creó este kit casi llegó a 10GB en 3 días por eso. Soluciones:
