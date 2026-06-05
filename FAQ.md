@@ -88,6 +88,14 @@ Quem criou este kit quase bateu 10GB em 3 dias por isso. Soluções:
   `.sqlite`/`sessions`/`media`/binários). Se versionar binário, o `.git` incha **pra sempre**.
 - Se o cofre passar de ~50MB, algo grande entrou errado — investigue.
 
+### A Eva vai encher o disco/cota sozinha com o tempo? Preciso limpar?
+**Você não precisa fazer nada** — ela se auto-limpa. O que cresce (sessões de conversa, mídia, logs e,
+se usar ChatGPT, o trace do Codex) é podado automaticamente com **retenção sensata** (sessões ~30 dias,
+mídia >30 dias, sessões de cron 48h). Quem faz isso é a skill **`guardiao-eva`** (semanal) + um check
+diário no heartbeat. Ela **avisa em linguagem simples** quando o disco passa de ~75% ("fiz faxina,
+liberei X") e **nunca apaga** o cérebro/memória/identidade nem o cofre de backup — só coisa recriável.
+💡 Em plano básico (cota pequena), o **Gemini** ocupa menos disco que o ChatGPT/Codex.
+
 ### Como sei se meu backup REALMENTE funciona?
 Instale a skill **`restore-drill`** (simulado mensal): ela clona o cofre num espaço temporário,
 confere os arquivos vitais e te diz se a Eva é **100% recuperável** — sem tocar na produção.

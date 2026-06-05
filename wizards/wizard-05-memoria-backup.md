@@ -35,12 +35,20 @@ Objetivo: a Eva lembrar das coisas E ter backup automático. Esta é a lição m
 1. **O cofre leva só texto** (a skill `backup-eva` já põe um `.gitignore` enxuto que exclui
    `.sqlite`, `sessions/`, `media/`, `logs/`, `node_modules/`, binários). Nunca versione isso — o
    `.git` incharia pra sempre.
-2. **Faxina automática:** instale a skill **`guardiao-eva`** (relatório semanal) — ela roda
-   `openclaw sessions cleanup --enforce`, poda mídia/logs velhos e compacta o cofre, **avisando** se
-   o disco passar de ~70%.
-3. **Prove que restaura:** instale a skill **`restore-drill`** (simulado mensal) — backup não-testado
+2. **Retenção automática (defaults sensatos — faça já, sem perguntar config pro leigo):** deixe a Eva
+   se auto-limpar. Aplique uma vez:
+   - `openclaw config set cron.sessionRetention 48h` (sessões de cron não acumulam).
+   - (opcional) cape o contexto p/ performance: `openclaw config set agents.defaults.contextTokens 200000`.
+   - Rode `openclaw sessions cleanup --enforce` agora e deixe agendado (heartbeat/guardião cuidam depois).
+3. **Faxina automática LIGADA por padrão (sobretudo no GERENCIADO):** instale a skill **`guardiao-eva`**
+   — relatório semanal que poda **sessões (~30d), mídia (>30d), logs e trace do Codex**, compacta o
+   cofre e **avisa a ~75%** da cota, **sem nunca tocar** no cérebro/identidade/cofre-de-aprendizado.
+   No gerenciado (cota pequena) **não trate como opcional** — é o que evita o estouro de disco.
+4. **Prove que restaura:** instale a skill **`restore-drill`** (simulado mensal) — backup não-testado
    não é backup. Ela clona o cofre num /tmp, confere os arquivos vitais e reporta se a Eva é 100%
    recuperável (sem tocar na produção).
+5. 💡 **Dica de cota pequena:** se a pessoa quer o **mais leve possível**, o **Gemini** ocupa menos
+   disco que o ChatGPT/Codex (que mantém um arquivo de trace local que cresce). Vale pra quem tem plano básico.
 
 ## Parte D — (opcional, avançado) Manutenção automática
 Para VM própria: ofereça um job semanal que faz snapshot → patches de SO → update do OpenClaw,

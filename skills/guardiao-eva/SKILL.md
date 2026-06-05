@@ -12,14 +12,26 @@ Rotina **semanal** (e sob comando) que protege a Eva em 4 frentes e manda **um r
 ao dono no canal principal. Não conclui em silêncio — sempre reporta o resultado.
 
 ## 1. 🧹 ESPAÇO EM DISCO (faxina — pra não matar a cota do usuário)
-> Em plano gerenciado a cota é pequena (ex.: 10GB) e o que mais cresce é **sessão e mídia**.
-- Mede o uso: `du -sh ~/.openclaw/agents/*/sessions ~/.openclaw/media ~/.openclaw 2>/dev/null`.
-- **Faxina segura:**
-  - Sessões antigas: `openclaw sessions cleanup --enforce` (poda transcrições órfãs/velhas).
-  - Mídia velha: remove arquivos de `~/.openclaw/media/` com mais de ~30 dias (que não sejam referência ativa).
-  - Logs: trunca/remove logs antigos.
-  - Compacta o cofre: `git -C ~/.openclaw/workspace gc` (mantém o `.git` pequeno).
-- **Alerta** se o uso passar de ~70% da cota: "⚠️ Disco em X% — fiz uma faxina, liberei Y. Se continuar subindo, considere um plano maior ou reduzir o que eu guardo."
+> Em plano gerenciado a cota é pequena (ex.: 10GB) e o que mais cresce é **sessão, mídia e (se usar
+> ChatGPT/Codex) o trace do Codex**. A memória (texto) é leve. **Tudo isso a Eva limpa sozinha** —
+> o dono nunca precisa rodar comando.
+
+**Política de retenção (defaults sensatos — limpa sozinha):**
+- **Sessões:** manter ~**30 dias** / cap de entradas → `openclaw sessions cleanup --enforce`.
+- **Sessões de cron** (backup 2h etc.): retenção curta — `cron.sessionRetention` em **48h** (config).
+- **Mídia:** remover de `~/.openclaw/media/` o que tem **>30 dias** e não é referência ativa.
+- **Logs:** truncar/remover antigos.
+- **Trace do Codex** (só se usar ChatGPT/Codex): se `~/.openclaw/agents/*/agent/codex-home/logs_2.sqlite`
+  passar de ~**500MB**, sinalizar/compactar (acima de ~800MB ele causa instabilidade — bug conhecido).
+- **Cofre de backup:** `git -C ~/.openclaw/workspace gc` (mantém o `.git` pequeno).
+
+🚫 **NUNCA podar** (regra dura): `MEMORY.md`, `memory/` curada, identidade (IDENTITY/SOUL/USER),
+`memory/aprendizado/` (cofre de aprendizado/**auditoria**), nem o cofre de backup. Faxina só toca
+**sessões, mídia, logs e trace** — coisas recriáveis.
+
+- Mede o uso: `du -sh ~/.openclaw/agents/*/sessions ~/.openclaw/media ~/.openclaw 2>/dev/null` e o % da cota.
+- **Alerta a ~75% da cota**, em linguagem de gente: "⚠️ Disco em X% — fiz uma faxina e liberei Y.
+  Se continuar subindo, dá pra considerar um plano maior, ou eu guardo menos mídia. Quer que eu cuide?"
 
 ## 2. 🔒 SEGREDOS (não vazar credencial no cofre)
 - Antes de confiar no backup, varra o que está versionado por padrões de token:

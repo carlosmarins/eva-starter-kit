@@ -88,6 +88,14 @@ día. Quien creó este kit casi llegó a 10GB en 3 días por eso. Soluciones:
   `.sqlite`/`sessions`/`media`/binarios). Si versionas binarios, el `.git` se infla **para siempre**.
 - Si la bóveda pasa de ~50MB, algo grande entró mal — investiga.
 
+### ¿La Eva va a llenar el disco/cuota sola con el tiempo? ¿Tengo que limpiar?
+**No tienes que hacer nada** — se auto-limpia. Lo que crece (sesiones de plática, media, logs y, si
+usas ChatGPT, el trace del Codex) se poda automáticamente con **retención sensata** (sesiones ~30 días,
+media >30 días, sesiones de cron 48h). Lo hace la skill **`guardiao-eva`** (semanal) + un chequeo
+diario en el heartbeat. Te **avisa en lenguaje simple** cuando el disco pasa de ~75% ("hice limpieza,
+liberé X") y **nunca borra** el cerebro/memoria/identidad ni la bóveda de respaldo — solo cosas
+recreables. 💡 En plan básico (cuota chica), **Gemini** ocupa menos disco que ChatGPT/Codex.
+
 ### ¿Cómo sé si mi respaldo REALMENTE funciona?
 Instala la skill **`restore-drill`** (simulacro mensual): clona la bóveda en un espacio temporal,
 revisa los archivos vitales y te dice si la Eva es **100% recuperable** — sin tocar producción.

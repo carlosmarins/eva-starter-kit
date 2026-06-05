@@ -1,5 +1,16 @@
 # Changelog — Eva Starter Kit
 
+## v0.7.1 (2026-06-05) — Disco que se cuida sozinho 🧹
+Pra Eva dos amigos (gerenciado, cota pequena) nunca estourar o disco — **automático, sem o leigo rodar nada**:
+- **Política de retenção com defaults sensatos:** sessões ~30 dias, mídia >30 dias, **sessões de cron
+  48h** (`cron.sessionRetention`), trace do Codex capado (~500MB; >800MB instabiliza), `contextTokens` opcional.
+- **`guardiao-eva`:** política de retenção explícita + **regra dura "NUNCA podar"** cérebro/identidade/
+  `memory/aprendizado/`(auditoria)/cofre; alerta em linguagem simples a **~75%** da cota.
+- **`wizard-05`:** aplica os defaults de retenção e torna a faxina **LIGADA por padrão no gerenciado**
+  (não opcional); + dica de que **Gemini ocupa menos disco que Codex** (cota pequena).
+- **`HEARTBEAT.template`:** check leve de disco **1x/dia** (faxina conservadora + aviso) — contínuo, não só semanal.
+- **FAQ (PT+ES):** "a Eva enche o disco sozinha? preciso limpar?" → não, ela se auto-limpa.
+
 ## v0.7.0 (2026-06-05) — A Eva aprende (com cerca de segurança) 🎓
 A Eva pode evoluir sozinha **sem o dono perder o controle**:
 - **Nova skill `aprender-com-cerca`:** a Eva aprende com o próprio trabalho dentro de uma **cerca por

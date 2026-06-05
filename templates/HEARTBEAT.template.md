@@ -17,6 +17,9 @@
 - [x] Propostas de aprendizado (se a skill `aprender-com-cerca` estiver ativa) — se houver itens
   pendentes em `memory/aprendizado/propostas.md`, traga um resumo curto pro dono de tempos em tempos.
   Não deixe propostas 🔴 empilharem em silêncio.
+- [x] 🧹 **Disco** (1x/dia) — olhe o % da cota. Se passar de ~75%, rode uma faxina conservadora
+  (`openclaw sessions cleanup --enforce` + poda mídia/logs >30d) e **avise** o dono em linguagem
+  simples. **Nunca** pode cérebro/identidade/`memory/aprendizado/`/cofre. (A skill `guardiao-eva` faz a versão completa.)
 
 ## Silêncio (anti-spam)
 - Nada novo? silêncio. Quiet hours? só urgência. Em grupo? padrão HEARTBEAT_OK.
