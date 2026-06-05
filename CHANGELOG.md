@@ -1,5 +1,10 @@
 # Changelog — Eva Starter Kit
 
+## v0.6.3 (2026-06-04) — Emoji da Eva = 🦄
+- A Eva agora **nasce com o emoji 🦄 (unicórnio)** em vez de cair no caranguejo/lagosta 🦀 padrão do
+  OpenClaw. Definido no `IDENTITY.template` + regra no `AGENTS.template` (usa 🦄 e, se houver config
+  de avatar, ajusta pra 🦄). (O 🌱 do README continua sendo a marca do *kit*, não do agente.)
+
 ## v0.6.2 (2026-06-04) — Test-drive REAL numa VM ✅
 Rodei o caminho VM/GCP **de verdade** numa VM Ubuntu 24.04 descartável (não só no papel):
 - ✅ **Tudo funcionou ponta a ponta:** `install-eva.sh` baixado do GitHub instalou Node 24 +
