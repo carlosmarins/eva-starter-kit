@@ -28,9 +28,17 @@ seu Git + (na VM) snapshot diário do disco. **Faça isso** — é a parte mais 
 ### Posso adicionar uma ferramenta depois?
 Sim. Chame o `wizard-04` quando quiser — a Eva conecta a nova sem mexer no resto.
 
-### A Eva ficou lenta / parou no meio. O que faço?
-Geralmente é sessão "cheia". Mande `/compact` (ou `/new`) no chat. Mantenha ≤ 3–4 tópicos no
-Telegram. Ver `templates/HEARTBEAT.template.md` (higiene de contexto).
+### A Eva ficou lenta / parou no meio (erro "agent failed"). O que faço?
+1. **Sessão cheia:** mande `/compact` (ou `/new`) no chat. Mantenha ≤ 3–4 tópicos no Telegram
+   (ver `templates/HEARTBEAT.template.md`).
+2. **Se você usa o modelo ChatGPT/Codex** (comum no caminho gerenciado) e ela **cai no meio das
+   respostas** (`codex app-server client closed`): isso é um **gotcha conhecido** —
+   - Use o **runtime Codex nativo** (`/model codex/gpt-5.5` no chat) — mais estável que o adapter genérico.
+   - ⚠️ **NÃO** configure um `contextWindow` enorme (tipo 1.000.000) no Codex: ele tem um limite
+     interno menor e, se você exagerar, ele **estoura e derruba o turno no meio**. Deixe o padrão.
+   - Dica: o **Gemini** aguenta janelas grandes; o Codex não. Se quiser conversas muito longas sem
+     quedas, o Gemini como principal é mais estável (mas usa chave/cota).
+3. Se uma conversa ficou "presa" num modelo de fallback, dê `/new` ou `/model <modelo>` nela.
 
 ### É seguro? Meus tokens ficam expostos?
 Não. Credenciais ficam em arquivos protegidos (`~/.openclaw/.env` / `credentials/`, chmod 600),
