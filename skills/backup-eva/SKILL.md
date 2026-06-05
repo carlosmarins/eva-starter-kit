@@ -33,10 +33,46 @@ gerenciado, porque quem executa é o agente (cron do OpenClaw), não o sistema.
 - Alternativa: se o `gh` CLI estiver disponível/logado, use-o (sem token manual).
 
 ### 3. Configurar o git do workspace (token só local, nunca versionado)
-- No workspace, garanta `.gitignore` com: `.env`, `*.env`, `credentials/`, `*.key`, `*.sqlite`.
+- **`.gitignore` ENXUTO (crítico p/ não inchar o disco do usuário nem o repo).** O cofre leva
+  **só texto** (memória/identidade/skills). Exclua tudo que é grande, binário ou recriável:
+  ```gitignore
+  # segredos (nunca versionar)
+  .env
+  *.env
+  credentials/
+  *.key
+  *.pem
+  # índice de memória, sessões, logs, mídia, deps — NÃO vão pro cofre (incham o .git pra sempre)
+  *.sqlite
+  *.sqlite-*
+  memory/*.sqlite*
+  sessions/
+  **/sessions/
+  media/
+  logs/
+  node_modules/
+  .npm/
+  npm/
+  # binários/anexos pesados (ficam no servidor, não no cofre)
+  *.png
+  *.jpg
+  *.jpeg
+  *.gif
+  *.webp
+  *.pdf
+  *.mp4
+  *.mov
+  *.zip
+  *.tar
+  *.tar.gz
+  ```
+- **Por quê:** o `.git` guarda TODO o histórico — se entrar binário/sessão, ele incha pra sempre e
+  come a cota do usuário (foi assim que um plano de 10GB encheu em dias). Texto comprime quase a nada.
 - `git init` (se preciso), identidade git, e o remote com o token **embutido apenas no
   `.git/config` local** (que NÃO é versionado): `https://<user>:<token>@github.com/<user>/minha-eva-backup.git`.
 - Primeiro `git add -A && git commit -m "backup inicial" && git push -u origin main`.
+- **Confira o tamanho:** o cofre deve ficar em **poucos MB**. Se passar de ~50MB, algo grande entrou
+  no `.gitignore` errado — investigue antes de continuar.
 
 ### 4. Agendar o backup automático (a cada 2h)
 - **Serviço gerenciado (ou padrão universal):** crie um **cron do OpenClaw** que roda a cada 2h e

@@ -133,7 +133,9 @@ La Eva guarda todo en su "memoria". Para **nunca perderla** (aunque el servidor 
 ## 🗺️ Qué hay dentro del kit (para curiosos)
 - `LEEME-PRIMERO.md` — instrucciones para que el agente sea tu tutor (en español)
 - `skills/criar-eva/` — el comando `/criar-eva` que conduce todo
-- `skills/backup-eva/` — el respaldo a prueba de fallas
+- `skills/backup-eva/` — el respaldo a prueba de fallas (bóveda ligera, solo texto)
+- `skills/restore-drill/` — 🧪 simulacro mensual que prueba que el respaldo SÍ restaura
+- `skills/guardiao-eva/` — 🛡️ reporte semanal: limpieza de disco + secretos + seguridad + respaldo
 - `wizards/` — los pasos guiados (casa → identidad → canales → herramientas → respaldo)
 - `install/` — scripts para montar tu propio servidor
 - `templates/`, `tools/`, `FAQ.es.md`, `COMO-RESTAURAR.es.md`

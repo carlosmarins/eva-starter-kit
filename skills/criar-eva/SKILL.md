@@ -39,6 +39,13 @@ cada etapa tem um wizard dedicado em `wizards/`.
 > Foi a FALTA disso que fez quem criou este kit perder tudo num gerenciado. Não conclua a jornada
 > sem o backup **verificado** (commit visível no GitHub do dono).
 
+## Skills de proteção contínua (instale no fim da jornada) 🛡️
+Depois que a Eva está no ar e com cofre, deixe-a se cuidando sozinha:
+- **`guardiao-eva`** (semanal) — relatório de saúde + **faxina de disco** (pra não estourar a cota,
+  ex.: 10GB) + caça-segredos + auditoria de segurança.
+- **`restore-drill`** (mensal) — simulado que **prova** que o backup restaura de verdade.
+Agende ambas no cron do OpenClaw (cada skill traz o comando no fim do arquivo).
+
 ## Controle de progresso
 Marque o avanço em `memory/hot.md` (ex.: `criar-eva: passo 4/7 — canais`). Se a pessoa parar e
 voltar depois, retome de onde estava (resuma o estado em 1 frase, não re-narre tudo).

@@ -1,0 +1,52 @@
+---
+name: guardiao-eva
+description: Modo Guardião — a Eva cuida sozinha da própria saúde, segurança, privacidade, ESPAÇO EM DISCO e backup, e manda um relatório semanal em linguagem simples ao dono. Inclui faxina automática (pra não entupir a cota do servidor), checagem de segredos, verificação de backup e simulado de recuperação. Use semanalmente (cron) ou sob comando ("modo guardião", "está tudo seguro?", "/guardiao").
+user-invocable: true
+metadata:
+  openclaw: {"emoji":"🛡️"}
+---
+
+# 🛡️ guardiao-eva — a Eva se cuida sozinha
+
+Rotina **semanal** (e sob comando) que protege a Eva em 4 frentes e manda **um relatório curto**
+ao dono no canal principal. Não conclui em silêncio — sempre reporta o resultado.
+
+## 1. 🧹 ESPAÇO EM DISCO (faxina — pra não matar a cota do usuário)
+> Em plano gerenciado a cota é pequena (ex.: 10GB) e o que mais cresce é **sessão e mídia**.
+- Mede o uso: `du -sh ~/.openclaw/agents/*/sessions ~/.openclaw/media ~/.openclaw 2>/dev/null`.
+- **Faxina segura:**
+  - Sessões antigas: `openclaw sessions cleanup --enforce` (poda transcrições órfãs/velhas).
+  - Mídia velha: remove arquivos de `~/.openclaw/media/` com mais de ~30 dias (que não sejam referência ativa).
+  - Logs: trunca/remove logs antigos.
+  - Compacta o cofre: `git -C ~/.openclaw/workspace gc` (mantém o `.git` pequeno).
+- **Alerta** se o uso passar de ~70% da cota: "⚠️ Disco em X% — fiz uma faxina, liberei Y. Se continuar subindo, considere um plano maior ou reduzir o que eu guardo."
+
+## 2. 🔒 SEGREDOS (não vazar credencial no cofre)
+- Antes de confiar no backup, varra o que está versionado por padrões de token:
+  `git -C ~/.openclaw/workspace grep -nIE 'glpat-|github_pat_|xoxb-|xapp-|sk-[A-Za-z0-9]|AIza[0-9A-Za-z_-]{20}|BEGIN .*PRIVATE KEY' || echo "limpo"`
+- Se achar algo: **alerta urgente** ao dono ("🚨 achei o que parece um token no backup — vou removê-lo do versionamento e você deve **rotacionar** esse segredo"). Remove do índice, reforça o `.gitignore`.
+
+## 3. 🛟 BACKUP recuperável
+- Confere o backup recente (último commit do cofre < ~1 dia).
+- 1x por mês, dispara a skill **`restore-drill`** (prova que restaura de verdade).
+
+## 4. 🩺 SAÚDE & SEGURANÇA básica
+- `openclaw security audit` (resumo dos pontos críticos/avisos).
+- Confere: canais com **allowlist do dono** (estranho não comanda a Eva); ferramentas em **somente-leitura** onde der.
+- (Se houver teto de gasto configurado) avisa se o uso de IA está perto do limite do mês.
+
+## 📋 O relatório (mande um resumo assim, em linguagem de gente)
+> "🛡️ **Relatório Guardião da semana**
+> • Disco: 2.1GB de 10GB (21%) — fiz faxina, liberei 300MB ✅
+> • Segredos: nenhum vazado no backup ✅
+> • Backup: último há 1h · simulado de recuperação OK 🛟
+> • Segurança: canais travados no seu acesso ✅ · 1 aviso: {…}
+> Tá tudo sob controle. 👍"
+Se algo estiver vermelho, explique simples e proponha a correção.
+
+## Agendar (recomendado)
+`openclaw cron add --cron "0 9 * * 1" --name "guardiao-semanal" --tools exec --message "Rode o Modo Guardião (skill guardiao-eva) e me mande o relatório."`
+
+## Regras
+- Faxina é **conservadora**: nunca apague memória curada (MEMORY/memory/identidade) nem o cofre. Só sessões órfãs, mídia velha e logs.
+- Sempre **reportar** — bom ou ruim. O silêncio é o inimigo (a falha da Hostinger foi silenciosa).

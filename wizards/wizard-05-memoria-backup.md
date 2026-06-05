@@ -28,13 +28,27 @@ Objetivo: a Eva lembrar das coisas E ter backup automático. Esta é a lição m
 3. **Gerenciado — regra de ouro:** o backup do provedor **não conta** (pode expirar/falhar, foi o que
    derrubou quem criou este kit). O cofre no GitHub do dono (passo 1) é o que garante.
 
-## Parte C — (opcional, avançado) Manutenção automática
+## Parte C — Espaço em disco (pra não entupir a cota) 🧹
+> Atenção real: em serviço gerenciado a cota é pequena (ex.: 10GB) e ela **enche rápido** — o que
+> mais cresce é **sessão, mídia e logs** (não a memória, que é texto leve). Quem criou este kit
+> quase bateu 10GB em 3 dias por causa disso.
+1. **O cofre leva só texto** (a skill `backup-eva` já põe um `.gitignore` enxuto que exclui
+   `.sqlite`, `sessions/`, `media/`, `logs/`, `node_modules/`, binários). Nunca versione isso — o
+   `.git` incharia pra sempre.
+2. **Faxina automática:** instale a skill **`guardiao-eva`** (relatório semanal) — ela roda
+   `openclaw sessions cleanup --enforce`, poda mídia/logs velhos e compacta o cofre, **avisando** se
+   o disco passar de ~70%.
+3. **Prove que restaura:** instale a skill **`restore-drill`** (simulado mensal) — backup não-testado
+   não é backup. Ela clona o cofre num /tmp, confere os arquivos vitais e reporta se a Eva é 100%
+   recuperável (sem tocar na produção).
+
+## Parte D — (opcional, avançado) Manutenção automática
 Para VM própria: ofereça um job semanal que faz snapshot → patches de SO → update do OpenClaw,
 com **health-check e rollback automático** se algo quebrar. (Ver `install/` / docs.)
 
 ## Stop condition
-Backup do workspace rodando automático (confirmado por um commit recente no repo) e, em VM, o
-snapshot diário agendado.
+Backup do workspace rodando automático (confirmado por um commit recente no repo), faxina/guardião
+agendados e, em VM, o snapshot diário agendado.
 
 ## Encerramento da jornada 🎉
 Quando terminar, parabenize de verdade:

@@ -40,6 +40,20 @@ Sí. Llama al `wizard-04` cuando quieras — la Eva conecta la nueva sin tocar l
      Gemini como principal es más estable (pero usa llave/cuota).
 3. Si una plática se quedó "pegada" en un modelo de respaldo, dale `/new` o `/model <modelo>`.
 
+### Mi disco/cuota se llenó rápido (casi llego al límite). ¿Por qué?
+Normal — lo que crece **no** es la memoria (texto ligero), sino **sesiones, media y logs** del día a
+día. Quien creó este kit casi llegó a 10GB en 3 días por eso. Soluciones:
+- Instala la skill **`guardiao-eva`** (limpieza semanal automática: `openclaw sessions cleanup --enforce`,
+  poda media/logs viejos, compacta la bóveda) — además te avisa si pasas de ~70%.
+- La **bóveda de respaldo lleva solo texto** (el `.gitignore` de la skill `backup-eva` excluye
+  `.sqlite`/`sessions`/`media`/binarios). Si versionas binarios, el `.git` se infla **para siempre**.
+- Si la bóveda pasa de ~50MB, algo grande entró mal — investiga.
+
+### ¿Cómo sé si mi respaldo REALMENTE funciona?
+Instala la skill **`restore-drill`** (simulacro mensual): clona la bóveda en un espacio temporal,
+revisa los archivos vitales y te dice si la Eva es **100% recuperable** — sin tocar producción.
+*Un respaldo que nunca se probó no es un respaldo.*
+
 ### ¿Es seguro? ¿Mis tokens quedan expuestos?
 No. Las credenciales quedan en archivos protegidos (`~/.openclaw/.env` / `credentials/`, chmod 600),
 **nunca** en Git ni repetidas en el chat.

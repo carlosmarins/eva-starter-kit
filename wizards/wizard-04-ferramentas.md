@@ -23,6 +23,10 @@ Anote a lista escolhida. Faça **uma por vez**.
 Siga este molde (os detalhes de onde clicar estão em `tools/<ferramenta>.md`):
 
 1. **Explique** em 1 frase o que ela vai poder fazer ("vou conseguir consultar seus convênios no Omie").
+   - **Comece pelo MENOS poder possível (privilégio mínimo):** ofereça **somente-leitura** por padrão
+     ("vou só *consultar*, não mexer"). Só peça permissão de escrita/edição se a pessoa disser que
+     precisa. Ex.: token de leitura no GitLab/Jira; scope `readonly` no Google; `execute_sql_readonly`
+     no BigQuery. É mais seguro e quase sempre é o que a pessoa quer.
 2. **Ensine a pegar a credencial**, clique a clique. Ex. (Omie):
    > "Entra no Omie → Configurações → Integrações/API → gere/copie o **App Key** e o **App Secret**.
    > Me cola os dois aqui."
@@ -45,6 +49,7 @@ Siga este molde (os detalhes de onde clicar estão em `tools/<ferramenta>.md`):
 | GitLab/GitHub | token de acesso | `tools/gitlab.py` / `tools/github.py` |
 
 ## Regras
+- **Privilégio mínimo por padrão:** somente-leitura primeiro; escrita só com pedido explícito.
 - **Uma ferramenta por vez.** Não peça 3 credenciais juntas.
 - Pediu credencial e a pessoa não achou? **Guie pelo caminho exato** (ou link/print). Não desista.
 - Toda credencial → arquivo seguro. Confirme o teste antes de passar pra próxima.
