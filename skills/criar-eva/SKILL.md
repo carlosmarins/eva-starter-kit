@@ -46,10 +46,19 @@ Depois que a Eva está no ar e com cofre, deixe-a se cuidando sozinha:
 - **`restore-drill`** (mensal) — simulado que **prova** que o backup restaura de verdade.
 Agende ambas no cron do OpenClaw (cada skill traz o comando no fim do arquivo).
 
+## Segurança de comportamento (instale junto — leves, sob demanda) 🚧🦺
+Não pesam no boot (carregam só quando precisam) e protegem o dono:
+- **`acoes-sensiveis`** 🚧 — trava à prova de desculpa antes de qualquer ação 🔴 (enviar, dar acesso,
+  apagar, gastar, mudar config): confirmar + verificar. Universal.
+- **`tarefas-autonomas`** 🦺 — cinto pra quando a Eva trabalha sozinha (cron/heartbeat): anti-loop,
+  teto de passos, back-off, consciência de custo, e **nunca executa 🔴 sozinha**.
+
 ## Evolução opcional (quando a pessoa quiser) 🎓
-- **`aprender-com-cerca`** — a Eva passa a **aprender com o próprio trabalho** dentro de uma cerca de
-  risco (🟢 aplica sozinha · 🟡 aplica e avisa · 🔴 só propõe e espera "aprova"), com registro
-  auditável. Ofereça **só se a pessoa quiser** e oriente o começo seguro: **liberar só 🟢 primeiro**.
+- **`aprender-com-cerca`** — a Eva **aprende com o próprio trabalho** dentro da cerca de risco (🟢 aplica
+  · 🟡 avisa · 🔴 só propõe), com **confiança por contagem, decaimento na contradição e auditoria**.
+  Ofereça **só se a pessoa quiser** e oriente o começo seguro: **liberar só 🟢 primeiro**.
+- **`ler-documentos`** 📄 — *(só caminho VM, avançado, ~6GB)* extrai texto/tabelas de PDF/Word/imagem
+  localmente (Docling). **Opcional** — não instale no gerenciado nem "por via das dúvidas".
 
 ## Controle de progresso
 Marque o avanço em `memory/hot.md` (ex.: `criar-eva: passo 4/7 — canais`). Se a pessoa parar e

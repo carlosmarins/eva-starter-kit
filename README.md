@@ -161,6 +161,9 @@ A Eva guarda tudo na "memória" dela. Pra **nunca perder** isso (mesmo se o serv
 - `skills/restore-drill/` — 🧪 simulado mensal que prova que o backup restaura de verdade
 - `skills/guardiao-eva/` — 🛡️ relatório semanal: faxina de disco + segredos + segurança + backup
 - `skills/aprender-com-cerca/` — 🎓 a Eva aprende sozinha com cerca de risco (🟢 aplica · 🟡 avisa · 🔴 pede "ok")
+- `skills/acoes-sensiveis/` — 🚧 trava à prova de desculpa antes de ação de alto risco (confirmar + verificar)
+- `skills/tarefas-autonomas/` — 🦺 cinto anti-loop/anti-gasto pra quando a Eva trabalha sozinha
+- `skills/ler-documentos/` — 📄 *(opcional, só VM)* extrai texto/tabelas de PDF/Word/imagem (local, Docling)
 - `wizards/` — os passos guiados (casa → identidade → canais → ferramentas → backup)
 - `install/` — scripts pra montar o servidor próprio
 - `templates/`, `tools/`, `FAQ.md`, `COMO-RESTAURAR.md`

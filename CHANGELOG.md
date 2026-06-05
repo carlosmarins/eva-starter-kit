@@ -1,5 +1,20 @@
 # Changelog — Eva Starter Kit
 
+## v0.8.0 (2026-06-05) — Segurança de comportamento + aprendizado de verdade 🚧🦺🎓
+Destilado (adaptado, não copiado) de 4 repos de referência — tudo leve, markdown, **nada no boot**:
+- **`aprender-com-cerca` turbinado:** + **confiança por contagem** (baixa/média/alta), **decaimento na
+  contradição** (cai 1 nível + `EM REVISÃO`), **escada de autonomia** (🟡 6x→🟢, 🔴 aprovado→permanente,
+  🔴 pendente→digest semanal), **captura automática** (`observacoes.md` minerado no heartbeat, ≤10/vez) e
+  **redação de segredos**. (inspirado em ECC/affaan-m — só o conceito, sem daemon/embeddings.)
+- **Nova `acoes-sensiveis` 🚧** (à prova de desculpa, do Superpowers/obra): Lei de Ferro + tabela
+  Desculpa|Realidade + portão de verificação. Carrega **só quando há ação 🔴** (custo zero no resto).
+- **Nova `tarefas-autonomas` 🦺** (cinto, do AutoGen/microsoft): teto de passos/tempo, anti-loop, back-off,
+  consciência de custo; **nunca executa 🔴 sozinha**. Pra cron/heartbeat/job longo.
+- **`ler-documentos` 📄** (Docling local) como **add-on OPCIONAL do caminho VM** (~6GB, OCR off, receita
+  de reinstalação, ler=🟢/agir=🔴). **Não** é padrão; não entra no gerenciado.
+- Ganchos leves (1 linha) em `AGENTS`/`HEARTBEAT`; registrado em `criar-eva` + READMEs.
+- Princípio mantido: **performance (nada no boot)**, defaults seguros (🔴 sempre confirma), sem chave/GPU.
+
 ## v0.7.1 (2026-06-05) — Disco que se cuida sozinho 🧹
 Pra Eva dos amigos (gerenciado, cota pequena) nunca estourar o disco — **automático, sem o leigo rodar nada**:
 - **Política de retenção com defaults sensatos:** sessões ~30 dias, mídia >30 dias, **sessões de cron
