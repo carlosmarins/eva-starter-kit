@@ -26,6 +26,10 @@ Te enlista lo que sabe y qué herramientas ya están conectadas — perfecto par
 ## 4. ⏰ "Recuérdame ___ mañana" / "todos los días a las 8 mándame ___"
 El primer gustito de tener un asistente de verdad: se encarga de tus pendientes y recordatorios.
 
+> ☀️ **Tip de oro — "Revisión del Día":** pídele *"todos los días a las 18h, mándame un resumen de
+> mi día y lo que quedó pendiente para mañana"*. La Eva crea un agendamiento (cron) sola y empieza a
+> **trabajar aunque no la llames**. Aquí es donde se vuelve un asistente de verdad, no un chat.
+
 ## 5. 📋 "Resúmeme esto" (pega un texto, correo o link)
 Muestra su valor al instante — destila lo que importa.
 

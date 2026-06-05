@@ -53,6 +53,11 @@ A pessoa consegue **conversar com o agente** no painel do serviço. Aí o própr
 ## Cuidados (lições reais)
 - **Backup:** o gerenciado pode NÃO ter backup próprio robusto. Garanta no **wizard-05** que o
   workspace dela vá pra um Git (não confie só nos snapshots da plataforma).
-- **Atualizações:** em alguns gerenciados o update é controlado pela plataforma — avise que ela
-  não deve forçar updates manuais (pode quebrar). Se houver incidente, suporte do provedor.
+- **Atualizações:** o gerenciado serve versões **estáveis testadas** — **não rode `openclaw update`
+  manualmente** (fura o filtro de estáveis e pode quebrar). Deixe a plataforma atualizar. Se houver
+  incidente, suporte do provedor.
+- **Primeiros socorros:** se algo ficar estranho, o comando salvador é **`openclaw doctor`** (e
+  **`openclaw doctor --fix`** pra consertar — ele faz backup antes). Pode pedir pra própria Eva rodar.
+- **Terminal sem medo:** aquela tela preta é um cockpit restrito (só aceita `openclaw ...`) — a
+  pessoa **não quebra o servidor** por ali. Tranquilize-a.
 - Se algo travar no provedor, **peça pra ela acionar o suporte** — não tente contornar o painel.

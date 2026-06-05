@@ -1,5 +1,15 @@
 # Changelog — Eva Starter Kit
 
+## v0.5.1 (2026-06-04) — Primeiros socorros + proatividade 🩺☀️
+Mais conceitos destilados (aulas de crons/heartbeat e troubleshoot do curso de referência):
+- **`openclaw doctor` / `doctor --fix`** como "primeiros socorros" (auto-conserto com backup antes):
+  no FAQ (PT+ES) e nos cuidados do `wizard-01a`.
+- **"Terminal sem medo"**: explica que a tela preta do gerenciado é um cockpit restrito (só
+  `openclaw ...`) — não dá pra quebrar o servidor (FAQ PT+ES + `wizard-01a`).
+- **"Revisão do Dia"**: exemplo concreto de cron proativo no cartão de primeiros pedidos (a Eva
+  manda um resumo do dia às 18h e passa a trabalhar sem ser chamada).
+- **Não rodar `openclaw update` manual** no gerenciado (fura o filtro de versões estáveis) — reforçado.
+
 ## v0.5.0 (2026-06-04) — Ligar o cérebro + pegadinhas que travam 🧠
 Lições destiladas de um curso de referência (conceitos próprios, sem material de terceiros):
 - **FIX importante — `wizard-01a` (gerenciado) agora ensina a LIGAR O MODELO de IA** (faltava!).

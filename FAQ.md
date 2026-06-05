@@ -28,6 +28,19 @@ seu Git + (na VM) snapshot diário do disco. **Faça isso** — é a parte mais 
 ### Posso adicionar uma ferramenta depois?
 Sim. Chame o `wizard-04` quando quiser — a Eva conecta a nova sem mexer no resto.
 
+### Tenho medo de usar o "terminal" (aquela tela preta). Posso quebrar algo?
+Relaxa. No serviço gerenciado, aquela telinha **não é um Linux de verdade** — é um "cockpit"
+restrito que **só aceita comandos `openclaw ...`**. Pensa nele como o controle remoto da TV: poucos
+botões, e o que não é botão simplesmente não funciona. Você **não tem como quebrar o servidor** por
+ali. E, na real, na maior parte do tempo quem digita os comandos é a **própria Eva** — você só
+conversa com ela.
+
+### Algo quebrou / deu erro estranho. Tem um "primeiros socorros"?
+Sim: **`openclaw doctor`** (diagnostica problemas comuns de config/canal/serviço) e, se ele achar
+algo, **`openclaw doctor --fix`** (conserta sozinho — e faz um backup antes de mexer). É o primeiro
+comando a tentar quando a Eva "fica estranha". Você pode até pedir pra própria Eva: *"roda o
+`openclaw doctor` e me diz se achou algo."*
+
 ### A Eva ficou lenta / parou no meio (erro "agent failed"). O que faço?
 1. **Sessão cheia:** mande `/compact` (ou `/new`) no chat. Mantenha ≤ 3–4 tópicos no Telegram
    (ver `templates/HEARTBEAT.template.md`).

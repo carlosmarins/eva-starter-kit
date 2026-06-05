@@ -25,6 +25,10 @@ Ela lista o que sabe e quais ferramentas já estão conectadas — ótimo pra vo
 ## 4. ⏰ "Me lembra de ___ amanhã" / "todo dia às 8h me manda ___"
 O primeiro gostinho de ter um assistente de verdade: ela cuida das suas tarefas e lembretes.
 
+> ☀️ **Dica de ouro — "Revisão do Dia":** peça *"todo dia às 18h, me manda um resumo do meu dia e o
+> que ficou pendente pra amanhã"*. A Eva cria um agendamento (cron) sozinha e passa a **trabalhar
+> mesmo quando você não chama**. É aqui que ela vira um assistente de verdade, não um chat.
+
 ## 5. 📋 "Resume isso pra mim" (cola um texto, e-mail ou link)
 Mostra na hora o valor — ela destila o que importa.
 
