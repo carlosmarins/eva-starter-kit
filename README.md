@@ -1,4 +1,3 @@
-<!-- Banner: docs/img/00-banner.png (logo/arte "Eva Starter Kit") -->
 
 # 🌱 Eva Starter Kit — crie a sua assistente de IA pessoal
 
@@ -83,12 +82,10 @@ Pronto! A partir daí **a própria Eva te guia** — o nome dela, o Telegram, su
 Acesse **console.cloud.google.com**, entre com sua conta Google, crie um **projeto novo** e
 **ative o faturamento** (cartão — o uso inicial costuma cair nos créditos grátis).
 
-<!-- docs/img/10-gcp-novo-projeto.png — criar projeto no Google Cloud -->
 
 ### Passo 2 — Abrir o "Cloud Shell"
 No topo do site, clique no ícone **`>_`** (Cloud Shell). É um terminal que já vem pronto.
 
-<!-- docs/img/11-gcp-cloudshell.png — botão do Cloud Shell -->
 
 ### Passo 3 — Rodar os 2 comandos
 Cole os comandos abaixo (a Eva/este kit te dá eles prontos):
@@ -109,8 +106,6 @@ Daí em diante é igual ao jeito fácil: ela te guia no resto. 🎉
 2. Clique em **Download ZIP**. (Ou pegue a [Release mais recente](../../releases) — é o jeito recomendado.)
 3. Descompacte o arquivo. Pronto — é esse conteúdo que você entrega pro seu agente.
 
-<!-- docs/img/20-github-download-zip.png — botão Code > Download ZIP -->
-*(imagem: botão verde "Code" → "Download ZIP")*
 
 > Quem manja de Git pode: `git clone https://github.com/carlosmarins/eva-starter-kit.git`
 
