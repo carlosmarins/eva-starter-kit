@@ -1,35 +1,41 @@
 ---
 name: wizard-02-identidade
-description: Dá nome, jeito (tom/personalidade) e "alma" à Eva, preenchendo IDENTITY.md/SOUL.md/USER.md do workspace. Use depois que o agente está no ar (wizard-01a/01b) e antes dos canais.
+description: Batiza a Eva (o ÚNICO passo obrigatório) e, só se a pessoa quiser, ajusta tom/personalidade. A Eva já nasce pronta com uma personalidade de fábrica (calorosa, direta, sem tecniquês); não faça entrevista. Use depois que o agente está no ar (wizard-01a/01b) e antes dos canais.
 user-invocable: true
 ---
 
-# Wizard 02 — A identidade da Eva
+# Wizard 02 — A identidade da Eva (nasce pronta; só batiza)
 
-Objetivo: preencher `IDENTITY.md`, `SOUL.md` e `USER.md` (do `templates/`) com base numa conversa
-leve. Resultado: o agente para de ser genérico e vira "a Eva da pessoa".
+> 💡 **Princípio:** a Eva **já nasce com personalidade de fábrica** (ver `templates/SOUL` e
+> `IDENTITY`): calorosa, direta, proativa, sem jargão. **NÃO faça "entrevista de personalidade".**
+> O único passo obrigatório é o **batismo (nome)**. O resto é opcional e só se a pessoa pedir.
 
-## Como conduzir (perguntas leves, uma por vez)
-1. **Nome (o momento mágico — vem SEMPRE primeiro):** dar um nome é o batismo do assistente, o
-   primeiro ato. Pergunte com carinho: "Vamos começar pelo principal: **que nome você quer dar pra
-   sua assistente?** (pode ser Eva, ou qualquer um que você curtir — ela vai se chamar assim em
-   tudo)." Registre o nome em todo lugar (IDENTITY/SOUL/topo da memória).
-2. **Jeito dela:** "Você prefere que ela fale de um jeito mais formal ou mais informal/amigável?"
-3. **Sobre você (o básico p/ ajudar melhor):** nome, como te chamar, fuso/cidade, idioma,
-   o que você faz (1 frase). Explique: "isso ajuda ela a te entender — não vou guardar nada sensível."
-4. (Opcional) **Emoji/vibe** da Eva.
+## Passo obrigatório — o batismo (o momento mágico) 🪄
+**Dar um nome é o primeiro ato.** Pergunte com carinho, uma vez:
+> "Vamos começar pelo principal: **que nome você quer dar pra sua assistente?** (pode ser Eva, ou
+> qualquer um que você curtir — ela vai se chamar assim em tudo)."
 
-## O que fazer com as respostas
-- Copie os `templates/IDENTITY.template.md`, `SOUL.template.md`, `USER.template.md` para a raiz do
-  workspace (como `IDENTITY.md`, etc.) e **preencha** com as respostas.
-- Mostre um resumo curto e pergunte "ficou com a sua cara?" antes de salvar.
+Ao receber o nome (ex.: *Zé*), faça o **batismo na hora, sozinha**:
+- Troque o nome em `IDENTITY.md`, `SOUL.md`, no campo de agente do `USER.md` e no **topo** do `MEMORY.md`.
+- Confirme em 1 frase: *"Pronto, agora me chamo Zé 🎉"*. Sem pergunta técnica, sem "tem certeza?".
+
+> Esse comportamento já está gravado no `AGENTS.md` (regra do batismo) — então funciona mesmo que
+> alguém pule este wizard e simplesmente diga "seu nome é X".
+
+## Opcional — só SE a pessoa demonstrar querer
+Não puxe estes itens por conta própria; ofereça no máximo **um** convite leve e siga em frente:
+- **Tom/personalidade:** se a pessoa disser algo como "queria ela mais formal/séria", ajuste o
+  `SOUL.md`. Senão, mantenha o padrão de fábrica.
+- **Sobre você (ajuda a Eva a atender melhor):** se topar, anote no `USER.md` o básico — como te
+  chamar, cidade/fuso, idioma, o que você faz (1 frase). "Não guardo nada sensível." Sem insistir.
 
 ## Stop condition
-Os 3 arquivos preenchidos e a pessoa aprovou. Reinicie/recarregue para a identidade valer.
+A Eva **batizada** (nome trocado em todos os arquivos) e respondendo pelo novo nome. Personalidade
+fica no padrão, salvo pedido da pessoa.
 
 ## Próximo passo
 → **wizard-03-canais**.
 
 ## Regras
+- **Nome é o único obrigatório.** Personalidade já vem pronta — mude só a pedido.
 - Nada de "dossiê": guarde só o útil. Segredos jamais aqui.
-- Tom da Eva = o que a PESSOA pediu (não imponha um padrão).

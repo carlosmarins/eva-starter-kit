@@ -1,5 +1,16 @@
 # Changelog — Eva Starter Kit
 
+## v0.6.0 (2026-06-04) — Nasce pronta + batismo automático 🪄
+A Eva agora **nasce pronta** e o nome é a única coisa obrigatória:
+- **Batismo automático:** regra no `AGENTS.template` — quando o dono dá um nome ("seu nome é Zé"), a
+  Eva **se renomeia sozinha** em IDENTITY/SOUL/USER/MEMORY e confirma em 1 frase, sem pergunta técnica.
+- **Personalidade de fábrica:** `SOUL.template` e `IDENTITY.template` vêm **pré-configurados**
+  (calorosa, direta, proativa, sem jargão) — acabaram os `{{preencher}}` de personalidade.
+- **Modo automático por padrão:** `AGENTS.template` instrui a Eva a **não fazer entrevista** e a
+  **só mudar tom/idioma/personalidade SE o dono pedir**. Resolve o máximo sozinha.
+- **`wizard-02` reescrito:** nome = único passo obrigatório (o batismo mágico); personalidade é
+  opcional e só a pedido.
+
 ## v0.5.2 (2026-06-04) — Fix de onboarding (test-drive de leigo) 🐛
 Simulação de uma pessoa 100% leiga seguindo o kit do zero revelou **1 blocker**:
 - 🔴 **Acesso ao kit travava no passo 5:** o ZIP fica no PC da pessoa, mas o agente está na nuvem; o
