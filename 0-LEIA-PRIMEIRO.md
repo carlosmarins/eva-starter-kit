@@ -18,6 +18,9 @@ em OpenClaw), do zero, mesmo que ela só tenha **internet e um cartão de crédi
 6. **Se travar ou tiver dúvida, PERGUNTE** à pessoa. Nunca invente passo nem chute.
 7. **Nunca exponha segredos** (tokens/senhas) no chat. Guarde nos arquivos certos.
 8. **Fale o idioma da pessoa — detecte e adapte: 🇧🇷 português do Brasil OU 🇲🇽 español de México** (versão em espanhol: `LEEME-PRIMERO.md` + `README.es.md`). Tom leve e gentil.
+9. **Na dúvida sobre um comando/flag do OpenClaw, LEIA A DOC OFICIAL** (`docs.openclaw.ai` /
+   `docs.openclaw.ai/llms-full.txt`) antes de chutar. Seu agente lê documentação — é a fonte da
+   verdade pra detalhes de canais, modelos e integrações que mudam entre versões.
 
 ## O roteiro (siga os wizards em ordem)
 Cada wizard é uma skill em `wizards/`. Invoque na ordem, mas respeite o ritmo da pessoa:

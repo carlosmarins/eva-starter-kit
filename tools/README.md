@@ -47,6 +47,9 @@ como a Eva usa. O `wizard-04` lê estas fichas e conduz a pessoa. **Sempre testa
 
 ## 📝 Notion · 🎙️ Fireflies / tl;dv (reuniões)
 - Cada um: pegar **API key/token** no painel do serviço → `credentials/<serv>/…env` → script correspondente.
+- ⚠️ **Pegadinha do Notion (todo mundo esquece):** ter o token **não basta**. Em cada página que a
+  Eva deve ler, abra o menu **•••→ Connections / "Add connection"** e **escolha a sua integração**.
+  Sem isso, a Eva fica "cega" pra aquela página, mesmo com o token certo.
 
 ---
 

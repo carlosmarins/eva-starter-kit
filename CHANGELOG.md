@@ -1,5 +1,20 @@
 # Changelog — Eva Starter Kit
 
+## v0.5.0 (2026-06-04) — Ligar o cérebro + pegadinhas que travam 🧠
+Lições destiladas de um curso de referência (conceitos próprios, sem material de terceiros):
+- **FIX importante — `wizard-01a` (gerenciado) agora ensina a LIGAR O MODELO de IA** (faltava!).
+  Sem credencial de modelo a Eva não responde. Cobre as duas opções (OAuth ChatGPT Plus/Pro vs
+  **chave de API** pré-paga) + **pegadinha de ouro**: `platform.openai.com` (chave) **≠**
+  `chatgpt.com` (assinatura) + a chave aparece **uma vez só**.
+- **`wizard-03` — modo privacidade do Telegram em GRUPO:** por padrão o bot fica **mudo** em grupo;
+  desligar via `@BotFather → /setprivacy → Disable` (e re-adicionar se já estava no grupo). +
+  `/revoke` se o token vazar.
+- **`0-LEIA-PRIMEIRO` regra #9 — escape hatch:** na dúvida de comando/flag, a Eva **lê a doc
+  oficial** (`docs.openclaw.ai/llms-full.txt`) em vez de chutar.
+- **Cartão de primeiros pedidos — "pedido turbo":** a Eva lê a doc e se explica (auto-conhecimento),
+  salvando um resumo na memória.
+- **Catálogo (Notion):** pegadinha do "Add connection" (compartilhar a página com a integração).
+
 ## v0.4.1 (2026-06-04) — Conectar canal sem travar 📱
 - **`wizard-03-canais` reescrito** (era o ponto que mais trava o leigo): passo a passo real e
   clique-a-clique pra **Telegram** (criar bot no @BotFather → pegar token → conectar) e **WhatsApp**

@@ -33,6 +33,14 @@ Isso é o que dá o **token** (a "senha" do bot). Guie clique a clique:
 5. "Pronto! Ele te manda uma mensagem com um **token** parecido com `8123456:AAF...xyz`.
    **Copia e cola aqui pra mim.**" → (você guarda em segredo; nunca repita o token no chat depois.)
 
+### Parte A.5 — só se for usar a Eva em GRUPO: desligar o "modo privacidade" 👥
+> **Pegadinha importante:** por padrão, um bot do Telegram **só enxerga** mensagens onde é
+> @mencionado ou comandos (`/algo`). Em conversa 1-a-1 (DM) isso não atrapalha. Mas se você for pôr
+> a Eva num **grupo** (equipe, família), ela fica **muda** — não lê o contexto. Conserte ANTES de
+> adicionar no grupo:
+> 1. No **@BotFather**, mande `/setprivacy` → escolha o seu bot → clique **Disable**.
+> 2. Se o bot **já estava** num grupo, **remova e adicione de novo** pra valer.
+
 ### Parte B — conectar o bot na Eva
 **Se for Gerenciado (Hostinger):**
 1. "No painel, vá em **OpenClaw → Integrações** e clique em **Conectar** na linha do **Telegram**."
@@ -76,7 +84,8 @@ Só faça se a pessoa pedir; guie clique a clique ou deixe pra depois (dá pra a
 
 ## Regras importantes 🔒
 - **Token/QR são segredos.** Depois de usar, confirme que ficou salvo (painel/config/.env) e
-  **nunca** repita o token no chat.
+  **nunca** repita o token no chat. **Se o token do Telegram vazar:** no @BotFather mande
+  `/revoke`, gere um novo e atualize na Eva (o antigo deixa de funcionar na hora).
 - **Privacidade desde o início:** deixe a Eva respondendo **só pra pessoa** (allowlist do próprio
   usuário). Estranho não comanda a Eva.
 - **Em grupos:** trave quem pode dar comandos (senão qualquer um no grupo manda na Eva).

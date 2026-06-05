@@ -23,7 +23,23 @@ Você guia; ela só paga e clica o inevitável.
    'compra concluída' ou um painel." (Não peça os dados do cartão; é ela quem digita.)
 4. **Primeiro acesso ao painel/terminal do agente.** Guie até a tela onde ela fala com o agente
    (web/terminal do serviço).
-5. **Entregar este kit ao agente.** Instrua:
+5. **🧠 Ligar o cérebro da Eva (o modelo de IA) — NÃO PULE.** Sem uma credencial de modelo, a Eva
+   *não responde*. Explique simples e ofereça os dois jeitos:
+   - **Tem assinatura ChatGPT Plus/Pro?** → conecte por **login (OAuth)**: no painel/terminal do
+     serviço, autorize a conta (ou `openclaw models auth login` — confira a flag exata na doc
+     oficial). Usa a sua assinatura, sai mais barato pro uso pesado.
+   - **Não tem (ou prefere pré-pago)?** → use uma **chave de API da OpenAI**:
+     1. Abra **`platform.openai.com`** → Settings → **Billing** → adicione um cartão e **US$ 5–10
+        de crédito** (dá pra meses de uso normal).
+     2. **API keys → Create new secret key** (nome: `openclaw`). A chave começa com `sk-...`.
+     3. Cole a chave no painel da Eva (campo de API key / setup).
+   - ⚠️ **PEGADINHA Nº 1 (todo mundo cai):** **`platform.openai.com` ≠ `chatgpt.com`**. A *chave de
+     API* sai do **platform**; o *chatgpt.com* é só a assinatura. Cadastrar cartão no chatgpt.com
+     **não** gera chave de API.
+   - ⚠️ **A chave aparece UMA vez só** — copie na hora. Se fechar sem copiar, gere outra. Nunca cole
+     a chave em chat público nem suba pro Git.
+   - **Teste:** mande "oi, quem é você?" e confirme que a Eva respondeu. Aí o cérebro está ligado. ✅
+6. **Entregar este kit ao agente.** Instrua:
    "No seu novo agente, manda esta mensagem: *'Recebi um kit de instalação. Leia o arquivo
    0-LEIA-PRIMEIRO.md e seja meu tutor a partir daí.'* e me diz o que ele responder."
    - Se o serviço permite subir arquivos/zip, oriente a subir o kit no workspace primeiro.

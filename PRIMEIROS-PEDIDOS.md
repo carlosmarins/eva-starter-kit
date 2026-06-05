@@ -18,6 +18,10 @@ Deixe ela dizer quem é, do jeitinho dela. Você sente na hora a personalidade.
 ## 3. 🧰 "O que você consegue fazer?"
 Ela lista o que sabe e quais ferramentas já estão conectadas — ótimo pra você descobrir o que pedir.
 
+> 💡 **Pedido turbo (faz a Eva se conhecer):** *"Leia a doc oficial em `docs.openclaw.ai/llms-full.txt`
+> e me explique em português simples: o que você é, o que consegue e o que NÃO consegue fazer, e
+> como eu te configuro. Salve um resumo na sua memória."* Em 1 pedido ela vira muito mais útil.
+
 ## 4. ⏰ "Me lembra de ___ amanhã" / "todo dia às 8h me manda ___"
 O primeiro gostinho de ter um assistente de verdade: ela cuida das suas tarefas e lembretes.
 

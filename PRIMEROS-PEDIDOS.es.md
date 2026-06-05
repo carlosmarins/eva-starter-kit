@@ -18,6 +18,11 @@ Deja que diga quién es, a su manera. Vas a sentir su personalidad de inmediato.
 ## 3. 🧰 "¿Qué puedes hacer?"
 Te enlista lo que sabe y qué herramientas ya están conectadas — perfecto para saber qué pedirle.
 
+> 💡 **Petición turbo (hace que la Eva se conozca):** *"Lee la doc oficial en
+> `docs.openclaw.ai/llms-full.txt` y explícame en español simple: qué eres, qué puedes y qué NO
+> puedes hacer, y cómo te configuro. Guarda un resumen en tu memoria."* En 1 petición se vuelve
+> mucho más útil.
+
 ## 4. ⏰ "Recuérdame ___ mañana" / "todos los días a las 8 mándame ___"
 El primer gustito de tener un asistente de verdad: se encarga de tus pendientes y recordatorios.
 
