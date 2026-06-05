@@ -1,5 +1,13 @@
 # Changelog — Eva Starter Kit
 
+## v0.9.1 (2026-06-05) — Anti-overwhelm: o kit cresceu, a jornada continua simples 🧒
+Test-drive "criança de 5 anos" após 10 skills — nada faltando, mas risco de **excesso**. Ajustes de clareza:
+- **`criar-eva` (conclusão):** regra explícita **"NÃO despeje tudo"** — proteção instala **em silêncio**
+  (1 frase: "deixei sua Eva se cuidando sozinha"); evolução só é **mencionada** sob pedido. Nunca abrir menu de 10 skills pro leigo.
+- **README (PT+ES): "Mapa do kit"** em 3 grupos — **a jornada (você faz)** · **proteção automática (ela liga sozinha)**
+  · **poderes extras (quando pedir)** — pra leigo/tutor navegarem sem se perder.
+- **Regras de ouro alinhadas:** `criar-eva` aponta pras regras 9–11 do `0-LEIA-PRIMEIRO` (sem duplicar).
+
 ## v0.9.0 (2026-06-05) — Pesquisar, ler a web e auto-saúde 🔎🌐🩺
 Fase 3 destilada (adaptado, não copiado; leve, markdown/CPU, sem chave/GPU obrigatórios):
 - **Nova `pesquisar` 🔎:** SOP de pesquisa — planejar → aprovar se caro → coletar → **relatório COM FONTES**

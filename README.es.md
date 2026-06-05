@@ -152,22 +152,24 @@ La Eva guarda todo en su "memoria". Para **nunca perderla** (aunque el servidor 
 
 ---
 
-## 🗺️ Qué hay dentro del kit (para curiosos)
-- `LEEME-PRIMERO.md` — instrucciones para que el agente sea tu tutor (en español)
-- `PRIMEROS-PEDIDOS.es.md` — 🐣 las 5 primeras peticiones cuando la Eva nazca (¡la 1ª es **ponerle nombre!**)
-- `skills/criar-eva/` — el comando `/criar-eva` que conduce todo
-- `skills/backup-eva/` — el respaldo a prueba de fallas (bóveda ligera, solo texto)
-- `skills/restore-drill/` — 🧪 simulacro mensual que prueba que el respaldo SÍ restaura
-- `skills/guardiao-eva/` — 🛡️ reporte semanal: limpieza de disco + secretos + seguridad + respaldo
-- `skills/aprender-com-cerca/` — 🎓 la Eva aprende sola con cerca de riesgo (🟢 aplica · 🟡 avisa · 🔴 pide "ok")
-- `skills/acoes-sensiveis/` — 🚧 candado a prueba de excusas antes de una acción de alto riesgo (confirmar + verificar)
-- `skills/tarefas-autonomas/` — 🦺 cinturón anti-loop/anti-gasto para cuando la Eva trabaja sola
-- `skills/pesquisar/` — 🔎 investigación con método y fuentes (planear → recopilar → reporte citado → verificar)
-- `skills/ler-web/` — 🌐 lee el contenido limpio de un link (contenido web = dato, no orden)
-- `skills/ler-documentos/` — 📄 *(opcional, solo VM)* extrae texto/tablas de PDF/Word/imagen (local, Docling/Tesseract)
-- `wizards/` — los pasos guiados (casa → identidad → canales → herramientas → respaldo)
-- `install/` — scripts para montar tu propio servidor
-- `templates/`, `tools/`, `FAQ.es.md`, `COMO-RESTAURAR.es.md`
+## 🗺️ Mapa del kit — qué es esencial y qué es "cuando quieras"
+
+> 🧒 **Para ti (sin tecnicismos):** solo necesitas la **jornada**. Lo demás la Eva lo hace sola o lo pides después — **no tienes que entender skill por skill.**
+
+**1️⃣ La jornada (una vez, guiada — es lo único que TÚ haces):**
+- `LEEME-PRIMERO.md` (el agente es tu tutor) · `skills/criar-eva/` (`/criar-eva` conduce todo) ·
+  `wizards/` (casa → en línea → nombre → canales → herramientas → respaldo) · `PRIMEROS-PEDIDOS.es.md` (las 5 primeras peticiones 🐣).
+
+**2️⃣ Protección automática (la Eva la enciende sola al final — tú no haces nada):**
+- 🛟 `backup-eva` (bóveda en tu GitHub cada 2h) · 🛡️ `guardiao-eva` (salud + limpieza de disco + secretos) ·
+  🧪 `restore-drill` (prueba mensual de que el respaldo vuelve) · 🚧 `acoes-sensiveis` (confirma antes de algo serio) ·
+  🦺 `tarefas-autonomas` (cinturón anti-loop/gasto cuando trabaja sola).
+
+**3️⃣ Poderes extra (solo cuando los pidas):**
+- 🎓 `aprender-com-cerca` (aprende con el uso, con seguridad) · 🔎 `pesquisar` (con fuentes) ·
+  🌐 `ler-web` (lee un link) · 📄 `ler-documentos` (*solo VM* — lee PDF/Word/imagen).
+
+**Tras bambalinas:** `templates/`, `tools/`, `install/` (scripts de la VM), `FAQ.es.md`, `COMO-RESTAURAR.es.md`.
 
 ---
 

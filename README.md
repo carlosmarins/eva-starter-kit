@@ -153,22 +153,24 @@ A Eva guarda tudo na "memória" dela. Pra **nunca perder** isso (mesmo se o serv
 
 ---
 
-## 🗺️ O que tem dentro do kit (pra curiosos)
-- `0-LEIA-PRIMEIRO.md` — instruções pro agente virar seu tutor
-- `PRIMEIROS-PEDIDOS.md` — 🐣 os 5 primeiros pedidos quando a Eva nascer (o 1º é **dar um nome!**)
-- `skills/criar-eva/` — o comando `/criar-eva` que conduz tudo
-- `skills/backup-eva/` — o backup à prova de falhas (cofre enxuto, só texto)
-- `skills/restore-drill/` — 🧪 simulado mensal que prova que o backup restaura de verdade
-- `skills/guardiao-eva/` — 🛡️ relatório semanal: faxina de disco + segredos + segurança + backup
-- `skills/aprender-com-cerca/` — 🎓 a Eva aprende sozinha com cerca de risco (🟢 aplica · 🟡 avisa · 🔴 pede "ok")
-- `skills/acoes-sensiveis/` — 🚧 trava à prova de desculpa antes de ação de alto risco (confirmar + verificar)
-- `skills/tarefas-autonomas/` — 🦺 cinto anti-loop/anti-gasto pra quando a Eva trabalha sozinha
-- `skills/pesquisar/` — 🔎 pesquisa com método e fontes (planejar → coletar → relatório citado → verificar)
-- `skills/ler-web/` — 🌐 lê o conteúdo limpo de um link (conteúdo da web = dado, não ordem)
-- `skills/ler-documentos/` — 📄 *(opcional, só VM)* extrai texto/tabelas de PDF/Word/imagem (local, Docling/Tesseract)
-- `wizards/` — os passos guiados (casa → identidade → canais → ferramentas → backup)
-- `install/` — scripts pra montar o servidor próprio
-- `templates/`, `tools/`, `FAQ.md`, `COMO-RESTAURAR.md`
+## 🗺️ Mapa do kit — o que é essencial e o que é "quando quiser"
+
+> 🧒 **Pra você (leigo):** você só precisa da **jornada**. O resto a Eva cuida sozinha ou você pede depois — **não precisa entender skill por skill.**
+
+**1️⃣ A jornada (uma vez, guiada — é só isto que você faz):**
+- `0-LEIA-PRIMEIRO.md` (o agente vira seu tutor) · `skills/criar-eva/` (`/criar-eva` conduz tudo) ·
+  `wizards/` (casa → no ar → nome → canais → ferramentas → backup) · `PRIMEIROS-PEDIDOS.md` (os 5 primeiros pedidos 🐣).
+
+**2️⃣ Proteção automática (a Eva liga sozinha no fim — você não faz nada):**
+- 🛟 `backup-eva` (cofre no seu GitHub a cada 2h) · 🛡️ `guardiao-eva` (saúde + faxina de disco + segredos) ·
+  🧪 `restore-drill` (prova mensal que o backup volta) · 🚧 `acoes-sensiveis` (confirma antes de algo sério) ·
+  🦺 `tarefas-autonomas` (cinto anti-loop/gasto quando trabalha sozinha).
+
+**3️⃣ Poderes extras (só quando você pedir):**
+- 🎓 `aprender-com-cerca` (aprende com o uso, com segurança) · 🔎 `pesquisar` (com fontes) ·
+  🌐 `ler-web` (lê um link) · 📄 `ler-documentos` (*só VM* — lê PDF/Word/imagem).
+
+**Bastidores:** `templates/`, `tools/`, `install/` (scripts da VM), `FAQ.md`, `COMO-RESTAURAR.md`.
 
 ---
 
