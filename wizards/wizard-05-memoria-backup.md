@@ -16,15 +16,17 @@ Objetivo: a Eva lembrar das coisas E ter backup automático. Esta é a lição m
 3. Higiene: ensine os comandos `/new` (assunto novo) e `/compact` (sessão longa) e a regra
    "no máximo 3-4 tópicos no Telegram" (senão o contexto entope e ela fica lenta).
 
-## Parte B — Backup automático (faça SEMPRE)
-1. **Workspace → Git.** Crie um repositório **privado** (GitLab/GitHub da pessoa). Transforme
-   `~/.openclaw/workspace` num repo e configure um **timer** (systemd ou cron) que faz
-   `add/commit/push` automático a cada **2 horas**. Assim memória/identidade/skills ficam versionadas
-   **fora** do servidor. (Segredos no `.gitignore` — nunca sobem.)
-2. **VM própria — snapshot diário do disco.** Crie um agendamento de snapshot (GCP resource-policy)
-   no disco da VM, retendo ~14 dias. Recuperação completa em minutos se a VM morrer.
-3. **Gerenciado — não confie só na plataforma.** O backup do workspace pro Git (passo 1) é
-   essencial, porque o backup nativo do provedor pode falhar/expirar.
+## Parte B — Backup automático (faça SEMPRE, e CEDO) 🛟
+> **Esta é a parte que evita o desastre.** Idealmente faça logo após o agente estar no ar — não
+> deixe a pessoa investir horas na Eva sem o cofre ligado.
+
+1. **Use a skill dedicada `backup-eva`** — ela configura o cérebro da Eva sendo empurrado pra um
+   **GitHub PRIVADO do próprio dono**, a cada 2h, pela **própria Eva** (cron do OpenClaw). Funciona
+   **mesmo em serviço gerenciado travado** e **verifica** (só conclui quando vê o commit no GitHub).
+2. **VM própria — reforço:** adicione um **snapshot diário do disco** (GCP resource-policy, ~14 dias)
+   + opcionalmente um systemd timer pro push (mais robusto que o cron do agente).
+3. **Gerenciado — regra de ouro:** o backup do provedor **não conta** (pode expirar/falhar, foi o que
+   derrubou quem criou este kit). O cofre no GitHub do dono (passo 1) é o que garante.
 
 ## Parte C — (opcional, avançado) Manutenção automática
 Para VM própria: ofereça um job semanal que faz snapshot → patches de SO → update do OpenClaw,

@@ -32,8 +32,12 @@ cada etapa tem um wizard dedicado em `wizards/`.
 5. **`wizard-03-canais`** → Telegram (primeiro), depois WhatsApp/Slack se quiser.
 6. **`wizard-04-ferramentas`** ⭐ → pergunta QUAIS ferramentas e, pra cada, ensina a pegar a
    credencial, conecta e **testa na hora**.
-7. **`wizard-05-memoria-backup`** → memória (hot.md + heartbeat) + **backup automático** (workspace→Git
-   a cada 2h; snapshot diário do disco em VM) + (opcional) manutenção automática.
+7. **`wizard-05-memoria-backup`** → memória (hot.md + heartbeat) + **backup automático** + (opcional) manutenção.
+
+> 🛟 **REGRA CRÍTICA — backup cedo:** assim que o agente estiver no ar (passo 3), antes de investir
+> tempo configurando o resto, rode a skill **`backup-eva`** pra ligar o cofre no GitHub do dono.
+> Foi a FALTA disso que fez quem criou este kit perder tudo num gerenciado. Não conclua a jornada
+> sem o backup **verificado** (commit visível no GitHub do dono).
 
 ## Controle de progresso
 Marque o avanço em `memory/hot.md` (ex.: `criar-eva: passo 4/7 — canais`). Se a pessoa parar e
