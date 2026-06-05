@@ -10,7 +10,10 @@ Objetivo: preencher `IDENTITY.md`, `SOUL.md` e `USER.md` (do `templates/`) com b
 leve. Resultado: o agente para de ser genérico e vira "a Eva da pessoa".
 
 ## Como conduzir (perguntas leves, uma por vez)
-1. **Nome:** "Como você quer chamar sua assistente? (pode ser Eva, ou outro que você curtir)"
+1. **Nome (o momento mágico — vem SEMPRE primeiro):** dar um nome é o batismo do assistente, o
+   primeiro ato. Pergunte com carinho: "Vamos começar pelo principal: **que nome você quer dar pra
+   sua assistente?** (pode ser Eva, ou qualquer um que você curtir — ela vai se chamar assim em
+   tudo)." Registre o nome em todo lugar (IDENTITY/SOUL/topo da memória).
 2. **Jeito dela:** "Você prefere que ela fale de um jeito mais formal ou mais informal/amigável?"
 3. **Sobre você (o básico p/ ajudar melhor):** nome, como te chamar, fuso/cidade, idioma,
    o que você faz (1 frase). Explique: "isso ajuda ela a te entender — não vou guardar nada sensível."

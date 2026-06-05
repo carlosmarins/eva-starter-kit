@@ -57,6 +57,10 @@ voltar depois, retome de onde estava (resuma o estado em 1 frase, não re-narre 
 ## Stop condition (jornada concluída)
 Eva no ar + identidade + ao menos 1 canal funcionando + backup automático rodando. Aí comemore de
 verdade: *"Pronto! A <nome> está viva, conectada e com backup. Ela é sua. 🎉"*
+> 🐣 **Entregue o cartão de boas-vindas:** aponte a pessoa pro `PRIMEIROS-PEDIDOS.md` (ou
+> `PRIMEROS-PEDIDOS.es.md`) — os 5 primeiros pedidos. **Regra de ouro do nascimento:** o
+> **primeiríssimo pedido é DAR UM NOME** ao assistente ("a partir de agora seu nome é ___"). É o
+> momento mágico — não pule.
 
 ## Erros comuns (não trave a pessoa)
 - "Não achei onde pegar a credencial" → guie pelo caminho exato da ficha em `tools/README.md` (ou link/print).

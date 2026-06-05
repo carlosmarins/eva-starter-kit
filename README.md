@@ -133,6 +133,7 @@ A Eva guarda tudo na "memória" dela. Pra **nunca perder** isso (mesmo se o serv
 
 ## 🗺️ O que tem dentro do kit (pra curiosos)
 - `0-LEIA-PRIMEIRO.md` — instruções pro agente virar seu tutor
+- `PRIMEIROS-PEDIDOS.md` — 🐣 os 5 primeiros pedidos quando a Eva nascer (o 1º é **dar um nome!**)
 - `skills/criar-eva/` — o comando `/criar-eva` que conduz tudo
 - `skills/backup-eva/` — o backup à prova de falhas (cofre enxuto, só texto)
 - `skills/restore-drill/` — 🧪 simulado mensal que prova que o backup restaura de verdade

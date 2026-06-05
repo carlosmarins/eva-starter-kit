@@ -33,20 +33,28 @@ Siga este molde (os detalhes de onde clicar estão em `tools/<ferramenta>.md`):
    Cada ferramenta tem seu jeito (veja a ficha em `tools/`).
 3. **Grave com segurança:** salve em `~/.openclaw/credentials/<ferramenta>/<conta>.env`
    (chmod 600). **Nunca** no Git, nunca repita no chat.
-4. **Instale o script** correspondente de `tools/` no workspace (`tools/<ferramenta>.py`).
+4. **Conecte — PREFIRA o conector nativo (MCP) do OpenClaw**, que é o jeito moderno e mais fácil:
+   - 1º tente **`openclaw mcp add`** (ele faz *probe* e valida na hora). Se a ferramenta usa login
+     social, **`openclaw mcp login <servidor>`** abre o **OAuth de 1 clique** (ideal pra leigo —
+     Google/Slack/GitHub/Jira/Atlassian/BigQuery costumam ter servidor MCP pronto).
+   - Use `openclaw mcp tools` pra deixar só as permissões necessárias (privilégio mínimo).
+   - **Fallback (só se NÃO houver MCP):** ferramentas nicho (ex.: Omie, Zendesk) podem precisar de
+     um script próprio no workspace (`tools/<ferramenta>.py` via API). Use só quando não existir MCP.
 5. **TESTE na hora** e comemore com um número real:
    "✅ Conectado! Achei **247 convênios** no seu Omie 🎉".
    Se falhar, diga exatamente o que faltou e tente de novo (não siga quebrado).
 
 ## Catálogo (resumo — fichas completas em `tools/`)
-| Ferramenta | O que precisa | Como a Eva usa |
+> **Regra:** conector **nativo MCP** primeiro (`openclaw mcp add`/`login`); script `.py` só como fallback.
+
+| Ferramenta | Como conectar (preferido) | O que precisa |
 |---|---|---|
-| Omie | App Key + App Secret | `tools/omie.py` (API) |
-| Jira | site + email + API token | `tools/jira.py` |
-| Zendesk | subdomínio + email + API token | `tools/zendesk.py` |
-| BigQuery | acesso do projeto (chave SA ou ADC) | `tools/bigquery.py` |
-| Google Drive/Gmail/Agenda | login Google (OAuth, 1 clique) | `tools/google.py` |
-| GitLab/GitHub | token de acesso | `tools/gitlab.py` / `tools/github.py` |
+| Google Drive/Gmail/Agenda | **MCP + `mcp login`** (OAuth 1 clique) | login Google |
+| Jira/Atlassian | **MCP + `mcp login`** (OAuth) | conta Atlassian |
+| Slack/GitHub | **MCP + `mcp login`** (OAuth) | login da conta |
+| BigQuery | **MCP** (`mcp add`) | acesso do projeto (ADC ou chave SA) |
+| Omie | script `tools/omie.py` (sem MCP) | App Key + App Secret |
+| Zendesk | script `tools/zendesk.py` (sem MCP) | subdomínio + email + API token |
 
 ## Regras
 - **Privilégio mínimo por padrão:** somente-leitura primeiro; escrita só com pedido explícito.

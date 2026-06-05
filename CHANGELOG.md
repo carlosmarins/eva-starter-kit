@@ -1,5 +1,15 @@
 # Changelog — Eva Starter Kit
 
+## v0.4.0 (2026-06-04) — Nascimento 🐣
+- **Cartão "primeiros pedidos"** (`PRIMEIROS-PEDIDOS.md` + `.es.md`): os 5 primeiros pedidos pra
+  fazer assim que a Eva nasce — ativa a pessoa e mostra valor na hora. **Regra de ouro:** o
+  **primeiríssimo pedido é DAR UM NOME** ao assistente (o momento mágico do nascimento). `criar-eva`
+  e `wizard-02` reforçam o nome como primeiro ato.
+- **Conectores nativos (MCP) primeiro:** confirmado que o OpenClaw 2026.6.1 tem subsistema MCP
+  completo (`openclaw mcp add`/`login` OAuth de 1 clique/`tools`). `wizard-04` e `tools/README`
+  agora **preferem conector nativo MCP** (Google/Slack/GitHub/Jira/Atlassian/BigQuery); scripts
+  `.py` viram **fallback** só pra ferramentas nicho sem MCP (Omie/Zendesk). Mais fácil e mais seguro.
+
 ## v0.3.0 (2026-06-04) — Modo Guardião 🛡️
 - **Nova skill `guardiao-eva`** (semanal): relatório de saúde + **faxina de disco** automática
   (`openclaw sessions cleanup --enforce`, poda mídia/logs, `git gc` do cofre) — resolve o estouro de
