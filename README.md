@@ -1,35 +1,143 @@
-# Eva Starter Kit 🌱
+<!-- Banner: docs/img/00-banner.png (logo/arte "Eva Starter Kit") -->
 
-Crie a **sua própria assistente de IA pessoal** (a "Eva", rodando em OpenClaw) — mesmo sem saber
-nada de tecnologia. Você só precisa de **internet e um cartão de crédito**.
+# 🌱 Eva Starter Kit — crie a sua assistente de IA pessoal
 
-> A mágica: você **não lê manual**. Você conversa. O próprio agente lê este kit e vira o seu
-> **tutor**, te guiando passo a passo, fazendo o trabalho pesado e te ensinando o resto.
+> **Em 1 frase:** este kit te ajuda a ter a **sua própria assistente de inteligência artificial**
+> (vamos chamar de **Eva**) — que conversa com você no Telegram/WhatsApp, lembra das suas coisas e
+> usa as suas ferramentas. **Você não precisa saber nada de tecnologia.** É só seguir os passos.
 
-## Como funciona (3 passos)
-1. **Tenha um agente "no ar"** — pelo jeito **fácil** (serviço gerenciado, em minutos) ou
-   **poderoso** (uma VM só sua). O kit te guia nos dois.
-2. **Dê este kit pro agente** — ele lê o `0-LEIA-PRIMEIRO.md` e assume como tutor.
-3. **Responda as perguntas dele** — identidade, canais (Telegram/WhatsApp/Slack), ferramentas
-   (Omie, Jira, Drive, etc.) e backup. Em ~30 min você tem a sua Eva.
+> 🧒 **Feito pra qualquer pessoa.** Se você sabe usar WhatsApp e fazer uma compra na internet,
+> você consegue. A própria Eva vira sua **professora** e faz o trabalho difícil por você.
 
-## Dois caminhos
-| | 🟢 Gerenciado (fácil) | 🔵 VM própria (poderoso) |
+---
+
+## ✅ O que você precisa (só isso)
+- 📶 Internet
+- 💳 Um cartão de crédito
+- ⏱️ ~15 a 30 minutos
+- ☕ Calma — vai dar tudo certo
+
+---
+
+## 🛣️ Existem 2 jeitos. Qual é o seu?
+
+Pense numa **casa** pra sua Eva morar:
+
+| | 🟢 **Jeito FÁCIL** (casa alugada) | 🔵 **Jeito PODEROSO** (casa própria) |
 |---|---|---|
-| Pra quem | Não-técnico, quer rapidez | Quer controle total + backup robusto |
-| Como | Contrata um plano (Hostinger) → agente pronto | Roda 1 instalador numa VM (GCP) |
-| Tempo | ~5 min | ~20 min (guiado) |
+| Pra quem | Quer o **mais simples** possível | Quer **controle total** e é mais curioso |
+| Como | Você assina um serviço pronto (Hostinger) | Você cria um servidor na Google (guiado) |
+| Tempo | ~5 min | ~20 min |
+| **Recomendado pra começar** | ⭐ **SIM** | — |
 
-## O que tem no kit
-- `0-LEIA-PRIMEIRO.md` — instruções pro agente virar tutor
-- `wizards/` — os assistentes passo a passo (escolha-casa → identidade → canais → ferramentas → backup)
-- `install/` — `install-eva.sh` (monta a VM do zero) e `provision-gcp.sh`
-- `tools/` — ferramentas comuns prontas pra conectar (Omie, Jira, Zendesk, BigQuery, Drive, GitLab...)
-- `templates/` e `exemplos/` — modelos de identidade e uma Eva de referência
-- `FAQ.md` — dúvidas comuns
+> 👉 **Na dúvida, vá no Jeito FÁCIL (🟢).** Você pode mudar depois.
 
-## Começando
-- **Gerenciado:** siga o `FAQ.md` → "Como contratar" e depois cole este kit pro seu agente.
-- **VM própria:** veja `install/README` ou deixe o `wizard-01b` te guiar.
+---
 
-Feito com ❤️ pra deixar IA pessoal ao alcance de qualquer um.
+## 🟢 JEITO FÁCIL — passo a passo (Hostinger)
+
+### Passo 1 — Abrir a página do serviço
+Abra o link do **OpenClaw gerenciado** (peça pro Carlos o link, ou procure "Hostinger OpenClaw").
+
+<!-- docs/img/01-hostinger-home.png — tela inicial da Hostinger com os planos -->
+*(imagem: tela de planos)*
+
+### Passo 2 — Escolher o plano e pagar
+- Clique no botão de **assinar/comprar** o plano mais simples (o básico já roda sua Eva).
+- Preencha os dados do **cartão** e confirme. ✅
+
+<!-- docs/img/02-hostinger-checkout.png — tela de pagamento -->
+*(imagem: tela de checkout/pagamento)*
+
+> 🔒 Só **você** digita o cartão. Ninguém mais vê.
+
+### Passo 3 — Entrar no painel da sua Eva
+Depois de pagar, a Hostinger te leva pra um **painel** onde você consegue **conversar com o agente**
+(é uma telinha de chat / terminal).
+
+<!-- docs/img/03-hostinger-painel.png — painel onde se fala com o agente -->
+*(imagem: painel/terminal do agente)*
+
+### Passo 4 — Dar este kit pra ela e mandar ela te ensinar
+No chat do seu novo agente, **cole exatamente esta mensagem**:
+
+> *"Recebi um kit de instalação. Leia o arquivo `0-LEIA-PRIMEIRO.md` e seja meu tutor a partir daí.
+> Pode rodar a skill /criar-eva."*
+
+Pronto! A partir daí **a própria Eva te guia** — ela vai te perguntar o nome dela, conectar o
+Telegram, suas ferramentas, e (importante!) ligar o **backup**. É só responder o que ela perguntar. 🎉
+
+> 📥 *Como pegar os arquivos do kit?* Veja "📦 Como baixar este kit" mais abaixo.
+
+---
+
+## 🔵 JEITO PODEROSO — passo a passo (servidor na Google)
+
+> Mais passos, mas a Eva fica 100% sua. **A Eva também te guia aqui** — você não está sozinho.
+
+### Passo 1 — Criar conta na Google Cloud
+Acesse **console.cloud.google.com**, entre com sua conta Google, crie um **projeto novo** e
+**ative o faturamento** (cartão — o uso inicial costuma cair nos créditos grátis).
+
+<!-- docs/img/10-gcp-novo-projeto.png — criar projeto no Google Cloud -->
+
+### Passo 2 — Abrir o "Cloud Shell"
+No topo do site, clique no ícone **`>_`** (Cloud Shell). É um terminal que já vem pronto.
+
+<!-- docs/img/11-gcp-cloudshell.png — botão do Cloud Shell -->
+
+### Passo 3 — Rodar os 2 comandos
+Cole os comandos abaixo (a Eva/este kit te dá eles prontos):
+```bash
+bash provision-gcp.sh SEU_PROJETO     # cria o servidor
+# depois, dentro do servidor:
+sudo bash install-eva.sh              # instala a Eva
+```
+
+### Passo 4 — Falar com a Eva e mandar ela te ensinar
+Quando ela responder a um "oi", mande: *"Leia o `0-LEIA-PRIMEIRO.md` e rode /criar-eva."*
+Daí em diante é igual ao jeito fácil: ela te guia no resto. 🎉
+
+---
+
+## 📦 Como baixar este kit (do GitHub)
+1. No topo desta página, clique no botão verde **`< > Code`**.
+2. Clique em **Download ZIP**. (Ou pegue a [Release mais recente](../../releases) — é o jeito recomendado.)
+3. Descompacte o arquivo. Pronto — é esse conteúdo que você entrega pro seu agente.
+
+<!-- docs/img/20-github-download-zip.png — botão Code > Download ZIP -->
+*(imagem: botão verde "Code" → "Download ZIP")*
+
+> Quem manja de Git pode: `git clone https://github.com/carlosmarins/eva-starter-kit.git`
+
+---
+
+## 🛟 O MAIS IMPORTANTE: nunca perca a sua Eva
+A Eva guarda tudo na "memória" dela. Pra **nunca perder** isso (mesmo se o servidor sumir):
+- A própria Eva **salva o cérebro dela no SEU GitHub** (um cofre privado), automático, a cada 2h.
+- Ela **te avisa** se o backup parar.
+- Se um dia precisar, é só recuperar (tem um guia `COMO-RESTAURAR.md` dentro do seu cofre).
+
+> ⚠️ **Não confie só no backup do serviço** — ele pode falhar. O cofre no **seu GitHub** é o que
+> garante. A Eva configura isso pra você no `/criar-eva` (passo de backup). **Não pule.**
+
+---
+
+## 🆘 Travou? Deu erro?
+- A Eva foi ensinada a **perguntar** quando não sabe — então responda o que ela perguntar.
+- Erro no serviço pago? Chame o **suporte** do provedor.
+- Mais dúvidas: veja o **[FAQ.md](FAQ.md)**.
+
+---
+
+## 🗺️ O que tem dentro do kit (pra curiosos)
+- `0-LEIA-PRIMEIRO.md` — instruções pro agente virar seu tutor
+- `skills/criar-eva/` — o comando `/criar-eva` que conduz tudo
+- `skills/backup-eva/` — o backup à prova de falhas
+- `wizards/` — os passos guiados (casa → identidade → canais → ferramentas → backup)
+- `install/` — scripts pra montar o servidor próprio
+- `templates/`, `tools/`, `FAQ.md`, `COMO-RESTAURAR.md`
+
+---
+
+<sub>Feito com ❤️ pra deixar IA pessoal ao alcance de qualquer um · MIT · github.com/carlosmarins/eva-starter-kit</sub>
