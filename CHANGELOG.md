@@ -1,5 +1,13 @@
 # Changelog — Eva Starter Kit
 
+## v1.0.1 (2026-06-09) — Lição de campo: Eva não responde em grupo do Telegram 👥
+Primeiro amigo usando o kit bateu nisso — documentado pros próximos:
+- **FAQ (PT+ES):** "responde no privado/WhatsApp mas não em grupo (`not-allowed`)" → explica as **DUAS
+  travas independentes** de grupo: (1) **privacy mode** do @BotFather (Disable + **re-adicionar** o bot)
+  e (2) **autorização de QUEM ENVIA** no OpenClaw (`groupAllowFrom`/`allowFrom` com o ID numérico do dono)
+  — `allowAll` no grupo **não basta**. + `requireMention: false` pra responder a tudo. + prompt pronto pra pedir à própria Eva.
+- **`wizard-03-canais`:** Parte A.5 reescrita com as duas travas (era só o privacy mode).
+
 ## v1.0.0 (2026-06-05) — Primeira versão estável 🎉🦄
 Marco de consolidação — o kit está completo, testado (test-drive real numa VM) e à prova de iniciante.
 - **Git how-to detalhado (PT+ES):** "Como pegar o kit" em 3 jeitos (não-baixar/link · ZIP · `git clone`),

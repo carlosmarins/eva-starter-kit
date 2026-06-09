@@ -33,13 +33,20 @@ Isso é o que dá o **token** (a "senha" do bot). Guie clique a clique:
 5. "Pronto! Ele te manda uma mensagem com um **token** parecido com `8123456:AAF...xyz`.
    **Copia e cola aqui pra mim.**" → (você guarda em segredo; nunca repita o token no chat depois.)
 
-### Parte A.5 — só se for usar a Eva em GRUPO: desligar o "modo privacidade" 👥
-> **Pegadinha importante:** por padrão, um bot do Telegram **só enxerga** mensagens onde é
-> @mencionado ou comandos (`/algo`). Em conversa 1-a-1 (DM) isso não atrapalha. Mas se você for pôr
-> a Eva num **grupo** (equipe, família), ela fica **muda** — não lê o contexto. Conserte ANTES de
-> adicionar no grupo:
-> 1. No **@BotFather**, mande `/setprivacy` → escolha o seu bot → clique **Disable**.
-> 2. Se o bot **já estava** num grupo, **remova e adicione de novo** pra valer.
+### Parte A.5 — só se for usar a Eva em GRUPO: as DUAS travas (pegadinha nº1) 👥
+> Pra Eva responder em **grupo** do Telegram, precisa de **DUAS** coisas — quem ajusta só uma fica
+> batendo cabeça (sintoma: responde no DM/WhatsApp mas em grupo dá log **`not-allowed`**):
+>
+> **Trava 1 — Privacy mode do bot (@BotFather):** por padrão o bot só vê @menção/comando no grupo.
+> `/setprivacy` → escolha o bot → **Disable**. E se o bot **já estava** no grupo, **remova e adicione
+> de novo** (só vale na re-entrada).
+>
+> **Trava 2 — Autorização de QUEM ENVIA (OpenClaw):** em grupo o OpenClaw checa o **ID numérico de
+> quem mandou** a mensagem, não só o grupo. Configure em `channels.telegram`:
+> `groupPolicy: "open"` (ou o grupo na allowlist `groups`) **+ o ID do dono em `groupAllowFrom`**
+> (ou `allowFrom`). **`allowAll` no grupo NÃO basta** — sem o `groupAllowFrom` dá `not-allowed`.
+> Pra responder a tudo (não só quando mencionam), `requireMention: false` no grupo.
+> *(O ID numérico está no log do `not-allowed`, ou via `/start` no @userinfobot.)*
 
 ### Parte B — conectar o bot na Eva
 **Se for Gerenciado (Hostinger):**

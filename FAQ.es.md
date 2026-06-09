@@ -87,6 +87,22 @@ Es el paso que más se atora — tranqui, es fácil cuando sabes el truco:
   WhatsApp → Conectar → en el celular, WhatsApp → Dispositivos vinculados → Vincular un dispositivo.
 - Empieza por **Telegram** (más estable). El paso a paso completo está en `wizard-03-canais`.
 
+### La Eva responde en privado/WhatsApp pero NO en los grupos de Telegram (log `not-allowed`)?
+Es el tropiezo nº1 de grupos — y casi nunca es bug. En grupo, Telegram + OpenClaw tienen **dos
+candados independientes**, y la mayoría solo ajusta uno:
+1. **Privacy mode del bot** (en @BotFather): `/setprivacy` → **Disable** → y **saca el bot del grupo y
+   agrégalo de nuevo** (solo aplica al re-entrar). Sin esto el bot queda "ciego" en el grupo.
+2. **Autorización de QUIÉN ENVÍA** (en OpenClaw): en grupo, OpenClaw revisa el **ID numérico de quien
+   mandó** el mensaje, no solo el grupo. Si tu ID no está en **`groupAllowFrom`** (o `allowFrom`), da
+   **`not-allowed`** — *aun con el grupo permitido / `allowAll`*. **Esto es lo que falta en la mayoría de los casos.**
+3. **Mencionar:** por defecto (`requireMention: true`) la Eva solo responde cuando la **@mencionan** en
+   el grupo. Para que responda a todo, pon `requireMention: false` en ese grupo.
+
+**Cómo pedirle a la propia Eva que lo arregle** (pégalo en su chat): *"En grupo, OpenClaw autoriza por
+QUIÉN ENVÍA. Toma el ID numérico del remitente que aparece en el log `not-allowed`, agrégalo en
+`groupAllowFrom` y `allowFrom`, pon `groupPolicy: open` y `requireMention: false` en el grupo, recarga,
+y **solo di 'listo' después de verme responder en el grupo**."* (Tu ID numérico también sale mandando `/start` al **@userinfobot**.)
+
 ### Mi disco/cuota se llenó rápido (casi llego al límite). ¿Por qué?
 Normal — lo que crece **no** es la memoria (texto ligero), sino **sesiones, media y logs** del día a
 día. Quien creó este kit casi llegó a 10GB en 3 días por eso. Soluciones:
