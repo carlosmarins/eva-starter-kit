@@ -33,20 +33,28 @@ Isso é o que dá o **token** (a "senha" do bot). Guie clique a clique:
 5. "Pronto! Ele te manda uma mensagem com um **token** parecido com `8123456:AAF...xyz`.
    **Copia e cola aqui pra mim.**" → (você guarda em segredo; nunca repita o token no chat depois.)
 
-### Parte A.5 — só se for usar a Eva em GRUPO: as DUAS travas (pegadinha nº1) 👥
-> Pra Eva responder em **grupo** do Telegram, precisa de **DUAS** coisas — quem ajusta só uma fica
-> batendo cabeça (sintoma: responde no DM/WhatsApp mas em grupo dá log **`not-allowed`**):
->
-> **Trava 1 — Privacy mode do bot (@BotFather):** por padrão o bot só vê @menção/comando no grupo.
-> `/setprivacy` → escolha o bot → **Disable**. E se o bot **já estava** no grupo, **remova e adicione
-> de novo** (só vale na re-entrada).
->
-> **Trava 2 — Autorização de QUEM ENVIA (OpenClaw):** em grupo o OpenClaw checa o **ID numérico de
-> quem mandou** a mensagem, não só o grupo. Configure em `channels.telegram`:
-> `groupPolicy: "open"` (ou o grupo na allowlist `groups`) **+ o ID do dono em `groupAllowFrom`**
-> (ou `allowFrom`). **`allowAll` no grupo NÃO basta** — sem o `groupAllowFrom` dá `not-allowed`.
-> Pra responder a tudo (não só quando mencionam), `requireMention: false` no grupo.
-> *(O ID numérico está no log do `not-allowed`, ou via `/start` no @userinfobot.)*
+### Parte A.5 — usar a Eva em GRUPO (o tropeço nº1 — VOCÊ, tutor, faz o pesado) 👥
+> ⚠️ **A pessoa NÃO deve digitar comando nem caçar "ID numérico".** Isso é o que tornou esse passo
+> difícil até pra gente técnica. **Você (a Eva/tutor) faz a config; a pessoa só clica no Telegram.**
+> Grupo tem **DUAS travas** — sintoma de quem erra: responde no DM/WhatsApp mas no grupo dá `not-allowed`.
+
+**Trava 1 (só a pessoa pode — são 2 cliques no Telegram):**
+- "No **@BotFather**, manda `/setprivacy` → escolhe o bot → **Disable**."
+- "Adiciona o bot no grupo. (Se ele já estava, **remove e adiciona de novo** — só vale na re-entrada.)"
+
+**Trava 2 (VOCÊ faz sozinha — pegue o ID da pessoa automaticamente, sem ela procurar):**
+1. Peça: *"manda um 'oi' pro bot **no privado** do Telegram"* (ou no grupo). Quando ela mandar, **o ID
+   numérico dela aparece pra você** (no privado o OpenClaw mostra o remetente; no grupo, na linha de
+   log `not-allowed`). **Capture esse número você mesma** — não peça pra ela procurar.
+2. Configure você, via `openclaw config patch` (a pessoa não vê isso):
+   `channels.telegram.groupPolicy = "open"`; **adicione o ID dela em `groupAllowFrom`** (e `allowFrom`);
+   `requireMention: false` no grupo (pra responder a tudo, não só quando mencionam). **`allowAll` no
+   grupo NÃO basta** — sem `groupAllowFrom` dá `not-allowed`.
+3. Recarregue (`openclaw gateway restart`) e **verifique de verdade**: peça pra ela mandar no grupo e
+   confirme que você respondeu lá (truque: acompanhe no chat do painel se chegou / parou de dar `not-allowed`).
+   **Só diga "pronto" depois de responder no grupo.**
+
+> Resumindo pra pessoa: *"Faz 2 cliques no BotFather (Disable + re-adicionar) e me manda um oi — o resto eu configuro sozinha."*
 
 ### Parte B — conectar o bot na Eva
 **Se for Gerenciado (Hostinger):**

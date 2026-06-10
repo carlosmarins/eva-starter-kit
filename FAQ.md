@@ -102,6 +102,7 @@ independentes**, e a maioria só ajusta uma:
 ENVIA. Pegue o ID numérico do remetente que aparece no log `not-allowed`, adicione em `groupAllowFrom`
 e `allowFrom`, ponha `groupPolicy: open` e `requireMention: false` no grupo, recarregue, e **só diga
 'feito' depois de me ver responder no grupo**."* (Seu ID numérico também sai mandando `/start` pro **@userinfobot**.)
+> 📖 **Guia passo a passo dedicado:** [`docs/GRUPO-TELEGRAM.md`](docs/GRUPO-TELEGRAM.md) — com o jeito fácil (a Eva faz), o manual e o truque de debug.
 
 ### Meu disco/cota encheu rápido (quase bati o limite). Por quê?
 Normal — o que cresce **não** é a memória (texto leve), e sim **sessões, mídia e logs** do dia a dia.

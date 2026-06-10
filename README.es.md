@@ -164,6 +164,7 @@ La Eva guarda todo en su "memoria". Para **nunca perderla** (aunque el servidor 
 
 ## 🆘 ¿Se atoró? ¿Dio error?
 - A la Eva se le enseñó a **preguntar** cuando no sabe — así que responde lo que te pregunte.
+- **¿La Eva no responde en el GRUPO de Telegram?** (el tropiezo nº1) → guía dedicada: **[docs/GRUPO-TELEGRAM.es.md](docs/GRUPO-TELEGRAM.es.md)**.
 - ¿Error en el servicio de paga? Llama al **soporte** del proveedor.
 - Más dudas: mira el **[FAQ.es.md](FAQ.es.md)**.
 

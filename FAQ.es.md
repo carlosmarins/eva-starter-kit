@@ -102,6 +102,7 @@ candados independientes**, y la mayoría solo ajusta uno:
 QUIÉN ENVÍA. Toma el ID numérico del remitente que aparece en el log `not-allowed`, agrégalo en
 `groupAllowFrom` y `allowFrom`, pon `groupPolicy: open` y `requireMention: false` en el grupo, recarga,
 y **solo di 'listo' después de verme responder en el grupo**."* (Tu ID numérico también sale mandando `/start` al **@userinfobot**.)
+> 📖 **Guía paso a paso dedicada:** [`docs/GRUPO-TELEGRAM.es.md`](docs/GRUPO-TELEGRAM.es.md) — con la forma fácil (la Eva lo hace), la manual y el truco de debug.
 
 ### Mi disco/cuota se llenó rápido (casi llego al límite). ¿Por qué?
 Normal — lo que crece **no** es la memoria (texto ligero), sino **sesiones, media y logs** del día a

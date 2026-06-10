@@ -1,5 +1,14 @@
 # Changelog — Eva Starter Kit
 
+## v1.0.2 (2026-06-09) — Grupo do Telegram: tirar o terminal da mão do leigo 👥🧒
+2 amigos (técnicos!) tropeçaram no mesmo grupo do Telegram → o passo **não estava fácil de verdade**. Correção de UX:
+- **`wizard-03` (grupo) agora é AGENT-DRIVEN:** a pessoa faz só **2 cliques no @BotFather** (Disable + re-adicionar);
+  a **própria Eva captura o ID numérico do dono automaticamente** (do log/privado) e configura `groupPolicy`/
+  `groupAllowFrom`/`requireMention` sozinha, e **verifica** antes de dizer "pronto". **Sem o leigo digitar comando nem caçar ID.**
+- **Novo guia dedicado `docs/GRUPO-TELEGRAM.md` (PT+ES):** receita comprovada (jeito fácil "peça pra Eva" +
+  manual no terminal + **truque de debug** do painel) + aviso "NUNCA atualize o runtime do managed". Linkado no README e FAQ.
+- Lição honesta registrada: o ponto de **grupo** era o menos "criança de 5 anos" do kit; agora o trabalho pesado é da Eva.
+
 ## v1.0.1 (2026-06-09) — Lição de campo: Eva não responde em grupo do Telegram 👥
 Primeiro amigo usando o kit bateu nisso — documentado pros próximos:
 - **FAQ (PT+ES):** "responde no privado/WhatsApp mas não em grupo (`not-allowed`)" → explica as **DUAS
