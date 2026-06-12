@@ -1,5 +1,11 @@
 # Changelog — Eva Starter Kit
 
+## v1.0.3 (2026-06-12) — Lição de campo: Codex 403 = re-logar com `--force` 🔑
+Na Eva de referência o codex passou a cair pro reserva com **403/`auth`** (Cloudflare do `chatgpt.com`)
+mesmo com o **token válido** — 322 fallbacks/24h. Causa = token OAuth **"preso"/marcado**; conserto = **re-login com `--force`** (token limpo) → resolveu (0 fallbacks após).
+- **FAQ (PT+ES):** nova entrada "Codex cai pro reserva com 403/auth mesmo com login válido" → `openclaw models auth login --provider openai --device-code --force` + restart. Distinto de "token expirado".
+- **Alerta:** se o 403 voltar com token novo = OpenAI bloqueando uso automatizado da assinatura → **Gemini** (ou API key paga) é mais estável. Recado pra quem usa a Eva em automação/uso intenso.
+
 ## v1.0.2 (2026-06-09) — Grupo do Telegram: tirar o terminal da mão do leigo 👥🧒
 2 amigos (técnicos!) tropeçaram no mesmo grupo do Telegram → o passo **não estava fácil de verdade**. Correção de UX:
 - **`wizard-03` (grupo) agora é AGENT-DRIVEN:** a pessoa faz só **2 cliques no @BotFather** (Disable + re-adicionar);

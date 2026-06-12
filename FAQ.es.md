@@ -57,6 +57,19 @@ Si mandas **varios comandos/pruebas seguidas** en pocos minutos usando ChatGPT, 
 **bloqueo temporal** (anti-robot) y la Eva caer al modelo de respaldo hasta "enfriarse".
 Espacia las pruebas; si pasa, espera unos minutos.
 
+### La Eva (en ChatGPT/Codex) se cae al respaldo con error `403` / `auth` — ¿aun con el login válido?
+Si en los logs aparece `reason=auth` / un **403** de `chatgpt.com` ("Enable JavaScript and cookies") y se
+cae a Gemini, aun con el login **todavía válido (no expirado)**: el token OAuth probablemente está
+**"atorado"/marcado**. El arreglo es **re-loguear con `--force`** (genera un token limpio) — en la terminal:
+```
+openclaw models auth login --provider openai --device-code --force
+```
+Abre un **link + código** → inicias sesión con la cuenta ChatGPT → autorizas. Luego: `openclaw gateway restart`.
+*(Es distinto de "token expirado" — aquí el `--force` es el truco.)*
+> ⚠️ Si el 403 **vuelve aun con token nuevo**, es OpenAI bloqueando el **uso automatizado** de la suscripción.
+> Ahí lo estable es **cambiar a Gemini** como modelo principal (o usar una **API key de pago** de OpenAI).
+> 💡 Por eso: si usas la Eva para **automatización/uso intenso**, el ChatGPT por suscripción puede ser inestable — **Gemini** suele ser más tranquilo.
+
 ### La Eva dio error de "archivo no encontrado" (equivocó el nombre de un archivo)?
 Pasa — a veces la IA "adivina" el nombre de un archivo. A la Eva se le indicó **no inventar rutas**:
 si una lectura falla, **lista la carpeta** (o usa `openclaw memory search`), encuentra el nombre
