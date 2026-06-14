@@ -1,5 +1,13 @@
 # Changelog — Eva Starter Kit
 
+## v1.0.4 (2026-06-14) — Manutenção resiliente: update que não derruba a Eva 🛡️
+Co-construído com a própria Eva (consultada sobre os incidentes reais dela). Nuggets genéricos pro `wizard-05`:
+- **Pós-upgrade SEMPRE `doctor --fix`** — `npm install`/update não roda as migrações (auth muda de lugar) → Eva sobe "viva" mas sem auth. (Reaplicar patch próprio do Codex DEPOIS do doctor.)
+- **Health-check REAL** (modelo primário responde + chamada de ferramenta funciona), não "processo subiu" → evita **falso-verde** (a Eva responder pelo reserva mascara o primário quebrado).
+- **Detectar fallback + auto-curar** pós-update (doctor+restart; se não recuperar, **avisar** — nada de quebra silenciosa) + sentinela de visibilidade.
+- **Snapshot/backup antes E depois** do update.
+- Bônus heartbeat: alerta se cair pro reserva por +15min (pega queda mid-week, que a manutenção semanal não cobre).
+
 ## v1.0.3 (2026-06-12) — Lição de campo: Codex 403 = re-logar com `--force` 🔑
 Na Eva de referência o codex passou a cair pro reserva com **403/`auth`** (Cloudflare do `chatgpt.com`)
 mesmo com o **token válido** — 322 fallbacks/24h. Causa = token OAuth **"preso"/marcado**; conserto = **re-login com `--force`** (token limpo) → resolveu (0 fallbacks após).

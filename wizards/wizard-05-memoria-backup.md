@@ -50,9 +50,23 @@ Objetivo: a Eva lembrar das coisas E ter backup automático. Esta é a lição m
 5. 💡 **Dica de cota pequena:** se a pessoa quer o **mais leve possível**, o **Gemini** ocupa menos
    disco que o ChatGPT/Codex (que mantém um arquivo de trace local que cresce). Vale pra quem tem plano básico.
 
-## Parte D — (opcional, avançado) Manutenção automática
-Para VM própria: ofereça um job semanal que faz snapshot → patches de SO → update do OpenClaw,
-com **health-check e rollback automático** se algo quebrar. (Ver `install/` / docs.)
+## Parte D — (opcional, avançado) Manutenção automática RESILIENTE
+Para VM própria: um job semanal que faz snapshot → patches de SO → update do OpenClaw. Mas
+**um update mal-feito derruba a Eva em silêncio** — então siga estas 4 regras de ouro (lições de campo):
+1. **Snapshot + backup ANTES e DEPOIS do update** (rede pra rollback).
+2. **Pós-upgrade, SEMPRE rode `openclaw doctor --fix --non-interactive`** — o `npm install`/update sobe o
+   código mas **não roda as migrações** (ex.: auth/credenciais mudando de lugar); sem o doctor, a Eva
+   sobe "viva" mas **sem conseguir autenticar**. (Se você usa Codex/patch próprio, reaplique-o **depois** do doctor.)
+3. **Health-check REAL, não "o processo subiu"** — teste de verdade: o modelo **primário** responde? uma
+   **chamada de ferramenta** funciona? Senão, **rollback**. Cuidado com **falso-verde**: se a Eva responde
+   pelo *modelo reserva*, o processo está "ok" mas o primário está quebrado.
+4. **Detectar fallback + auto-curar:** se, após o update, a Eva estiver rodando no **reserva** (primário
+   caído), rode `doctor --fix` + restart de novo; se não recuperar, **avise o dono** (nada de quebra silenciosa).
+   Registre o que a auto-cura fez (arquivo sentinela) pra ter visibilidade.
+
+> 💡 Bônus (heartbeat): um check "se eu cair pro modelo reserva por +15min em horário útil, avisa o dono"
+> pega quedas de primário **no meio da semana** (a manutenção semanal só cobre o pós-update).
+(Ver `install/` / docs.)
 
 ## Stop condition
 Backup do workspace rodando automático (confirmado por um commit recente no repo), faxina/guardião
