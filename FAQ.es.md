@@ -90,6 +90,19 @@ correcto y **lo rehace en el mismo turno** — sin trabarse. En un workspace chi
      Gemini como principal es más estable (pero usa llave/cuota).
 3. Si una plática se quedó "pegada" en un modelo de respaldo, dale `/new` o `/model <modelo>`.
 
+### Mi Eva parece haber "olvidado" cosas / el recall empeoró (o veo `Unknown memory embedding provider` en el log)?
+Si usas **memoria semántica con embedding LOCAL** (ej.: `llama-cpp`/GGUF) y, después de un
+**update / `doctor --fix` / refresh**, la Eva encuentra menos cosas (recall "tonto", solo por
+palabra clave) — o en el log aparece `Unknown memory embedding provider: local` / `memory sync failed`:
+el **plugin del embedding se cayó** (el `doctor --fix` deshabilita plugins no-core). Arreglo:
+```
+openclaw plugins enable llama-cpp
+openclaw gateway restart
+```
+Confirma con `openclaw memory status --deep` (Embeddings/Vector "ready"). **Regla de oro:** **cada vez
+que corras `doctor --fix`/update, vuelve a habilitar tus plugins críticos después** — y pon un check en
+el heartbeat para avisar si el embedding se cae (se cae **callado** y nadie lo nota por horas).
+
 ### No logro conectar Telegram / WhatsApp. ¿Qué hago?
 Es el paso que más se atora — tranqui, es fácil cuando sabes el truco:
 - **Telegram:** primero creas un "robot" en **@BotFather** (manda `/newbot`, eliges nombre y un
@@ -138,6 +151,17 @@ recreables. 💡 En plan básico (cuota chica), **Gemini** ocupa menos disco que
 Instala la skill **`restore-drill`** (simulacro mensual): clona la bóveda en un espacio temporal,
 revisa los archivos vitales y te dice si la Eva es **100% recuperable** — sin tocar producción.
 *Un respaldo que nunca se probó no es un respaldo.*
+
+### Recibí "el respaldo falló" en Telegram (pero el respaldo parece ok) / ¿el respaldo se detuvo sin avisar?
+Si el respaldo lo hace el **cron del agente** (lo normal en administrado) y el modelo se cayó al
+**respaldo** en un blip (auth/403), el modelo de respaldo **no tiene herramienta de shell** → el turno de
+respaldo **no corre** y la Eva puede mandar **"el respaldo falló"** (alarma **falsa**: el problema fue el
+modelo, no la bóveda). Qué hacer:
+- **Confirma la bóveda:** mira el **último commit** en el repositorio de respaldo de GitHub. Si es reciente, está ok.
+- **En VM:** migra el respaldo a un **systemd timer** (shell puro, no depende del agente/modelo — ver
+  `skill backup-eva`, paso 4); así esas alarmas falsas desaparecen.
+- Mantén el **check de frescura** (paso 7 de `backup-eva`): ese sí te avisa **de verdad** si la bóveda se
+  queda **sin commit** por muchas horas.
 
 ### ¿Es seguro? ¿Mis tokens quedan expuestos?
 No. Las credenciales quedan en archivos protegidos (`~/.openclaw/.env` / `credentials/`, chmod 600),

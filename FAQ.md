@@ -90,6 +90,19 @@ se uma leitura falhar, ela **lista a pasta** (ou usa `openclaw memory search`), 
      quedas, o Gemini como principal é mais estável (mas usa chave/cota).
 3. Se uma conversa ficou "presa" num modelo de fallback, dê `/new` ou `/model <modelo>` nela.
 
+### Minha Eva parece ter "esquecido" coisas / o recall piorou (ou vejo `Unknown memory embedding provider` no log)?
+Se você usa **memória semântica com embedding LOCAL** (ex.: `llama-cpp`/GGUF) e, depois de um
+**update / `doctor --fix` / refresh**, a Eva passou a achar menos coisa (recall "burro", só por
+palavra-chave) — ou no log aparece `Unknown memory embedding provider: local` / `memory sync failed`:
+o **plugin do embedding caiu** (o `doctor --fix` desabilita plugins não-core). Conserto:
+```
+openclaw plugins enable llama-cpp
+openclaw gateway restart
+```
+Confirme com `openclaw memory status --deep` (Embeddings/Vector "ready"). **Regra de ouro:** **toda vez
+que rodar `doctor --fix`/update, re-habilite seus plugins críticos depois** — e ponha um check no
+heartbeat pra avisar se o embedding cair (ele cai **calado** e ninguém percebe por horas).
+
 ### Não consigo conectar o Telegram / WhatsApp. O que faço?
 É o passo que mais trava — calma, é simples quando você sabe o pulo do gato:
 - **Telegram:** primeiro você cria um "robô" no **@BotFather** (manda `/newbot`, escolhe nome e um
@@ -138,6 +151,16 @@ liberei X") e **nunca apaga** o cérebro/memória/identidade nem o cofre de back
 Instale a skill **`restore-drill`** (simulado mensal): ela clona o cofre num espaço temporário,
 confere os arquivos vitais e te diz se a Eva é **100% recuperável** — sem tocar na produção.
 *Backup que nunca foi testado não é backup.*
+
+### Recebi "backup falhou" no Telegram (mas o backup parece ok) / o backup parou sem avisar?
+Se o backup é feito pelo **cron do agente** (padrão no gerenciado) e o modelo caiu pro **reserva** num
+blip (auth/403), o reserva **não tem ferramenta de shell** → o turno de backup **não roda** e a Eva pode
+mandar **"backup falhou"** (alarme **falso**: o problema foi o modelo, não o cofre). O que fazer:
+- **Confirme o cofre:** veja o **último commit** no repositório de backup do GitHub. Se está recente, está ok.
+- **Em VM:** migre o backup pro **systemd timer** (shell puro, não depende do agente/modelo — ver
+  `skill backup-eva`, passo 4); aí esses alarmes falsos somem.
+- Mantenha o **check de frescor** (passo 7 da `backup-eva`): ele avisa **de verdade** se o cofre ficar
+  **sem commit** por muitas horas.
 
 ### É seguro? Meus tokens ficam expostos?
 Não. Credenciais ficam em arquivos protegidos (`~/.openclaw/.env` / `credentials/`, chmod 600),

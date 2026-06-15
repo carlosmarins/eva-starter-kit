@@ -24,7 +24,11 @@ Objetivo: a Eva lembrar das coisas E ter backup automático. Esta é a lição m
    **GitHub PRIVADO do próprio dono**, a cada 2h, pela **própria Eva** (cron do OpenClaw). Funciona
    **mesmo em serviço gerenciado travado** e **verifica** (só conclui quando vê o commit no GitHub).
 2. **VM própria — reforço:** adicione um **snapshot diário do disco** (GCP resource-policy, ~14 dias)
-   + opcionalmente um systemd timer pro push (mais robusto que o cron do agente).
+   + um **systemd timer pro push** (shell puro). **Prefira o systemd ao cron-do-agente em VM** — não é só
+   "mais robusto": o cron-do-agente **falha calado quando o modelo cai pro reserva** (o reserva não tem
+   ferramenta de shell → o turno de backup não roda) e ainda pode te mandar **alarme falso "backup falhou"**.
+   O systemd timer **não depende do agente/modelo**. (Dê `pull` antes do `push` no script, senão um 2º
+   escritor causa rejeição.) **No gerenciado não há systemd** → aí o cron-do-agente é o caminho mesmo.
 3. **Gerenciado — regra de ouro:** o backup do provedor **não conta** (pode expirar/falhar, foi o que
    derrubou quem criou este kit). O cofre no GitHub do dono (passo 1) é o que garante.
 
@@ -56,7 +60,13 @@ Para VM própria: um job semanal que faz snapshot → patches de SO → update d
 1. **Snapshot + backup ANTES e DEPOIS do update** (rede pra rollback).
 2. **Pós-upgrade, SEMPRE rode `openclaw doctor --fix --non-interactive`** — o `npm install`/update sobe o
    código mas **não roda as migrações** (ex.: auth/credenciais mudando de lugar); sem o doctor, a Eva
-   sobe "viva" mas **sem conseguir autenticar**. (Se você usa Codex/patch próprio, reaplique-o **depois** do doctor.)
+   sobe "viva" mas **sem conseguir autenticar**.
+   - ⚠️ **Mas o `doctor --fix` (e qualquer refresh de plugin) pode DESABILITAR plugins não-core** —
+     o **provider de embedding (`llama-cpp`)**, às vezes **canais** — e **regredir patches próprios**.
+     **DEPOIS do doctor, re-habilite seus plugins críticos** (`openclaw plugins enable <ids…>`) e reaplique
+     patches. Senão a Eva sobe sem **memória semântica** (recall vira só keyword) ou sem um canal, **e
+     ninguém percebe** (foi o que aconteceu de verdade: ~12h de memória degradada em silêncio). No job de
+     manutenção semanal, deixe esse `plugins enable` fixo logo após o doctor.
 3. **Health-check REAL, não "o processo subiu"** — teste de verdade: o modelo **primário** responde? uma
    **chamada de ferramenta** funciona? Senão, **rollback**. Cuidado com **falso-verde**: se a Eva responde
    pelo *modelo reserva*, o processo está "ok" mas o primário está quebrado.
@@ -66,6 +76,11 @@ Para VM própria: um job semanal que faz snapshot → patches de SO → update d
 
 > 💡 Bônus (heartbeat): um check "se eu cair pro modelo reserva por +15min em horário útil, avisa o dono"
 > pega quedas de primário **no meio da semana** (a manutenção semanal só cobre o pós-update).
+> 💡 Bônus 2 — **saúde da memória semântica** (se você usa embedding LOCAL, ex.: `llama-cpp`/GGUF): um check
+> best-effort "meu provider de embedding ainda está carregado?" — ele **cai calado** num refresh/`doctor --fix`
+> e o recall degrada pra keyword/FTS **sem aviso**. Sinais: `openclaw plugins inspect llama-cpp` (Status),
+> `openclaw memory status --deep` (Embeddings/Vector ready), ou erro `Unknown memory embedding provider`/
+> `memory sync failed` no log. (A skill `guardiao-eva` é um bom lugar pra esse check.)
 (Ver `install/` / docs.)
 
 ## Stop condition

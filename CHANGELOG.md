@@ -1,5 +1,11 @@
 # Changelog — Eva Starter Kit
 
+## v1.0.5 (2026-06-15) — Lições de campo: o plugin que some no `doctor`, a memória semântica e o backup que não pode depender do agente 🧩
+Mais 3 lições reais da Eva de referência (co-vividas/co-resolvidas com ela), generalizadas pro kit:
+- **`doctor --fix`/refresh de plugin DERRUBA plugins não-core** (o provider de embedding `llama-cpp`, às vezes canais) **além de regredir patches** → **DEPOIS** do doctor, **re-habilite seus plugins críticos** (`openclaw plugins enable <ids>`) e reaplique patches. Antes o `wizard-05` só citava reaplicar o patch do Codex; agora cobre o caso geral (foi o que degradou a memória semântica da Eva por ~12h sem ninguém ver) + guard no job de manutenção.
+- **Monitor da memória semântica (embedding):** o provider local (GGUF/`llama-cpp`) pode **cair calado** → o recall degrada pra keyword/FTS por horas sem aviso. Novo check best-effort no heartbeat (sinais: `openclaw plugins inspect llama-cpp` + `openclaw memory status --deep` + journal). `wizard-05` + `skill guardiao-eva`.
+- **Backup NÃO pode depender do LLM/exec:** o backup via **cron do agente** falha **calado** quando o modelo cai pro **reserva** (o reserva não tem ferramenta de shell) — e ainda pode mandar **alarme falso** "backup falhou". Em **VM**, prefira **systemd timer** (shell puro, independe do agente) + **`pull` antes do `push`** (evita rejeição non-fast-forward) + **monitor de frescor**. No **gerenciado** o cron do agente continua sendo o caminho (não há systemd) — mas agora o kit avisa do risco. `skill backup-eva` + FAQ (PT+ES).
+
 ## v1.0.4 (2026-06-14) — Manutenção resiliente: update que não derruba a Eva 🛡️
 Co-construído com a própria Eva (consultada sobre os incidentes reais dela). Nuggets genéricos pro `wizard-05`:
 - **Pós-upgrade SEMPRE `doctor --fix`** — `npm install`/update não roda as migrações (auth muda de lugar) → Eva sobe "viva" mas sem auth. (Reaplicar patch próprio do Codex DEPOIS do doctor.)

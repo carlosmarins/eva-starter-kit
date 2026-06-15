@@ -17,7 +17,8 @@ metadata:
 A Eva empurra o conteúdo do workspace (`~/.openclaw/workspace`: `MEMORY.md`, `memory/`, identidade,
 skills) para um **repositório GitHub PRIVADO do próprio dono**, **a cada 2 horas**. Segredos
 (`.env`, `credentials/`, chaves) **nunca** sobem (vão no `.gitignore`). Funciona em VM e em
-gerenciado, porque quem executa é o agente (cron do OpenClaw), não o sistema.
+gerenciado. No **gerenciado**, quem executa é o agente (cron do OpenClaw); em **VM**, prefira um
+**systemd timer** (shell puro, não depende do agente/modelo — ver passo 4).
 
 ## Passo a passo (conduza, um de cada vez)
 
@@ -75,11 +76,16 @@ gerenciado, porque quem executa é o agente (cron do OpenClaw), não o sistema.
   no `.gitignore` errado — investigue antes de continuar.
 
 ### 4. Agendar o backup automático (a cada 2h)
-- **Serviço gerenciado (ou padrão universal):** crie um **cron do OpenClaw** que roda a cada 2h e
+- **Serviço gerenciado (única opção lá):** crie um **cron do OpenClaw** que roda a cada 2h e
   faz o push. Ex.: `openclaw cron add --every 2h --name "backup-eva" --tools exec --message
-  "Rotina de backup: rode no workspace 'git add -A && git commit -m auto-backup-$(date -u +%FT%TZ) || true && git push -q'. Responda só 'backup ok' ou o erro."`
-- **VM própria (mais robusto):** além/no lugar do cron, instale um **systemd timer** (oneshot a
-  cada 2h) que roda o `git push` — independe do agente estar de pé. (Ver `install/`.)
+  "Rotina de backup: rode no workspace 'git add -A && git commit -m auto-backup-$(date -u +%FT%TZ) || true && git pull --no-rebase --no-edit -q && git push -q'. Responda só 'backup ok' ou o erro."`
+  ⚠️ **Saiba do risco:** esse cron roda **via o agente**. Se o modelo cair pro **reserva** (ex.: blip de
+  auth/403), o reserva **não tem ferramenta de shell** → o backup **não roda** e você pode até receber um
+  **alarme falso "backup falhou"**. Por isso o check de frescor (passo 7) é o seu seguro.
+- **VM própria — PREFIRA o systemd timer (não o cron-do-agente):** instale um **systemd timer** (oneshot
+  a cada 2h) que roda o `git pull --no-rebase && git push` em **shell puro** — **independe do agente/modelo**
+  (imune ao problema do reserva acima) e não dá alarme falso. **Sempre `pull` antes do `push`** (se houver
+  2 escritores no mesmo repo, o push é rejeitado por non-fast-forward sem o pull). (Ver `install/`.)
 
 ### 5. ✅ VERIFICAR (não pule — é o que garante)
 - Dispare um backup **agora** e **confirme** que o commit apareceu no GitHub (peça pra pessoa
