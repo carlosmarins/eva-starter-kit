@@ -163,6 +163,17 @@ modelo, no la bóveda). Qué hacer:
 - Mantén el **check de frescura** (paso 7 de `backup-eva`): ese sí te avisa **de verdad** si la bóveda se
   queda **sin commit** por muchas horas.
 
+### ¿Después de un update la Eva parece haber "olvidado" todo / veo "Vector search: paused"?
+Todo **update de OpenClaw invalida el índice de embeddings** (cambia su "identidad") → el recall semántico
+cae a keyword hasta reindexar. Arreglo — córrelo **con el gateway/OpenClaw ARRIBA**:
+```
+openclaw memory index --force --agent main
+```
+Luego revisa `openclaw memory status --deep`: debe decir `Semantic vectors: ready` y **no**
+`Vector search: paused`/`fts-only`. ⚠️ **Nunca reindexes con el gateway apagado** — ahí genera un índice
+`fts-only` (sin vectores). Lo ideal es que el **job de mantenimiento reindexe solo** tras cada update (ver
+`wizard-05`, Parte D) y que el **`guardiao-eva`** lo detecte si queda paused.
+
 ### ¿Es seguro? ¿Mis tokens quedan expuestos?
 No. Las credenciales quedan en archivos protegidos (`~/.openclaw/.env` / `credentials/`, chmod 600),
 **nunca** en Git ni repetidas en el chat.

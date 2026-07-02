@@ -162,6 +162,17 @@ mandar **"backup falhou"** (alarme **falso**: o problema foi o modelo, não o co
 - Mantenha o **check de frescor** (passo 7 da `backup-eva`): ele avisa **de verdade** se o cofre ficar
   **sem commit** por muitas horas.
 
+### Depois de um update, a Eva parece ter "esquecido" tudo / vejo "Vector search: paused"?
+Todo **update do OpenClaw invalida o índice de embeddings** (muda a "identidade" dele) → o recall semântico
+cai pra keyword até reindexar. Conserto — rode **com o gateway/OpenClaw NO AR**:
+```
+openclaw memory index --force --agent main
+```
+Depois confira `openclaw memory status --deep`: tem que dizer `Semantic vectors: ready` e **não**
+`Vector search: paused`/`fts-only`. ⚠️ **Nunca reindexe com o gateway parado** — aí ele gera um índice
+`fts-only` (sem vetores). O ideal é o **job de manutenção reindexar sozinho** após cada update (ver
+`wizard-05`, Parte D) e o **`guardiao-eva`** pegar se ficar paused.
+
 ### É seguro? Meus tokens ficam expostos?
 Não. Credenciais ficam em arquivos protegidos (`~/.openclaw/.env` / `credentials/`, chmod 600),
 **nunca** no Git nem repetidos no chat.

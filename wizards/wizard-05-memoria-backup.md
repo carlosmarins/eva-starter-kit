@@ -63,24 +63,34 @@ Para VM própria: um job semanal que faz snapshot → patches de SO → update d
    sobe "viva" mas **sem conseguir autenticar**.
    - ⚠️ **Mas o `doctor --fix` (e qualquer refresh de plugin) pode DESABILITAR plugins não-core** —
      o **provider de embedding (`llama-cpp`)**, às vezes **canais** — e **regredir patches próprios**.
-     **DEPOIS do doctor, re-habilite seus plugins críticos** (`openclaw plugins enable <ids…>`) e reaplique
-     patches. Senão a Eva sobe sem **memória semântica** (recall vira só keyword) ou sem um canal, **e
-     ninguém percebe** (foi o que aconteceu de verdade: ~12h de memória degradada em silêncio). No job de
-     manutenção semanal, deixe esse `plugins enable` fixo logo após o doctor.
+     **DEPOIS do doctor, re-habilite seus plugins críticos** — **um por vez** (`openclaw plugins enable <id>`
+     num loop; as versões novas **não** aceitam vários numa linha só) — e reaplique patches. Senão a Eva sobe
+     sem **memória semântica** (recall vira só keyword) ou sem um canal, **e ninguém percebe** (foi o que
+     aconteceu de verdade: ~12h de memória degradada em silêncio). No job de manutenção semanal, deixe esse
+     `plugins enable` (loop) fixo logo após o doctor.
 3. **Health-check REAL, não "o processo subiu"** — teste de verdade: o modelo **primário** responde? uma
    **chamada de ferramenta** funciona? Senão, **rollback**. Cuidado com **falso-verde**: se a Eva responde
    pelo *modelo reserva*, o processo está "ok" mas o primário está quebrado.
 4. **Detectar fallback + auto-curar:** se, após o update, a Eva estiver rodando no **reserva** (primário
    caído), rode `doctor --fix` + restart de novo; se não recuperar, **avise o dono** (nada de quebra silenciosa).
    Registre o que a auto-cura fez (arquivo sentinela) pra ter visibilidade.
+5. **Reindexe a memória semântica DEPOIS do update — COM O GATEWAY NO AR.** 🧠 Todo update muda a *identidade*
+   do índice de embeddings → ele fica **inválido** e precisa ser **reconstruído**. Rode
+   `openclaw memory index --force --agent main` **com o gateway UP** (o provider local `llama-cpp` só carrega
+   pelo gateway) — com o **gateway PARADO o reindex sai `fts-only` (sem vetores) → "Vector search: paused"** e o
+   recall vira só keyword, **em silêncio**. Depois **verifique**: `openclaw memory status --deep` tem que dizer
+   `Semantic vectors: ready` e **não** `fts-only`/`paused`; se ficou fts-only, **alerte o dono e reindexe de novo
+   gateway-up**. (Foi exatamente o que custou **dias** de memória degradada na Eva de referência — automatize
+   no job de manutenção: reindex + verificação logo após o `doctor`+restart.)
 
 > 💡 Bônus (heartbeat): um check "se eu cair pro modelo reserva por +15min em horário útil, avisa o dono"
 > pega quedas de primário **no meio da semana** (a manutenção semanal só cobre o pós-update).
 > 💡 Bônus 2 — **saúde da memória semântica** (se você usa embedding LOCAL, ex.: `llama-cpp`/GGUF): um check
-> best-effort "meu provider de embedding ainda está carregado?" — ele **cai calado** num refresh/`doctor --fix`
-> e o recall degrada pra keyword/FTS **sem aviso**. Sinais: `openclaw plugins inspect llama-cpp` (Status),
-> `openclaw memory status --deep` (Embeddings/Vector ready), ou erro `Unknown memory embedding provider`/
-> `memory sync failed` no log. (A skill `guardiao-eva` é um bom lugar pra esse check.)
+> best-effort. ⚠️ **Não basta "o provider está carregado"** — o furo real é o **índice ficar `fts-only`
+> (sem vetores) com o provider UP**, tipicamente **depois de um update**. Sinais de alerta no
+> `openclaw memory status --deep`: **`Vector search: paused`**, **`fts-only`**, identity-mismatch, ou
+> `Semantic vectors` != ready; e no log `Unknown memory embedding provider`/`memory sync failed`. Conserto:
+> `openclaw memory index --force --agent main` **com o gateway UP**. (A skill `guardiao-eva` já faz esse check.)
 (Ver `install/` / docs.)
 
 ## Stop condition

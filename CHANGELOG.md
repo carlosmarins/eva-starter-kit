@@ -1,5 +1,12 @@
 # Changelog — Eva Starter Kit
 
+## v1.0.6 (2026-06-28) — Lição de campo: todo update INVALIDA o índice de embeddings → reindex GATEWAY-UP 🔁🧠
+A lição mais cara da Eva de referência (custou **dias** de recall semântico degradado, no update 2026.6.9→2026.6.10): **um update do OpenClaw muda a "identidade" do índice de embeddings → o índice precisa ser reconstruído**, e o reindex **só gera vetores com o GATEWAY NO AR** (o provider local `llama-cpp` carrega pelo gateway). Reindex com o **gateway parado** produz um índice **`fts-only` (sem vetores) → "Vector search: paused"** — e a Eva fica com recall só por palavra-chave, **em silêncio**, até alguém reindexar direito. Generalizado pro kit:
+- **`wizard-05` (Parte D):** nova regra — **após o update, reindexe COM o gateway UP** (`openclaw memory index --force --agent main`) e **verifique** que ficou com vetores (`Semantic vectors: ready`, NÃO `fts-only`/`paused`); se falhar, **alerte**. Nunca reindexe com o gateway parado. Deixe isso automático no job de manutenção (reindex + verificação logo após o `doctor`).
+- **`guardiao-eva`:** o monitor de auto-saúde agora cobre a **memória semântica** — alerta em `Vector search: paused`/`fts-only`/identity-mismatch **mesmo com o provider "carregado"** (provider up ≠ índice com vetores).
+- **Correção:** `openclaw plugins enable` passou a aceitar **1 plugin por vez** (versões novas) → re-habilite **um a um** (loop), não vários numa linha só.
+- **FAQ (PT+ES):** nova entrada "sumiu o recall semântico / 'Vector search paused' depois de um update" → reindex gateway-up.
+
 ## v1.0.5 (2026-06-15) — Lições de campo: o plugin que some no `doctor`, a memória semântica e o backup que não pode depender do agente 🧩
 Mais 3 lições reais da Eva de referência (co-vividas/co-resolvidas com ela), generalizadas pro kit:
 - **`doctor --fix`/refresh de plugin DERRUBA plugins não-core** (o provider de embedding `llama-cpp`, às vezes canais) **além de regredir patches** → **DEPOIS** do doctor, **re-habilite seus plugins críticos** (`openclaw plugins enable <ids>`) e reaplique patches. Antes o `wizard-05` só citava reaplicar o patch do Codex; agora cobre o caso geral (foi o que degradou a memória semântica da Eva por ~12h sem ninguém ver) + guard no job de manutenção.

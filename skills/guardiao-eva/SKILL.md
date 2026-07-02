@@ -50,6 +50,11 @@ ao dono no canal principal. Não conclui em silêncio — sempre reporta o resul
   - `RAM/CARGA_ALTA` → **adia tarefa pesada** pra mais tarde e avisa; não martele.
   - `CRÍTICO` → avisa o dono na hora, em linguagem simples.
   - Apagar dados pra liberar = 🔴 → **propõe**, não faz sozinha.
+- **🧠 Memória semântica (se usa embedding LOCAL, ex.: `llama-cpp`/GGUF):** rode `openclaw memory status --deep`.
+  Se aparecer **`Vector search: paused`**, **`fts-only`**, identity-mismatch, ou `Semantic vectors` != ready
+  (comum **depois de um update do OpenClaw**, **mesmo com o provider "carregado"** — provider up ≠ índice com
+  vetores), o recall caiu pra keyword. **Conserte:** `openclaw memory index --force --agent main` **com o
+  gateway UP** (nunca com o gateway parado — geraria fts-only) e **alerte** o dono. Não conclua em silêncio.
 - Segurança: `openclaw security audit`; canais com **allowlist do dono**; ferramentas **somente-leitura** onde der.
 - (Se houver teto de gasto) avisa se o uso de IA está perto do limite do mês.
 > 🛠️ *(Avançado, só VM):* quem quiser gráficos/histórico pode instalar um monitor local (ex.: Netdata)
