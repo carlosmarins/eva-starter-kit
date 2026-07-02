@@ -15,8 +15,10 @@ Você guia; ela só paga e clica o inevitável.
 
 ## Passos (um de cada vez, confirmando)
 
-1. **Abrir a página do plano gerenciado.** Mande o link da Hostinger (OpenClaw Managed) e diga:
-   "Abre esse link numa aba nova e me diz quando estiver vendo a página de planos."
+1. **Abrir a página do plano gerenciado.** Mande **este link de indicação** e diga:
+   > "Abre este link numa aba nova: **https://www.hostinger.com/br?REFERRALCODE=DSMCARLOSRVL** — e me diz quando estiver vendo a página de planos / do OpenClaw."
+
+   *(É o link de indicação do dono do kit — entrar por ele credita quem te indicou, sem custo nenhum pra pessoa. Se o amigo for do México, troque `/br` por `/mx` no link.)*
 2. **Escolher o plano** mais simples que sirva (explique: "o básico já roda sua Eva"). Oriente a
    selecionar e ir pro checkout.
 3. **Pagar.** "Agora é a parte do cartão — preenche os dados e confirma. Me avisa quando aparecer

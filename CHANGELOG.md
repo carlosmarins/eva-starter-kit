@@ -1,5 +1,8 @@
 # Changelog — Eva Starter Kit
 
+## v1.0.7 (2026-06-28) — Caminho gerenciado: link de indicação da Hostinger 🔗
+No caminho **Gerenciado (Hostinger)**, o kit agora abre a Hostinger pelo **link de indicação de quem passou o kit** (em `README`/`FAQ`/`wizard-01a`, PT `/br` + ES `/mx`), com aviso **transparente** de que é indicação e **não muda nada pro usuário**. Assim quem compartilha o kit é creditado pela indicação (programa de referral da Hostinger). Só no caminho gerenciado — o caminho VM/Google Cloud não usa Hostinger.
+
 ## v1.0.6 (2026-06-28) — Lição de campo: todo update INVALIDA o índice de embeddings → reindex GATEWAY-UP 🔁🧠
 A lição mais cara da Eva de referência (custou **dias** de recall semântico degradado, no update 2026.6.9→2026.6.10): **um update do OpenClaw muda a "identidade" do índice de embeddings → o índice precisa ser reconstruído**, e o reindex **só gera vetores com o GATEWAY NO AR** (o provider local `llama-cpp` carrega pelo gateway). Reindex com o **gateway parado** produz um índice **`fts-only` (sem vetores) → "Vector search: paused"** — e a Eva fica com recall só por palavra-chave, **em silêncio**, até alguém reindexar direito. Generalizado pro kit:
 - **`wizard-05` (Parte D):** nova regra — **após o update, reindexe COM o gateway UP** (`openclaw memory index --force --agent main`) e **verifique** que ficou com vetores (`Semantic vectors: ready`, NÃO `fts-only`/`paused`); se falhar, **alerte**. Nunca reindexe com o gateway parado. Deixe isso automático no job de manutenção (reindex + verificação logo após o `doctor`).

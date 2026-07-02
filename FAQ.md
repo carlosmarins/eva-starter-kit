@@ -11,7 +11,7 @@ Sim. A ideia é justa: você **conversa**, o agente faz. Se travar, ele pergunta
 - O modelo de IA (ChatGPT Pro / Gemini) pode ter custo à parte conforme a opção.
 
 ### Caminho Gerenciado — como contrato?
-1. Acesse a página do **OpenClaw gerenciado (Hostinger)**.
+1. Entre na Hostinger por **[este link](https://www.hostinger.com/br?REFERRALCODE=DSMCARLOSRVL)** (indicação de quem te passou o kit — ajuda essa pessoa 🙏) e vá pro **OpenClaw gerenciado**.
 2. Escolha o plano básico, vá ao checkout e **pague com cartão**.
 3. Acesse o painel/terminal do agente.
 4. Suba/cole este kit e diga: *"Leia o `0-LEIA-PRIMEIRO.md` e seja meu tutor."*

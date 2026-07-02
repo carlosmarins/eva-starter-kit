@@ -37,6 +37,9 @@ Pense numa **casa** pra sua Eva morar:
 
 ## 🟢 JEITO FÁCIL — passo a passo (Hostinger)
 
+> 👉 **Comece criando sua conta aqui: [entrar na Hostinger →](https://www.hostinger.com/br?REFERRALCODE=DSMCARLOSRVL)**
+> *(É o link de indicação de quem te passou o kit — entrar por ele ajuda essa pessoa e não muda nada pra você. Obrigado! 🙏)*
+
 Quando você entra na Hostinger, cai no **hPanel** (seu painel de controle):
 
 ![Tela inicial do hPanel da Hostinger](docs/img/00-hostinger-hpanel.png)

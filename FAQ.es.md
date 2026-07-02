@@ -11,7 +11,7 @@ camino **Administrado** y sigue lo que te diga.
 - El modelo de IA (ChatGPT Pro / Gemini) puede tener costo aparte según la opción.
 
 ### Camino Administrado — ¿cómo lo contrato?
-1. Entra a la página de **OpenClaw administrado (Hostinger)**.
+1. Entra a Hostinger por **[este link](https://www.hostinger.com/mx?REFERRALCODE=DSMCARLOSRVL)** (invitación de quien te pasó el kit — lo ayuda 🙏) y ve a **OpenClaw administrado**.
 2. Elige el plan básico, ve al checkout y **paga con tarjeta**.
 3. Entra al panel/terminal del agente.
 4. Sube/pega este kit y dile: *"Lee el `LEEME-PRIMERO.md` y sé mi tutor."*

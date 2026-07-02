@@ -36,6 +36,9 @@ Imagina una **casa** para que viva tu Eva:
 
 ## 🟢 CAMINO FÁCIL — paso a paso (Hostinger)
 
+> 👉 **Empieza creando tu cuenta aquí: [entrar a Hostinger →](https://www.hostinger.com/mx?REFERRALCODE=DSMCARLOSRVL)**
+> *(Es el link de invitación de quien te pasó el kit — entrar por ahí lo ayuda y a ti no te cambia nada. ¡Gracias! 🙏)*
+
 Cuando entras a Hostinger, llegas al **hPanel** (tu panel de control):
 
 ![Pantalla inicial del hPanel de Hostinger](docs/img/00-hostinger-hpanel.png)
