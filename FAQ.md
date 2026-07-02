@@ -163,6 +163,11 @@ mandar **"backup falhou"** (alarme **falso**: o problema foi o modelo, não o co
   **sem commit** por muitas horas.
 
 ### Depois de um update, a Eva parece ter "esquecido" tudo / vejo "Vector search: paused"?
+> 📍 **Isto é sobretudo VM/self-hosted com embedding LOCAL** (`llama-cpp`/GGUF). No **gerenciado
+> (Hostinger)** você **não roda update manual** (a plataforma atualiza) e normalmente não usa embedding
+> local — então raramente cai aqui; se o recall piorar, **peça pra própria Eva** rodar o comando abaixo
+> (o gateway já está no ar no gerenciado) ou acione o **suporte**. O resto desta resposta é pra quem tem VM.
+
 Todo **update do OpenClaw invalida o índice de embeddings** (muda a "identidade" dele) → o recall semântico
 cai pra keyword até reindexar. Conserto — rode **com o gateway/OpenClaw NO AR**:
 ```

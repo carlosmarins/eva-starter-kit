@@ -164,6 +164,11 @@ modelo, no la bóveda). Qué hacer:
   queda **sin commit** por muchas horas.
 
 ### ¿Después de un update la Eva parece haber "olvidado" todo / veo "Vector search: paused"?
+> 📍 **Esto es sobre todo VM/self-hosted con embedding LOCAL** (`llama-cpp`/GGUF). En **administrado
+> (Hostinger)** tú **no corres update manual** (la plataforma actualiza) y normalmente no usas embedding
+> local — así que rara vez caes aquí; si el recall empeora, **pídele a la propia Eva** que corra el comando
+> de abajo (el gateway ya está arriba en administrado) o contacta al **soporte**. El resto es para VM.
+
 Todo **update de OpenClaw invalida el índice de embeddings** (cambia su "identidad") → el recall semántico
 cae a keyword hasta reindexar. Arreglo — córrelo **con el gateway/OpenClaw ARRIBA**:
 ```
